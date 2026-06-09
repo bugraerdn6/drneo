@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeoClup Nedir? — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--green:#1B3A6B;--green-light:#2E63BE;--green-pale:rgba(46,99,190,0.12);--white:#1D2E47;--off-white:#162236;--text:rgba(255,255,255,0.88);--text-muted:rgba(255,255,255,0.5);--border:rgba(255,255,255,0.08);--red:#C0392B;--red-light:#E74C3C}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:rgba(255,255,255,0.88);background:#15243C}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(18,32,52,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.07);height:88px;display:flex;align-items:center}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo-text{font-family:'Playfair Display',serif;font-size:46px;color:white;font-weight:700;letter-spacing:-0.5px;line-height:1}
+    .logo-dot{color:#C0392B}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{text-decoration:none;color:rgba(255,255,255,0.55);font-size:14px;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:white}
+    .nav-right{display:flex;align-items:center;gap:16px}
+    .lang-toggle{display:flex;align-items:center;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px;gap:2px}
+    .lang-btn{padding:4px 12px;border-radius:16px;border:none;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;background:transparent;color:rgba(255,255,255,0.45)}
+    .lang-btn.active{background:#1B3A6B;color:white}
+    .nav-cta{background:#C0392B;color:white;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:13px;font-weight:600;transition:background .2s}
+    .nav-cta:hover{background:#E74C3C}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .hamburger span{width:24px;height:2px;background:rgba(255,255,255,0.8);border-radius:2px}
+    .mobile-menu{display:none;position:fixed;top:88px;left:0;right:0;background:#162640;border-bottom:1px solid rgba(255,255,255,0.07);padding:20px 24px;flex-direction:column;gap:16px;z-index:99}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{color:rgba(255,255,255,0.75);text-decoration:none;font-weight:500;font-size:15px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+
+    /* BREADCRUMB */
+    .breadcrumb{padding:108px 24px 0;max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.35)}
+    .breadcrumb a{color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+    .breadcrumb a:hover{color:white}
+    .breadcrumb span{color:rgba(255,255,255,0.7);font-weight:500}
+
+    /* HERO */
+    .hero{max-width:860px;margin:0 auto;padding:48px 24px 64px;text-align:center}
+    .hero-tag{display:inline-block;background:rgba(192,57,43,0.15);border:1px solid rgba(192,57,43,0.3);color:#E74C3C;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);line-height:1.12;margin-bottom:20px;color:white}
+    .hero-accent{color:#C0392B;font-style:italic}
+    .hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.75;max-width:640px;margin:0 auto 36px}
+    .hero-cta{display:inline-flex;align-items:center;gap:10px;background:#C0392B;color:white;padding:14px 36px;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(192,57,43,0.4)}
+    .hero-cta:hover{background:#E74C3C;transform:translateY(-2px);box-shadow:0 8px 30px rgba(192,57,43,0.55)}
+
+    /* BRANDS */
+    .brand-cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+    .brand-cat{padding:8px 20px;border-radius:50px;border:1px solid rgba(255,255,255,0.12);background:transparent;color:rgba(255,255,255,0.5);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+    .brand-cat:hover{border-color:rgba(255,255,255,0.3);color:white}
+    .brand-cat.active{background:#C0392B;border-color:#C0392B;color:white}
+    .brands-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+    .brand-card{background:#1D2E47;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:16px 14px;display:flex;flex-direction:column;align-items:center;gap:6px;transition:border-color .2s;text-align:center}
+    .brand-card:hover{border-color:rgba(192,57,43,0.35)}
+    .brand-logo-wrap{width:64px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+    .brand-logo{width:48px;height:48px;object-fit:contain;border-radius:10px}
+    .brand-logo-fallback{width:48px;height:36px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.06);border-radius:8px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.55);text-align:center;padding:4px;line-height:1.2}
+    .brand-name{font-weight:600;font-size:12px;color:rgba(255,255,255,0.6);line-height:1.3}
+    .brand-rate{font-size:22px;font-weight:800;color:#C0392B;line-height:1}
+    .brand-rate-label{font-size:10px;color:rgba(255,255,255,0.3);margin-top:-2px}
+
+    /* HOW IT WORKS */
+    .section{max-width:1100px;margin:0 auto;padding:0 24px 80px}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);color:white;margin-bottom:8px}
+    .section-sub{font-size:15px;color:rgba(255,255,255,0.45);margin-bottom:40px}
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .step-card{background:#1D2E47;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:28px 24px;position:relative;overflow:hidden}
+    .step-card::before{content:attr(data-step);position:absolute;top:-10px;right:16px;font-size:80px;font-weight:800;color:rgba(255,255,255,0.04);line-height:1;font-family:'Playfair Display',serif}
+    .step-icon{width:48px;height:48px;background:rgba(192,57,43,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+    .step-card-title{font-weight:700;font-size:16px;color:white;margin-bottom:8px}
+    .step-card-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.65}
+
+    /* FEATURES */
+    .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:0}
+    .feature-item{display:flex;align-items:flex-start;gap:14px;background:#1D2E47;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px}
+    .feature-icon{width:40px;height:40px;background:rgba(46,99,190,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+    .feature-text h4{font-weight:700;font-size:15px;color:white;margin-bottom:4px}
+    .feature-text p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:12px}
+    .faq-item{border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden}
+    .faq-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:#1D2E47;transition:background .2s}
+    .faq-header:hover{background:#243554}
+    .faq-question{font-weight:600;font-size:15px;color:white}
+    .faq-arrow{transition:transform .3s;color:rgba(255,255,255,0.35);flex-shrink:0}
+    .faq-arrow.open{transform:rotate(180deg)}
+    .faq-body{padding:0 22px;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;background:#1a2840}
+    .faq-body.open{max-height:200px;padding:0 22px 18px}
+    .faq-answer{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7}
+
+    /* CTA BOTTOM */
+    .cta-bottom{max-width:1100px;margin:0 auto 80px;padding:0 24px}
+    .cta-box{background:linear-gradient(135deg,rgba(192,57,43,0.25) 0%,rgba(27,58,107,0.4) 100%);border:1px solid rgba(192,57,43,0.3);border-radius:24px;padding:48px;text-align:center}
+    .cta-box-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);color:white;margin-bottom:12px}
+    .cta-box-sub{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:32px;line-height:1.7}
+    .cta-box-btn{display:inline-flex;align-items:center;gap:10px;background:#C0392B;color:white;padding:14px 40px;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(192,57,43,0.4)}
+    .cta-box-btn:hover{background:#E74C3C;transform:translateY(-2px);box-shadow:0 8px 30px rgba(192,57,43,0.55)}
+
+    footer{background:#0D1A2E;color:rgba(255,255,255,0.5);padding:48px 24px 32px}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+    .footer-logo{color:white;font-family:'Playfair Display',serif;font-size:20px}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;transition:color .2s}
+    .footer-links a:hover{color:white}
+    .footer-copy{font-size:12px;text-align:center;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);margin-top:8px}
+
+    @media(max-width:900px){
+      .nav-links{display:none}.hamburger{display:flex}
+      .steps-grid{grid-template-columns:1fr}
+      .features-grid{grid-template-columns:1fr}
+      .cta-box{padding:32px 24px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-pill" width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg>
+      <span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" data-tr="Hemen Katıl" data-en="Join Now">Hemen Katıl</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+  <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+</div>
+
+<div class="breadcrumb">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <span data-tr="NeoClup Nedir?" data-en="What is NeoClup?">NeoClup Nedir?</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag" data-tr="Nakit İade Programı" data-en="Cashback Program">Nakit İade Programı</div>
+  <h1 class="hero-title" data-tr="Alışveriş yaparken <span class='hero-accent'>para kazan</span>" data-en="<span class='hero-accent'>Earn money</span> while shopping">Alışveriş yaparken <span class="hero-accent">para kazan</span></h1>
+  <p class="hero-sub" data-tr="NeoClup, anlaşmalı markalardan yaptığınız her alışverişte otomatik olarak nakit iade kazandıran bir uygulamadır. Ekstra bir şey yapmanıza gerek yok — sadece alışveriş yapın, paranız hesabınıza gelsin." data-en="NeoClup is an app that automatically earns you cashback on every purchase from partner brands. No extra steps needed — just shop and the money comes to your account.">NeoClup, anlaşmalı markalardan yaptığınız her alışverişte otomatik olarak nakit iade kazandıran bir uygulamadır. Ekstra bir şey yapmanıza gerek yok — sadece alışveriş yapın, paranız hesabınıza gelsin.</p>
+  <a href="#" class="hero-cta" id="hero-join-btn" data-tr="Hemen Ücretsiz Katıl →" data-en="Join Free Now →">Hemen Ücretsiz Katıl →</a>
+</div>
+
+<!-- NASIL ÇALIŞIR -->
+<div class="section">
+  <h2 class="section-title" data-tr="Nasıl Çalışır?" data-en="How Does It Work?">Nasıl Çalışır?</h2>
+  <p class="section-sub" data-tr="3 basit adımda nakit iade kazanmaya başlayın." data-en="Start earning cashback in 3 simple steps.">3 basit adımda nakit iade kazanmaya başlayın.</p>
+  <div class="steps-grid">
+    <div class="step-card" data-step="1">
+      <div class="step-icon">📲</div>
+      <div class="step-card-title" data-tr="Uygulamayı İndir" data-en="Download the App">Uygulamayı İndir</div>
+      <p class="step-card-desc" data-tr="NeoClup uygulamasını App Store veya Google Play'den ücretsiz indirin ve birkaç dakika içinde kaydınızı tamamlayın." data-en="Download the NeoClup app for free from the App Store or Google Play and complete your registration in a few minutes.">NeoClup uygulamasını App Store veya Google Play'den ücretsiz indirin ve birkaç dakika içinde kaydınızı tamamlayın.</p>
+    </div>
+    <div class="step-card" data-step="2">
+      <div class="step-icon">🛍️</div>
+      <div class="step-card-title" data-tr="Markadan Alışveriş Yap" data-en="Shop at Partner Brands">Markadan Alışveriş Yap</div>
+      <p class="step-card-desc" data-tr="Uygulama üzerinden anlaşmalı markalardan alışveriş yapın. Yüzlerce marka arasından istediğinizi seçin." data-en="Shop from partner brands through the app. Choose from hundreds of brands.">Uygulama üzerinden anlaşmalı markalardan alışveriş yapın. Yüzlerce marka arasından istediğinizi seçin.</p>
+    </div>
+    <div class="step-card" data-step="3">
+      <div class="step-icon">💰</div>
+      <div class="step-card-title" data-tr="Nakit İadeyi Al" data-en="Receive Your Cashback">Nakit İadeyi Al</div>
+      <p class="step-card-desc" data-tr="Her alışverişten sonra nakit iadeniz otomatik olarak hesabınıza yansır. İstediğiniz zaman çekebilirsiniz." data-en="Your cashback is automatically credited to your account after each purchase. Withdraw whenever you want.">Her alışverişten sonra nakit iadeniz otomatik olarak hesabınıza yansır. İstediğiniz zaman çekebilirsiniz.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MARKALAR -->
+<div class="section">
+  <h2 class="section-title" data-tr="Anlaşmalı Markalar" data-en="Partner Brands">Anlaşmalı Markalar</h2>
+  <p class="section-sub" data-tr="87 marka, 4 kategori — sürekli büyüyen ekosistem" data-en="87 brands, 4 categories — constantly growing ecosystem">87 marka, 4 kategori — sürekli büyüyen ekosistem</p>
+  <div class="brand-cats">
+    <button class="brand-cat active" onclick="filterBrands('all', this)" data-tr="Tümü" data-en="All">Tümü</button>
+    <button class="brand-cat" onclick="filterBrands('giyim', this)" data-tr="👕 Giyim" data-en="👕 Fashion">👕 Giyim</button>
+    <button class="brand-cat" onclick="filterBrands('market', this)" data-tr="🛒 Market" data-en="🛒 Grocery">🛒 Market</button>
+    <button class="brand-cat" onclick="filterBrands('restoran', this)" data-tr="🍽️ Restoran" data-en="🍽️ Restaurant">🍽️ Restoran</button>
+    <button class="brand-cat" onclick="filterBrands('petrol', this)" data-tr="⛽ Petrol" data-en="⛽ Fuel">⛽ Petrol</button>
+  </div>
+  <div class="brands-grid" id="brandsGrid"></div>
+</div>
+
+<!-- AVANTAJLAR -->
+<div class="section">
+  <h2 class="section-title" data-tr="Neden NeoClup?" data-en="Why NeoClup?">Neden NeoClup?</h2>
+  <p class="section-sub" data-tr="Diğer programlardan farkı ne?" data-en="What makes it different?">Diğer programlardan farkı ne?</p>
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">🎯</div>
+      <div class="feature-text">
+        <h4 data-tr="Otomatik Nakit İade" data-en="Automatic Cashback">Otomatik Nakit İade</h4>
+        <p data-tr="Puan, kupon yok. Direkt nakit iade. Hesabınıza otomatik yansır, manuel işlem gerekmez." data-en="No points, no coupons. Direct cashback. Automatically credited to your account, no manual action required.">Puan, kupon yok. Direkt nakit iade. Hesabınıza otomatik yansır, manuel işlem gerekmez.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🏪</div>
+      <div class="feature-text">
+        <h4 data-tr="Yüzlerce Marka" data-en="Hundreds of Brands">Yüzlerce Marka</h4>
+        <p data-tr="Türkiye'nin önde gelen markalarıyla anlaşmalıdır. Giyimden elektroniğe, marketten kozmetiğe geniş yelpaze." data-en="Partnered with Turkey's leading brands. Wide range from fashion to electronics, grocery to cosmetics.">Türkiye'nin önde gelen markalarıyla anlaşmalıdır. Giyimden elektroniğe, marketten kozmetiğe geniş yelpaze.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🔒</div>
+      <div class="feature-text">
+        <h4 data-tr="Güvenli ve Şeffaf" data-en="Safe and Transparent">Güvenli ve Şeffaf</h4>
+        <p data-tr="Tüm kazanımlarınızı anlık takip edebilirsiniz. Güvenli ödeme altyapısıyla korunan hesabınız." data-en="Track all your earnings in real time. Your account is protected with secure payment infrastructure.">Tüm kazanımlarınızı anlık takip edebilirsiniz. Güvenli ödeme altyapısıyla korunan hesabınız.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">💸</div>
+      <div class="feature-text">
+        <h4 data-tr="İstediğinizde Çekin" data-en="Withdraw Anytime">İstediğinizde Çekin</h4>
+        <p data-tr="Biriken nakit iadenizi banka hesabınıza veya dijital cüzdanınıza istediğiniz zaman aktarabilirsiniz." data-en="Transfer your accumulated cashback to your bank account or digital wallet whenever you want.">Biriken nakit iadenizi banka hesabınıza veya dijital cüzdanınıza istediğiniz zaman aktarabilirsiniz.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SSS -->
+<div class="section">
+  <h2 class="section-title" data-tr="Sık Sorulan Sorular" data-en="Frequently Asked Questions">Sık Sorulan Sorular</h2>
+  <p class="section-sub" data-tr="Merak ettikleriniz" data-en="Your questions answered">Merak ettikleriniz</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-header" onclick="toggleFaq(this)">
+        <span class="faq-question" data-tr="NeoClup ücretsiz mi?" data-en="Is NeoClup free?">NeoClup ücretsiz mi?</span>
+        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="faq-body">
+        <p class="faq-answer" data-tr="Evet, NeoClup uygulaması tamamen ücretsizdir. Kayıt olmanız, alışveriş yapmanız ve nakit iade kazanmanız için herhangi bir ücret ödemeniz gerekmez." data-en="Yes, the NeoClup app is completely free. No fees are required to register, shop and earn cashback.">Evet, NeoClup uygulaması tamamen ücretsizdir. Kayıt olmanız, alışveriş yapmanız ve nakit iade kazanmanız için herhangi bir ücret ödemeniz gerekmez.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-header" onclick="toggleFaq(this)">
+        <span class="faq-question" data-tr="Nakit iadem ne zaman hesabıma yansır?" data-en="When does my cashback credit to my account?">Nakit iadem ne zaman hesabıma yansır?</span>
+        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="faq-body">
+        <p class="faq-answer" data-tr="Alışverişinizin tamamlanmasının ardından nakit iadeniz genellikle birkaç gün içinde hesabınıza otomatik olarak yansır. Marka ve kampanyaya göre süre değişebilir." data-en="After your purchase is confirmed, your cashback is usually automatically credited to your account within a few days. The timeframe may vary by brand and campaign.">Alışverişinizin tamamlanmasının ardından nakit iadeniz genellikle birkaç gün içinde hesabınıza otomatik olarak yansır. Marka ve kampanyaya göre süre değişebilir.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-header" onclick="toggleFaq(this)">
+        <span class="faq-question" data-tr="Hangi markalar anlaşmalı?" data-en="Which brands are partnered?">Hangi markalar anlaşmalı?</span>
+        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="faq-body">
+        <p class="faq-answer" data-tr="NeoClup uygulaması içinde güncel marka listesine ulaşabilirsiniz. Yüzlerce marka ile sürekli genişleyen bir ekosistem sunulmaktadır." data-en="You can find the current brand list within the NeoClup app. A continuously expanding ecosystem with hundreds of brands is offered.">NeoClup uygulaması içinde güncel marka listesine ulaşabilirsiniz. Yüzlerce marka ile sürekli genişleyen bir ekosistem sunulmaktadır.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-header" onclick="toggleFaq(this)">
+        <span class="faq-question" data-tr="Nakit iadeyi nasıl çekebilirim?" data-en="How do I withdraw my cashback?">Nakit iadeyi nasıl çekebilirim?</span>
+        <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="faq-body">
+        <p class="faq-answer" data-tr="Uygulama içinden banka hesabınıza veya dijital cüzdanınıza kolayca transfer yapabilirsiniz. Minimum çekim tutarı uygulama içinde belirtilmektedir." data-en="You can easily transfer to your bank account or digital wallet from within the app. The minimum withdrawal amount is stated within the app.">Uygulama içinden banka hesabınıza veya dijital cüzdanınıza kolayca transfer yapabilirsiniz. Minimum çekim tutarı uygulama içinde belirtilmektedir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BOTTOM -->
+<div class="cta-bottom">
+  <div class="cta-box">
+    <h2 class="cta-box-title" data-tr="Hemen ücretsiz katılın" data-en="Join for free today">Hemen ücretsiz katılın</h2>
+    <p class="cta-box-sub" data-tr="Bir sonraki alışverişinizden itibaren nakit iade kazanmaya başlayın. Kayıt ücretsiz, kazanım otomatik." data-en="Start earning cashback from your next purchase. Registration is free, earnings are automatic.">Bir sonraki alışverişinizden itibaren nakit iade kazanmaya başlayın. Kayıt ücretsiz, kazanım otomatik.</p>
+    <a href="#" class="cta-box-btn" id="bottom-join-btn" data-tr="Hemen Katıl →" data-en="Join Now →">Hemen Katıl →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div class="footer-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+  </div>
+  <div class="footer-copy" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+</footer>
+
+<script>
+  const REGISTER_LINK = 'https://share.neoclub.app/HWgtbzTmJ3b';
+
+  const brands = [
+    // Giyim
+    {name:'Süvari',rate:'%7',cat:'giyim',domain:'suvari.com.tr'},
+    {name:'Gencallar',rate:'%7',cat:'giyim',domain:'gencallar.com'},
+    {name:'U.S. Polo Assn.',rate:'%7',cat:'giyim',domain:'uspoloassn.com'},
+    {name:'İpekyol',rate:'%7',cat:'giyim',domain:'ipekyol.com.tr'},
+    {name:'Sitare',rate:'%7',cat:'giyim',domain:'sitare.com.tr'},
+    {name:'Çizgi',rate:'%7',cat:'giyim',domain:'cizgimoda.com'},
+    {name:'Gençoptik',rate:'%7',cat:'giyim',domain:'gencoptik.com.tr'},
+    {name:'Damat / Tween',rate:'%7',cat:'giyim',domain:'damat.com.tr'},
+    {name:'Kiğılı',rate:'%7',cat:'giyim',domain:'kigili.com.tr'},
+    {name:'Jack & Jones',rate:'%7',cat:'giyim',domain:'jackjones.com'},
+    {name:'Koton',rate:'%7',cat:'giyim',domain:'koton.com'},
+    {name:'Armine',rate:'%7',cat:'giyim',domain:'armine.com'},
+    {name:'The North Face',rate:'%7',cat:'giyim',domain:'thenorthface.com'},
+    {name:'İmannoor',rate:'%7',cat:'giyim',domain:'imannoor.com'},
+    {name:'Cacharel',rate:'%7',cat:'giyim',domain:'cacharel.com'},
+    {name:'Pierre Cardin',rate:'%7',cat:'giyim',domain:'pierrecardin.com'},
+    {name:'Altınyıldız',rate:'%7',cat:'giyim',domain:'altinyildiz.com.tr'},
+    {name:'Ayakkabı Dünyası',rate:'%7',cat:'giyim',domain:'ayakkabidunyasi.com.tr'},
+    {name:'Panço',rate:'%7',cat:'giyim',domain:'panco.com.tr'},
+    {name:'Back & Bond',rate:'%7',cat:'giyim',domain:'backbond.com.tr'},
+    {name:'Paulmark',rate:'%7',cat:'giyim',domain:'paulmark.com.tr'},
+    {name:"Levi's",rate:'%7',cat:'giyim',domain:'levis.com'},
+    {name:'Mavi',rate:'%7',cat:'giyim',domain:'mavi.com'},
+    {name:'Hotiç',rate:'%7',cat:'giyim',domain:'hotic.com.tr'},
+    {name:'Adidas',rate:'%7',cat:'giyim',domain:'adidas.com'},
+    {name:'Lescon',rate:'%7',cat:'giyim',domain:'lescon.com.tr'},
+    {name:'Setre',rate:'%7',cat:'giyim',domain:'setre.com.tr'},
+    {name:'Madame Coco',rate:'%7',cat:'giyim',domain:'madamecoco.com.tr'},
+    {name:'DeFacto',rate:'%6',cat:'giyim',domain:'defacto.com.tr'},
+    {name:'Lumberjack',rate:'%7',cat:'giyim',domain:'lumberjack.com.tr'},
+    {name:'Reebok',rate:'%7',cat:'giyim',domain:'reebok.com'},
+    {name:'İnstreet',rate:'%7',cat:'giyim',domain:'instreet.com.tr'},
+    {name:'Nine West',rate:'%7',cat:'giyim',domain:'ninewest.com'},
+    {name:'saat&saat',rate:'%15',cat:'giyim',domain:'saatsaat.com.tr'},
+    {name:'FLO',rate:'%7',cat:'giyim',domain:'flo.com.tr'},
+    // Market
+    {name:'A101',rate:'%3',cat:'market',domain:'a101.com.tr'},
+    {name:'ŞOK',rate:'%2',cat:'market',domain:'sokmarket.com.tr'},
+    {name:'Mion',rate:'%2,5',cat:'market',domain:'mion.com.tr'},
+    {name:'Migros',rate:'%2,5',cat:'market',domain:'migros.com.tr'},
+    {name:'Macrocenter',rate:'%2,5',cat:'market',domain:'macrocenter.com.tr'},
+    {name:'BİM',rate:'%3',cat:'market',domain:'bim.com.tr'},
+    {name:'Getir',rate:'%3',cat:'market',domain:'getir.com'},
+    {name:'Avansas',rate:'%3',cat:'market',domain:'avansas.com'},
+    {name:'Taze Direkt',rate:'%2,5',cat:'market',domain:'tazedirekt.com'},
+    // Restoran
+    {name:'Adıyaman Çiğ Köfte',rate:'%3',cat:'restoran',domain:'adiyamancigkoftecisi.com'},
+    {name:'Alacatı Muhallebicisi',rate:'%3',cat:'restoran',domain:'alacatimuhallebicisi.com'},
+    {name:'Arabica Coffee House',rate:'%3',cat:'restoran',domain:'arabicacoffeehouse.com'},
+    {name:'Baydöner',rate:'%3',cat:'restoran',domain:'baydoner.com.tr'},
+    {name:'Bereket Döner',rate:'%3',cat:'restoran',domain:'bereketdoner.com.tr'},
+    {name:'Big Chefs',rate:'%3',cat:'restoran',domain:'bigchefs.com.tr'},
+    {name:'Bülent Börekçilik',rate:'%3',cat:'restoran',domain:'bulentborekcilik.com.tr'},
+    {name:'Bursa Kebap Evi',rate:'%3',cat:'restoran',domain:'bursakebapevi.com.tr'},
+    {name:'Cajun Corner',rate:'%3',cat:'restoran',domain:'cajuncorner.com.tr'},
+    {name:"Domino's Pizza",rate:'%3',cat:'restoran',domain:'dominos.com.tr'},
+    {name:'Dürümle',rate:'%3',cat:'restoran',domain:'durumle.com.tr'},
+    {name:'Ekleristan',rate:'%3',cat:'restoran',domain:'ekleristan.com'},
+    {name:'Ekrem Coşkun Döner',rate:'%3',cat:'restoran',domain:'ekremcoskun.com.tr'},
+    {name:'Espressolab',rate:'%3',cat:'restoran',domain:'espressolab.com.tr'},
+    {name:'Güllüoğlu',rate:'%3',cat:'restoran',domain:'gulluoglu.com'},
+    {name:"Gloria Jean's",rate:'%3',cat:'restoran',domain:'gloriajeanscoffees.com'},
+    {name:'HD İskender',rate:'%3',cat:'restoran',domain:'hdiskender.com.tr'},
+    {name:'hmbrgr',rate:'%3',cat:'restoran',domain:'hmbrgr.com.tr'},
+    {name:'KFC',rate:'%3',cat:'restoran',domain:'kfc.com'},
+    {name:'Köfteci Ramiz',rate:'%3',cat:'restoran',domain:'kofteciramiz.com.tr'},
+    {name:'Köfteci Yusuf',rate:'%3',cat:'restoran',domain:'kofteciyusuf.com.tr'},
+    {name:'Komagene',rate:'%3',cat:'restoran',domain:'komagene.com.tr'},
+    {name:'Levent Börek',rate:'%3',cat:'restoran',domain:'leventborek.com.tr'},
+    {name:'Little Caesars',rate:'%3',cat:'restoran',domain:'littlecaesars.com'},
+    {name:'Mackbear Coffee',rate:'%3',cat:'restoran',domain:'mackbear.com.tr'},
+    {name:'Mado',rate:'%3',cat:'restoran',domain:'mado.com.tr'},
+    {name:"Mama's Homemade",rate:'%3',cat:'restoran',domain:'mamashomemade.com.tr'},
+    {name:'Maydonoz Dönemeci',rate:'%3',cat:'restoran',domain:'maydonoz.com.tr'},
+    {name:"McDonald's",rate:'%3',cat:'restoran',domain:'mcdonalds.com'},
+    {name:'Oses Çiğ Köfte',rate:'%3',cat:'restoran',domain:'osescigkofte.com.tr'},
+    {name:'Osmanlı Kaburcusu',rate:'%3',cat:'restoran',domain:'osmanlikaburcusu.com.tr'},
+    {name:'Özsüt',rate:'%3',cat:'restoran',domain:'ozsut.com.tr'},
+    {name:'Pasaport Pizza',rate:'%3',cat:'restoran',domain:'pasaportpizza.com.tr'},
+    {name:'Pidem',rate:'%3',cat:'restoran',domain:'pidem.com.tr'},
+    {name:'Popeyes',rate:'%3',cat:'restoran',domain:'popeyes.com'},
+    {name:'Sbarro',rate:'%3',cat:'restoran',domain:'sbarro.com'},
+    {name:'Simitçi Dünyası',rate:'%3',cat:'restoran',domain:'simitcidunyasi.com.tr'},
+    {name:'SR Döner',rate:'%3',cat:'restoran',domain:'srdoner.com.tr'},
+    {name:'Starbucks',rate:'%3',cat:'restoran',domain:'starbucks.com'},
+    {name:'Subway',rate:'%3',cat:'restoran',domain:'subway.com'},
+    {name:'Tavuk Dünyası',rate:'%3',cat:'restoran',domain:'tavukdunyasi.com.tr'},
+    {name:'Burger King',rate:'%3',cat:'restoran',domain:'burgerking.com'},
+    // Petrol
+    {name:'Shell',rate:'%3,5',cat:'petrol',domain:'shell.com'},
+    {name:'Opet',rate:'%3',cat:'petrol',domain:'opet.com.tr'},
+    {name:'Petrol Ofisi',rate:'%4,5',cat:'petrol',domain:'petrolofisi.com.tr'},
+  ];
+
+  function renderBrands(filter) {
+    const grid = document.getElementById('brandsGrid');
+    const filtered = filter === 'all' ? brands : brands.filter(b => b.cat === filter);
+    grid.innerHTML = filtered.map(b => `
+      <div class="brand-card">
+        <div class="brand-logo-wrap">
+          <img class="brand-logo"
+               src="https://www.google.com/s2/favicons?domain=${b.domain}&sz=128"
+               alt="${b.name}"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="brand-logo-fallback" style="display:none">${b.name}</div>
+        </div>
+        <div class="brand-name">${b.name}</div>
+        <div class="brand-rate">${b.rate}</div>
+        <div class="brand-rate-label">Nakit İade</div>
+      </div>
+    `).join('');
+  }
+
+  function filterBrands(cat, btn) {
+    document.querySelectorAll('.brand-cat').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderBrands(cat);
+  }
+
+  renderBrands('all');
+
+  document.getElementById('hero-join-btn').href = REGISTER_LINK;
+  document.getElementById('hero-join-btn').target = '_blank';
+  document.getElementById('bottom-join-btn').href = REGISTER_LINK;
+  document.getElementById('bottom-join-btn').target = '_blank';
+  document.querySelector('.nav-cta').href = REGISTER_LINK;
+  document.querySelector('.nav-cta').target = '_blank';
+
+  let currentLang = 'tr';
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.querySelectorAll('[data-tr]').forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (!text) return;
+      if (text.includes('<')) { el.innerHTML = text; } else { el.textContent = text; }
+    });
+  }
+
+  function toggleFaq(header) {
+    const body = header.nextElementSibling;
+    const arrow = header.querySelector('.faq-arrow');
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.faq-arrow').forEach(a => a.classList.remove('open'));
+    if (!isOpen) { body.classList.add('open'); arrow.classList.add('open'); }
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+<style>.whatsapp-btn{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.45);z-index:999;transition:all .3s}.whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.65)}.whatsapp-btn svg{width:28px;height:28px}.whatsapp-tooltip{position:absolute;right:64px;background:rgba(0,0,0,0.75);color:white;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}.whatsapp-btn:hover .whatsapp-tooltip{opacity:1}</style><a href="https://wa.me/905469576197" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="whatsapp-tooltip">Bize Yazın</span></a></body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Plus — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="product-style.css" />
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-pill" width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg><span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta" data-tr="Sipariş Ver" data-en="Order Now">Sipariş Ver</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="urunler.html">Ürünler</a>
+  <a href="hakkimizda.html">Hakkımızda</a>
+  <a href="iletisim.html">İletişim</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <span>Body Plus</span>
+</div>
+
+<!-- PRODUCT HERO -->
+<div class="product-hero">
+
+  <!-- GALLERY -->
+  <div class="product-gallery">
+    <div class="main-img">
+      <img src="images/body-plus.png" alt="Body Plus" />
+    </div>
+    <div class="img-badge-row">
+      <div class="img-badge">
+        <strong>25</strong>
+        <span data-tr="Adet Bant" data-en="Patches">Adet Bant</span>
+      </div>
+      <div class="img-badge">
+        <strong>48</strong>
+        <span data-tr="Saat Etki" data-en="Hour Effect">Saat Etki</span>
+      </div>
+      <div class="img-badge">
+        <strong>12</strong>
+        <span data-tr="Aktif İçerik" data-en="Active Ingredients">Aktif İçerik</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="product-info-col">
+    <div class="product-cat-tag" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+    <h1 class="product-title">Body Plus</h1>
+    <p class="product-subtitle" data-tr="Vücut enerjisi, metabolizma desteği ve bağışıklık güçlendirme için ihtiyaç duyduğun her şey bu güçlü formülde bir arada!" data-en="Everything you need for body energy, metabolism support and immune strengthening — all in one powerful formula!">
+      Vücut enerjisi, metabolizma desteği ve bağışıklık güçlendirme için ihtiyaç duyduğun her şey bu güçlü formülde bir arada!
+    </p>
+
+    <div class="highlights">
+      <div class="highlight-item">
+        <span class="highlight-icon">🌱</span>
+        <span class="highlight-text" data-tr="Doğal bitki özleri, amino asitler ve vitaminlerle zenginleştirilmiştir." data-en="Enriched with natural plant extracts, amino acids and vitamins.">Doğal bitki özleri, amino asitler ve vitaminlerle zenginleştirilmiştir.</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-icon">💪</span>
+        <span class="highlight-text" data-tr="Kas ve performans desteği sunar." data-en="Provides muscle and performance support.">Kas ve performans desteği sunar.</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-icon">🧪</span>
+        <span class="highlight-text" data-tr="Dermatolojik olarak test edilmiştir." data-en="Dermatologically tested.">Dermatolojik olarak test edilmiştir.</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-icon">🔥</span>
+        <span class="highlight-text" data-tr="Metabolizmayı hızlandırır, yağ yakımını destekler." data-en="Boosts metabolism and supports fat burning.">Metabolizmayı hızlandırır, yağ yakımını destekler.</span>
+      </div>
+    </div>
+
+    <div class="product-meta">
+      <div class="meta-item">
+        <div class="meta-num">25</div>
+        <div class="meta-label" data-tr="Bant/Paket" data-en="Patches/Pack">Bant/Paket</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-num">48h</div>
+        <div class="meta-label" data-tr="Kullanım Süresi" data-en="Duration">Kullanım Süresi</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-num">12</div>
+        <div class="meta-label" data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-box-title" data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</div>
+      <div class="cta-box-sub" data-tr="Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz." data-en="You can safely order through our official distributor link.">
+        Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz.
+      </div>
+      <a href="#" class="btn-cta" id="product-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span data-tr="Sipariş Ver" data-en="Place Order">Sipariş Ver</span>
+      </a>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span data-tr="Orijinal Ürün" data-en="Original Product">Orijinal Ürün</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-tr="Güvenli Ödeme" data-en="Secure Payment">Güvenli Ödeme</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <span data-tr="Hızlı Kargo" data-en="Fast Shipping">Hızlı Kargo</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="product-tabs">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('benefits', this)" data-tr="Faydaları" data-en="Benefits">Faydaları</button>
+    <button class="tab-btn" onclick="showTab('ingredients', this)" data-tr="İçerik" data-en="Ingredients">İçerik</button>
+    <button class="tab-btn" onclick="showTab('usage', this)" data-tr="Nasıl Kullanılır?" data-en="How to Use?">Nasıl Kullanılır?</button>
+  </div>
+
+  <!-- BENEFITS -->
+  <div class="tab-panel active" id="tab-benefits">
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Gün boyu süren enerji sağlar, yorgunluğu azaltır" data-en="Provides all-day energy, reduces fatigue">Gün boyu süren enerji sağlar, yorgunluğu azaltır</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Metabolizmayı hızlandırarak kilo kontrolüne destek olur" data-en="Supports weight control by boosting metabolism">Metabolizmayı hızlandırarak kilo kontrolüne destek olur</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Hafıza ve odaklanmayı geliştirir, zihinsel performansı artırır" data-en="Improves memory and focus, increases mental performance">Hafıza ve odaklanmayı geliştirir, zihinsel performansı artırır</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Bağışıklık sistemini güçlendirerek hastalıklara karşı koruma sağlar" data-en="Strengthens the immune system and protects against diseases">Bağışıklık sistemini güçlendirerek hastalıklara karşı koruma sağlar</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Kan dolaşımını artırarak kalp ve damar sağlığını destekler" data-en="Supports heart and vascular health by increasing blood circulation">Kan dolaşımını artırarak kalp ve damar sağlığını destekler</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Kas gelişimi ve toparlanmayı hızlandırır, egzersiz performansını artırır" data-en="Accelerates muscle development and recovery, improves exercise performance">Kas gelişimi ve toparlanmayı hızlandırır, egzersiz performansını artırır</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Cildi yenileyerek genç görünüm sağlar, yaşlanma etkilerini geciktirir" data-en="Renews skin for a youthful look, delays aging effects">Cildi yenileyerek genç görünüm sağlar, yaşlanma etkilerini geciktirir</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Stres seviyesini düşürür, ruh halini iyileştirir" data-en="Reduces stress levels and improves mood">Stres seviyesini düşürür, ruh halini iyileştirir</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Karaciğer detoksuna yardımcı olur, toksinleri atar" data-en="Aids liver detox and eliminates toxins">Karaciğer detoksuna yardımcı olur, toksinleri atar</span>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="benefit-text" data-tr="Hormon dengesini destekleyerek genel sağlık üzerinde olumlu etkiler sunar" data-en="Supports hormone balance for positive effects on overall health">Hormon dengesini destekleyerek genel sağlık üzerinde olumlu etkiler sunar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INGREDIENTS -->
+  <div class="tab-panel" id="tab-ingredients">
+    <div class="ingredients-list">
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Guarana</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Brezilya'ya özgü bir bitki olup tohumlarında yüksek miktarda kafein bulunur. Enerji artırıcı ve zihinsel uyanıklık sağlama özellikleri ile bilinir. Metabolizmayı hızlandırarak yağ yakımını destekler." data-en="A plant native to Brazil with high caffeine content in its seeds. Known for its energy-boosting and mental alertness properties. Supports fat burning by boosting metabolism.">Brezilya'ya özgü bir bitki olup tohumlarında yüksek miktarda kafein bulunur. Enerji artırıcı ve zihinsel uyanıklık sağlama özellikleri ile bilinir. Metabolizmayı hızlandırarak yağ yakımını destekler.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">L-Arginin</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Vücutta nitrik oksit üretimini artırarak kan damarlarını genişletir. Kan dolaşımını iyileştirir, spor performansını artırır ve kalp sağlığını destekler." data-en="Increases nitric oxide production in the body, dilating blood vessels. Improves circulation, enhances athletic performance and supports heart health.">Vücutta nitrik oksit üretimini artırarak kan damarlarını genişletir. Kan dolaşımını iyileştirir, spor performansını artırır ve kalp sağlığını destekler.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Vitamin C (Askorbik Asit)</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Güçlü bir antioksidandır ve bağışıklık sistemini güçlendirir. Cilt sağlığını iyileştirir, hücre hasarını onarır ve demirin emilimini artırır." data-en="A powerful antioxidant that strengthens the immune system. Improves skin health, repairs cell damage and increases iron absorption.">Güçlü bir antioksidandır ve bağışıklık sistemini güçlendirir. Cilt sağlığını iyileştirir, hücre hasarını onarır ve demirin emilimini artırır.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Ginkgo Biloba</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Hafızayı güçlendirmeye yardımcı olan ve beyin fonksiyonlarını iyileştiren bir bitkidir. Kan dolaşımını artırarak zihinsel performansı destekler." data-en="A plant that helps strengthen memory and improve brain function. Supports mental performance by increasing blood circulation.">Hafızayı güçlendirmeye yardımcı olan ve beyin fonksiyonlarını iyileştiren bir bitkidir. Kan dolaşımını artırarak zihinsel performansı destekler.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Garcinia Cambogia</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Yağ yakımını destekleyen ve iştahı kontrol altına alarak kilo kaybına yardımcı olan bir bitkidir. İçeriğindeki HCA (Hidroksisitrik Asit), yağ üretimini engeller." data-en="A plant that supports fat burning and helps with weight loss by controlling appetite. Its HCA (Hydroxycitric Acid) content inhibits fat production.">Yağ yakımını destekleyen ve iştahı kontrol altına alarak kilo kaybına yardımcı olan bir bitkidir. İçeriğindeki HCA (Hidroksisitrik Asit), yağ üretimini engeller.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Kırmızı Kore Ginsengi</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Enerji seviyelerini artırarak yorgunluğu giderir. Bağışıklık sistemini güçlendirir, stresle mücadele eder ve zihinsel uyanıklığı destekler." data-en="Increases energy levels and eliminates fatigue. Strengthens the immune system, fights stress and supports mental alertness.">Enerji seviyelerini artırarak yorgunluğu giderir. Bağışıklık sistemini güçlendirir, stresle mücadele eder ve zihinsel uyanıklığı destekler.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Niyasin (Vitamin B3)</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Enerji üretimi ve sinir sistemi sağlığı için önemli bir vitamindir. Cilt sağlığını iyileştirir, kolesterol seviyelerini düzenler ve sindirim sistemi fonksiyonlarını destekler." data-en="An important vitamin for energy production and nervous system health. Improves skin health, regulates cholesterol levels and supports digestive system functions.">Enerji üretimi ve sinir sistemi sağlığı için önemli bir vitamindir. Cilt sağlığını iyileştirir, kolesterol seviyelerini düzenler ve sindirim sistemi fonksiyonlarını destekler.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Piridoksin (Vitamin B6)</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Beyin fonksiyonları için kritik öneme sahiptir ve sinir sistemi sağlığını destekler. Protein metabolizmasını düzenler, bağışıklık sistemini güçlendirir ve hormon üretimini destekler." data-en="Critically important for brain functions and supports nervous system health. Regulates protein metabolism, strengthens the immune system and supports hormone production.">Beyin fonksiyonları için kritik öneme sahiptir ve sinir sistemi sağlığını destekler. Protein metabolizmasını düzenler, bağışıklık sistemini güçlendirir ve hormon üretimini destekler.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Folik Asit (Vitamin B9)</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Hücre bölünmesi ve DNA sentezi için gereklidir. Hamilelikte bebeğin gelişimi için önemlidir ve anemiye karşı koruyucu etkisi vardır." data-en="Required for cell division and DNA synthesis. Important for fetal development during pregnancy and has a protective effect against anemia.">Hücre bölünmesi ve DNA sentezi için gereklidir. Hamilelikte bebeğin gelişimi için önemlidir ve anemiye karşı koruyucu etkisi vardır.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Kobalamin (Vitamin B12)</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Kırmızı kan hücrelerinin üretimini destekler, sinir sistemi sağlığını korur ve enerji üretimine yardımcı olur. Eksikliği halsizlik ve sinir hasarına yol açabilir." data-en="Supports red blood cell production, maintains nervous system health and aids energy production. Deficiency can lead to fatigue and nerve damage.">Kırmızı kan hücrelerinin üretimini destekler, sinir sistemi sağlığını korur ve enerji üretimine yardımcı olur. Eksikliği halsizlik ve sinir hasarına yol açabilir.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">Calciferol (Vitamin D2 & D3)</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Kemik sağlığı için gereklidir ve vücudun kalsiyum emilimini artırır. Bağışıklık sistemini güçlendirir ve depresyon gibi ruhsal durumlarla mücadeleye yardımcı olabilir." data-en="Essential for bone health and increases the body's calcium absorption. Strengthens the immune system and can help combat mental conditions like depression.">Kemik sağlığı için gereklidir ve vücudun kalsiyum emilimini artırır. Bağışıklık sistemini güçlendirir ve depresyon gibi ruhsal durumlarla mücadeleye yardımcı olabilir.</p>
+        </div>
+      </div>
+      <div class="ingredient-item">
+        <div class="ingredient-header" onclick="toggleIngredient(this)">
+          <span class="ingredient-name">BCAA (Branched-Chain Amino Acids)</span>
+          <svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="ingredient-body">
+          <p class="ingredient-desc" data-tr="Vücut tarafından doğrudan kaslarda kullanılan esansiyel amino asitlerdir. Kas onarımı ve büyümesini destekler, enerji üretimini artırır ve egzersiz sonrası iyileşmeyi hızlandırır." data-en="Essential amino acids used directly by muscles in the body. Supports muscle repair and growth, increases energy production and accelerates post-exercise recovery.">Vücut tarafından doğrudan kaslarda kullanılan esansiyel amino asitlerdir. Kas onarımı ve büyümesini destekler, enerji üretimini artırır ve egzersiz sonrası iyileşmeyi hızlandırır.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USAGE -->
+  <div class="tab-panel" id="tab-usage">
+    <div class="usage-steps">
+      <div class="usage-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title" data-tr="Temiz ve Kuru Bir Alan Seçin" data-en="Choose a Clean and Dry Area">Temiz ve Kuru Bir Alan Seçin</div>
+          <div class="step-desc" data-tr="Bandı yapıştırmadan önce cildinizi temizleyin ve iyice kurulayın. Kol içi, sırt veya karın bölgesi tercih edilebilir." data-en="Clean and dry your skin thoroughly before applying the patch. Inner arm, back or abdominal area are preferred.">Bandı yapıştırmadan önce cildinizi temizleyin ve iyice kurulayın. Kol içi, sırt veya karın bölgesi tercih edilebilir.</div>
+        </div>
+      </div>
+      <div class="usage-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title" data-tr="Bandı Uygulayın" data-en="Apply the Patch">Bandı Uygulayın</div>
+          <div class="step-desc" data-tr="Bandın koruyucu filmini soyun ve seçtiğiniz bölgeye bastırarak yapıştırın. Kenarlarını iyice sabitleyin." data-en="Peel off the protective film and press firmly onto the selected area. Secure the edges well.">Bandın koruyucu filmini soyun ve seçtiğiniz bölgeye bastırarak yapıştırın. Kenarlarını iyice sabitleyin.</div>
+        </div>
+      </div>
+      <div class="usage-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title" data-tr="48 Saat Etki Süresini Bekleyin" data-en="Wait 48 Hours for Effect">48 Saat Etki Süresini Bekleyin</div>
+          <div class="step-desc" data-tr="Her bant maksimum 48 saat boyunca etkisini sürdürür. Bu süre zarfında banyo yapabilir, spor aktiviteleri gerçekleştirebilirsiniz." data-en="Each patch maintains its effect for up to 48 hours. During this time you can shower and perform sports activities.">Her bant maksimum 48 saat boyunca etkisini sürdürür. Bu süre zarfında banyo yapabilir, spor aktiviteleri gerçekleştirebilirsiniz.</div>
+        </div>
+      </div>
+      <div class="usage-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title" data-tr="Bandı Çıkarın ve Yenileyin" data-en="Remove and Replace">Bandı Çıkarın ve Yenileyin</div>
+          <div class="step-desc" data-tr="48 saat sonra bandı yavaşça çıkarın. Bir sonraki bandı farklı bir bölgeye uygulayın. Her pakette 25 adet bant bulunmaktadır." data-en="After 48 hours, gently remove the patch. Apply the next patch to a different area. Each pack contains 25 patches.">48 saat sonra bandı yavaşça çıkarın. Bir sonraki bandı farklı bir bölgeye uygulayın. Her pakette 25 adet bant bulunmaktadır.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div class="footer-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+  </div>
+  <div class="footer-copy" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+</footer>
+
+<script>
+  const REFERRAL_LINK = 'https://doctoremglobal.com/index?ref=90195101'; // <- REFERRAL LİNKİNİZİ GİRİN
+  document.getElementById('nav-cta').href = REFERRAL_LINK;
+  document.getElementById('nav-cta').target = '_blank';
+  document.getElementById('product-cta').href = REFERRAL_LINK;
+  document.getElementById('product-cta').target = '_blank';
+
+  let currentLang = 'tr';
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.querySelectorAll('[data-tr]').forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (!text) return;
+      if (text.includes('<br>')) { el.innerHTML = text; } else { el.textContent = text; }
+    });
+  }
+
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function toggleIngredient(header) {
+    const body = header.nextElementSibling;
+    const arrow = header.querySelector('.ingredient-arrow');
+    body.classList.toggle('open');
+    arrow.classList.toggle('open');
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

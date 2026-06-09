@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dentovia — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="product-style.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-pill" width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg><span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta" data-tr="Sipariş Ver" data-en="Order Now">Sipariş Ver</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a><a href="urunler.html">Ürünler</a>
+  <a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a>
+</div>
+<div class="breadcrumb">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <span>Dentovia</span>
+</div>
+<div class="product-hero">
+  <div class="product-gallery">
+    <div class="main-img"><img src="images/dentovia.png" alt="Dentovia" /></div>
+    <div class="img-badge-row">
+      <div class="img-badge"><strong>100ml</strong><span data-tr="Tüp" data-en="Tube">Tüp</span></div>
+      <div class="img-badge"><strong>Florürsüz</strong><span data-tr="Formül" data-en="Formula">Formül</span></div>
+      <div class="img-badge"><strong>12</strong><span data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="product-cat-tag" data-tr="Hijyen · Ağız Bakımı" data-en="Hygiene · Oral Care">Hijyen · Ağız Bakımı</div>
+    <h1 class="product-title">Dentovia</h1>
+    <p class="product-subtitle" data-tr="Probiyotik destekli, florür ve paraben içermeyen diş macunu. Ağız mikrobiyomunu dengeler, diş sağlığını ve ağız hijyenini koruyan botanik formül." data-en="Probiotic-supported toothpaste without fluoride or parabens. Balances oral microbiome, botanical formula that maintains dental health and oral hygiene.">Probiyotik destekli, florür ve paraben içermeyen diş macunu. Ağız mikrobiyomunu dengeler, diş sağlığını ve ağız hijyenini koruyan botanik formül.</p>
+    <div class="highlights">
+      <div class="highlight-item"><span class="highlight-icon">🦷</span><span class="highlight-text" data-tr="Florür, paraben ve SLS içermez — güvenli ve doğal formül." data-en="No fluoride, parabens or SLS — safe and natural formula.">Florür, paraben ve SLS içermez — güvenli ve doğal formül.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🌿</span><span class="highlight-text" data-tr="Probiyotik Lactobacillus ile ağız mikrobiyom dengesi." data-en="Oral microbiome balance with probiotic Lactobacillus.">Probiyotik Lactobacillus ile ağız mikrobiyom dengesi.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">✨</span><span class="highlight-text" data-tr="Hidroksiapatit ile doğal diş beyazlatma ve parlatma." data-en="Natural tooth whitening and polishing with hydroxyapatite.">Hidroksiapatit ile doğal diş beyazlatma ve parlatma.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">💚</span><span class="highlight-text" data-tr="Ağız kokusu yok eder, diş eti sağlığını destekler." data-en="Eliminates bad breath and supports gum health.">Ağız kokusu yok eder, diş eti sağlığını destekler.</span></div>
+    </div>
+    <div class="product-meta">
+      <div class="meta-item"><div class="meta-num">100ml</div><div class="meta-label" data-tr="Hacim" data-en="Volume">Hacim</div></div>
+      <div class="meta-item"><div class="meta-num">2x</div><div class="meta-label" data-tr="Günlük Kullanım" data-en="Daily Use">Günlük Kullanım</div></div>
+      <div class="meta-item"><div class="meta-num">12</div><div class="meta-label" data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</div></div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-title" data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</div>
+      <div class="cta-box-sub" data-tr="Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz." data-en="You can safely order through our official distributor link.">Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz.</div>
+      <a href="#" class="btn-cta" id="product-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span data-tr="Sipariş Ver" data-en="Place Order">Sipariş Ver</span>
+      </a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span data-tr="Güvenli Ödeme" data-en="Secure Payment">Güvenli Ödeme</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM1 10h22"/></svg><span data-tr="Hızlı Kargo" data-en="Fast Shipping">Hızlı Kargo</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg><span data-tr="Orijinal Ürün" data-en="Original Product">Orijinal Ürün</span></div>
+    </div>
+  </div>
+</div>
+<div class="product-tabs">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('benefits')" data-tr="Faydaları" data-en="Benefits">Faydaları</button>
+    <button class="tab-btn" onclick="showTab('ingredients')" data-tr="İçerik" data-en="Ingredients">İçerik</button>
+    <button class="tab-btn" onclick="showTab('usage')" data-tr="Nasıl Kullanılır?" data-en="How to Use?">Nasıl Kullanılır?</button>
+  </div>
+  <div class="tab-panel active" id="tab-benefits">
+    <div class="benefits-grid">
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Ağız probiyotik dengesini korur ve mikrobiyomu destekler" data-en="Maintains oral probiotic balance and supports the microbiome">Ağız probiyotik dengesini korur ve mikrobiyomu destekler</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Diş çürüğü oluşumunu önler ve mine sağlığını destekler" data-en="Prevents tooth decay formation and supports enamel health">Diş çürüğü oluşumunu önler ve mine sağlığını destekler</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Diş eti sağlığını iyileştirir ve kanamayı azaltır" data-en="Improves gum health and reduces bleeding">Diş eti sağlığını iyileştirir ve kanamayı azaltır</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Kalıcı taze nefes sağlar ve ağız kokusunu yok eder" data-en="Provides lasting fresh breath and eliminates bad breath">Kalıcı taze nefes sağlar ve ağız kokusunu yok eder</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Aft ve ağız yaralarını yatıştırır ve iyileşmesini destekler" data-en="Soothes canker sores and mouth wounds and supports healing">Aft ve ağız yaralarını yatıştırır ve iyileşmesini destekler</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Dişleri beyazlatır ve parlatır, doğal bir görünüm sağlar" data-en="Whitens and polishes teeth, provides a natural appearance">Dişleri beyazlatır ve parlatır, doğal bir görünüm sağlar</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Florürsüz güvenli formülü ile tüm aile için uygundur" data-en="Suitable for the whole family with its fluoride-free safe formula">Florürsüz güvenli formülü ile tüm aile için uygundur</span></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-ingredients"><div class="ingredients-list">
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Lactobacillus & Söğüt Kabuğu Fermenti" data-en="Lactobacillus & Willow Bark Ferment">Lactobacillus & Söğüt Kabuğu Fermenti</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Probiyotik bakteri olan Lactobacillus, ağız mikrobiyomunu dengeler ve zararlı bakterilerin büyümesini engeller. Söğüt kabuğu fermenti antiinflamatuar ve antimikrobiyal özellikler taşır." data-en="Lactobacillus, a probiotic bacteria, balances the oral microbiome and inhibits the growth of harmful bacteria. Willow bark ferment has anti-inflammatory and antimicrobial properties.">Probiyotik bakteri olan Lactobacillus, ağız mikrobiyomunu dengeler ve zararlı bakterilerin büyümesini engeller. Söğüt kabuğu fermenti antiinflamatuar ve antimikrobiyal özellikler taşır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Aloe Vera Yaprağı Suyu" data-en="Aloe Vera Leaf Juice">Aloe Vera Yaprağı Suyu</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Yatıştırıcı ve antiinflamatuar özelliklere sahiptir. Diş eti tahrişini azaltır, aft ve yaraları iyileştirir. Ağız mukozasını nemlendirerek korur." data-en="Has soothing and anti-inflammatory properties. Reduces gum irritation, heals canker sores and wounds. Protects oral mucosa by keeping it moisturized.">Yatıştırıcı ve antiinflamatuar özelliklere sahiptir. Diş eti tahrişini azaltır, aft ve yaraları iyileştirir. Ağız mukozasını nemlendirerek korur.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Okaliptüs & Papatya & Hindistan Cevizi Yağı" data-en="Eucalyptus & Chamomile & Coconut Oil">Okaliptüs & Papatya & Hindistan Cevizi Yağı</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Okaliptüs güçlü antiseptik ve ferahlatıcı etki sağlar. Papatya yağı yatıştırır ve iltihabı azaltır. Hindistan cevizi yağı ise zararlı bakterileri öldürür ve dişleri parlatır." data-en="Eucalyptus provides strong antiseptic and refreshing effect. Chamomile oil soothes and reduces inflammation. Coconut oil kills harmful bacteria and polishes teeth.">Okaliptüs güçlü antiseptik ve ferahlatıcı etki sağlar. Papatya yağı yatıştırır ve iltihabı azaltır. Hindistan cevizi yağı ise zararlı bakterileri öldürür ve dişleri parlatır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Nane Yağı" data-en="Peppermint Oil">Nane Yağı</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Doğal bir antiseptiktir. Menthol içeriğiyle uzun süreli ferahlık ve taze nefes sağlar. Ağız kokusu yapan bakterileri öldürür." data-en="It is a natural antiseptic. Provides long-lasting freshness and fresh breath with its menthol content. Kills bacteria that cause bad breath.">Doğal bir antiseptiktir. Menthol içeriğiyle uzun süreli ferahlık ve taze nefes sağlar. Ağız kokusu yapan bakterileri öldürür.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Meyan Kökü & Yeşil Çay Özü" data-en="Licorice Root & Green Tea Extract">Meyan Kökü & Yeşil Çay Özü</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Meyan kökü diş çürüğüne yol açan bakterileri inhibe eder. Yeşil çay özü antioksidan ve antimikrobiyal özellikler taşır; plak oluşumunu azaltır." data-en="Licorice root inhibits bacteria that cause tooth decay. Green tea extract has antioxidant and antimicrobial properties; reduces plaque formation.">Meyan kökü diş çürüğüne yol açan bakterileri inhibe eder. Yeşil çay özü antioksidan ve antimikrobiyal özellikler taşır; plak oluşumunu azaltır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Hidroksiapatit" data-en="Hydroxyapatite">Hidroksiapatit</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Diş minesiyle aynı yapıya sahip doğal bir bileşiktir. Diş yüzeyindeki mikro çatlakları onarır, mine sertliğini artırır ve dişleri beyazlatarak parlatır. Florüre güvenli bir alternatiftir." data-en="It is a natural compound with the same structure as tooth enamel. Repairs micro-cracks on the tooth surface, increases enamel hardness and whitens and polishes teeth. It is a safe alternative to fluoride.">Diş minesiyle aynı yapıya sahip doğal bir bileşiktir. Diş yüzeyindeki mikro çatlakları onarır, mine sertliğini artırır ve dişleri beyazlatarak parlatır. Florüre güvenli bir alternatiftir.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Ksilitol" data-en="Xylitol">Ksilitol</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Birçok araştırmayla desteklenen diş koruyucu bir tatlandırıcıdır. Streptococcus mutans gibi çürüğe yol açan bakterilerin büyümesini engeller. Tükürük üretimini artırarak ağzın doğal savunma mekanizmasını destekler." data-en="A tooth-protective sweetener supported by many studies. Inhibits the growth of decay-causing bacteria like Streptococcus mutans. Supports the mouth's natural defense mechanism by increasing saliva production.">Birçok araştırmayla desteklenen diş koruyucu bir tatlandırıcıdır. Streptococcus mutans gibi çürüğe yol açan bakterilerin büyümesini engeller. Tükürük üretimini artırarak ağzın doğal savunma mekanizmasını destekler.</p></div></div>
+  </div></div>
+  <div class="tab-panel" id="tab-usage"><div class="usage-steps">
+    <div class="usage-step"><div class="step-num">1</div><div class="step-content"><div class="step-title" data-tr="Fırçanızı Hazırlayın" data-en="Prepare Your Brush">Fırçanızı Hazırlayın</div><div class="step-desc" data-tr="Yumuşak kıllı bir diş fırçasına bezelye büyüklüğünde diş macunu sıkın." data-en="Squeeze a pea-sized amount of toothpaste onto a soft-bristled toothbrush.">Yumuşak kıllı bir diş fırçasına bezelye büyüklüğünde diş macunu sıkın.</div></div></div>
+    <div class="usage-step"><div class="step-num">2</div><div class="step-content"><div class="step-title" data-tr="Düzgünce Fırçalayın" data-en="Brush Thoroughly">Düzgünce Fırçalayın</div><div class="step-desc" data-tr="En az 2 dakika boyunca tüm diş yüzeylerini, dişetlerini ve dili fırçalayın." data-en="Brush all tooth surfaces, gums and tongue for at least 2 minutes.">En az 2 dakika boyunca tüm diş yüzeylerini, dişetlerini ve dili fırçalayın.</div></div></div>
+    <div class="usage-step"><div class="step-num">3</div><div class="step-content"><div class="step-title" data-tr="Durulayın" data-en="Rinse">Durulayın</div><div class="step-desc" data-tr="Az su ile ağzınızı çalkalayın. Maksimum etki için fazla durulamamanızı tavsiye ederiz." data-en="Rinse your mouth with a little water. We recommend not over-rinsing for maximum effect.">Az su ile ağzınızı çalkalayın. Maksimum etki için fazla durulamamanızı tavsiye ederiz.</div></div></div>
+    <div class="usage-step"><div class="step-num">4</div><div class="step-content"><div class="step-title" data-tr="Günde 2 Kez" data-en="Twice Daily">Günde 2 Kez</div><div class="step-desc" data-tr="Sabah kahvaltıdan sonra ve gece yatmadan önce kullanın. Diş ipi ve ağız gargarasıyla birlikte kullanabilirsiniz." data-en="Use after breakfast in the morning and before bedtime at night. Can be used together with dental floss and mouthwash.">Sabah kahvaltıdan sonra ve gece yatmadan önce kullanın. Diş ipi ve ağız gargarasıyla birlikte kullanabilirsiniz.</div></div></div>
+  </div></div>
+</div>
+<footer style="background:#0D1A2E;color:rgba(255,255,255,0.6);padding:48px 24px 32px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div style="color:white;font-family:'Playfair Display',serif;font-size:20px;">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div style="display:flex;gap:24px;">
+      <a href="index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+      <a href="urunler.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="iletisim.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div style="font-size:12px;text-align:center;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);margin-top:8px;" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+<script src="product-script.js"></script>
+</body>
+</html>

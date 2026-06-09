@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Neo — Doğadan Gelen Sağlık</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #1B3A6B;
+      --green-light: #2E63BE;
+      --green-pale:  #EAF0FB;
+      --green-mid:   #C2D4F0;
+      --white:       #FFFFFF;
+      --off-white:   #F5F7FC;
+      --text:        #15243C;
+      --text-muted:  #4A6080;
+      --border:      #C8D8EC;
+      --red:         #C0392B;
+      --red-light:   #E74C3C;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.88); background: #15243C; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(18,32,52,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      height: 88px;
+      display: flex; align-items: center;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 46px; color: white; font-weight: 700; letter-spacing: -0.5px; line-height: 1; }
+    .logo-dot { color: var(--red); }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      text-decoration: none; color: rgba(255,255,255,0.55);
+      font-size: 14px; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: white; }
+
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .lang-toggle {
+      display: flex; align-items: center;
+      background: rgba(255,255,255,0.08); border-radius: 20px;
+      padding: 4px; gap: 2px;
+    }
+    .lang-btn {
+      padding: 4px 12px; border-radius: 16px; border: none;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      transition: all .2s; background: transparent; color: rgba(255,255,255,0.45);
+    }
+    .lang-btn.active { background: var(--green); color: white; }
+
+    .nav-cta {
+      background: var(--red); color: white;
+      padding: 9px 20px; border-radius: 50px;
+      text-decoration: none; font-size: 13px; font-weight: 600;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--red-light); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: rgba(255,255,255,0.8); border-radius: 2px; transition: .3s; }
+
+    /* ── NEOCLUP ── */
+    .neoclup-hero {
+      padding: 104px 24px 28px;
+      background: linear-gradient(160deg, #0d1826 0%, #15243C 55%, #1a1530 100%);
+      position: relative; overflow: hidden; text-align: center;
+    }
+    .neoclup-hero::before {
+      content: ''; position: absolute; top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,57,43,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .neoclup-hero::after {
+      content: ''; position: absolute; bottom: -60px; right: -60px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(27,58,107,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .neoclup-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+    .neoclup-tag {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-bottom: 12px;
+    }
+    .neoclup-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.2vw, 44px);
+      line-height: 1.12; color: white; margin-bottom: 12px; font-weight: 700;
+    }
+    .neoclup-accent { color: var(--red); font-style: italic; }
+    .neoclup-sub {
+      font-size: 14px; color: rgba(255,255,255,0.45);
+      max-width: 440px; margin: 0 auto 22px; line-height: 1.65;
+    }
+    .neoclup-steps {
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; margin-bottom: 22px; flex-wrap: wrap;
+    }
+    .neoclup-step { display: flex; align-items: center; gap: 8px; }
+    .neoclup-step-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+      flex-shrink: 0;
+    }
+    .neoclup-step-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); white-space: nowrap; }
+    .neoclup-step-arrow { color: rgba(255,255,255,0.18); font-size: 16px; }
+    .neoclup-btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: center; }
+    .neoclup-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red); color: white;
+      padding: 12px 32px; border-radius: 50px;
+      font-weight: 700; font-size: 14px; text-decoration: none;
+      transition: all .25s; letter-spacing: 0.3px;
+      box-shadow: 0 4px 20px rgba(192,57,43,0.4);
+    }
+    .neoclup-cta:hover { background: var(--red-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,57,43,0.55); }
+    .neoclup-info-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red); color: white;
+      padding: 12px 24px; border-radius: 50px;
+      font-weight: 700; font-size: 14px; text-decoration: none;
+      transition: all .25s; letter-spacing: 0.3px;
+      box-shadow: 0 4px 20px rgba(192,57,43,0.4);
+    }
+    .neoclup-info-btn:hover { background: var(--red-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,57,43,0.55); }
+    .neoclup-brands { margin-top: 20px; }
+    .neoclup-brands-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .neoclup-brands-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .brand-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px 14px; display: inline-flex; align-items: center; gap: 8px; transition: border-color .2s; }
+    .brand-pill:hover { border-color: rgba(255,255,255,0.25); }
+    .brand-pill img { width: 20px; height: 20px; border-radius: 4px; object-fit: contain; }
+    .brand-pill-name { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); white-space: nowrap; }
+    .brand-pill-rate { font-size: 12px; font-weight: 700; color: #C0392B; }
+    .brand-pill-more { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px 14px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); }
+
+    /* ── PRODUCTS SECTION ── */
+    .products-section { padding: 0 24px 100px; max-width: 1200px; margin: 0 auto; }
+    .filter-bar { padding: 28px 24px 20px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 9px 22px; border-radius: 50px; border: 1.5px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05); font-size: 13px; font-weight: 600; cursor: pointer;
+      color: rgba(255,255,255,0.5); transition: all .2s;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--green); color: white; border-color: var(--green); }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .product-card {
+      background: #1D2E47; border-radius: 20px; border: 2px solid rgba(160,50,38,0.45);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      overflow: hidden; transition: all .3s; text-decoration: none; color: inherit; display: block;
+    }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 56px rgba(0,0,0,0.4); border-color: rgba(160,50,38,0.65); }
+    .product-img {
+      width: 100%; aspect-ratio: 1/1; background: #203350;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .product-img img { width: 100%; height: 100%; object-fit: contain; }
+    .product-badge {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--green); color: white;
+      font-size: 11px; font-weight: 700; padding: 4px 12px;
+      border-radius: 50px; letter-spacing: .5px;
+    }
+    .product-body { padding: 22px 20px 16px; }
+    .product-cat { font-size: 11px; font-weight: 700; color: var(--green-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .product-name { font-weight: 700; font-size: 18px; margin-bottom: 8px; color: white; }
+    .product-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 16px; }
+    .product-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .tag { font-size: 11px; background: rgba(46,99,190,0.2); color: var(--green-light); padding: 3px 12px; border-radius: 50px; font-weight: 600; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .product-info { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .product-btn {
+      background: var(--red); color: white; padding: 8px 20px; border-radius: 50px;
+      font-size: 13px; font-weight: 600; text-decoration: none; transition: all .2s;
+      display: inline-flex; align-items: center; gap: 6px;
+      box-shadow: 0 4px 14px rgba(192,57,43,0.4);
+    }
+    .product-btn:hover { background: var(--red-light); transform: translateY(-1px); box-shadow: 0 6px 22px rgba(192,57,43,0.65); }
+    .product-btn svg { width: 14px; height: 14px; }
+
+    /* ── SECTION HEADER ── */
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--green-light); text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); line-height: 1.2; margin-bottom: 16px; color: white; }
+    .section-sub { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── WHY ── */
+    .why { padding: 100px 24px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .why-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .why-features { display: flex; flex-direction: column; gap: 28px; }
+    .feature-item {
+      display: flex; gap: 18px; align-items: flex-start;
+    }
+    .feature-icon-wrap {
+      width: 48px; height: 48px; background: rgba(46,99,190,0.2);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-icon-wrap svg { width: 24px; height: 24px; }
+    .feature-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; color: white; }
+    .feature-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+    .why-visual {
+      background: var(--green);
+      border-radius: 24px; padding: 40px;
+      color: white; position: relative; overflow: hidden;
+    }
+    .why-visual::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .why-visual-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; margin-bottom: 8px; position: relative;
+    }
+    .why-visual-sub { font-size: 14px; opacity: .75; margin-bottom: 32px; position: relative; }
+    .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; }
+    .wstat {
+      background: rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 20px; border: 1px solid rgba(255,255,255,0.15);
+    }
+    .wstat-num { font-size: 32px; font-weight: 700; line-height: 1; }
+    .wstat-label { font-size: 12px; opacity: .7; margin-top: 6px; }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 100px 24px;
+      background: linear-gradient(135deg, var(--green) 0%, #0d2347 100%);
+      text-align: center; color: white;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      margin-bottom: 16px; line-height: 1.2;
+    }
+    .cta-inner p { font-size: 17px; opacity: .8; margin-bottom: 36px; line-height: 1.7; }
+    .btn-white {
+      background: white; color: var(--red);
+      padding: 16px 36px; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 16px;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: all .2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.2); }
+    .btn-white svg { width: 18px; height: 18px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0D1A2E; color: rgba(255,255,255,0.6);
+      padding: 48px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-logo { color: white; font-family: 'Playfair Display', serif; font-size: 20px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color .2s; }
+    .footer-links a:hover { color: white; }
+    .footer-copy { font-size: 12px; text-align: center; width: 100%; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 8px; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .why-inner { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none; position: fixed; top: 88px; left: 0; right: 0;
+      background: #162640; border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 20px 24px; flex-direction: column; gap: 16px; z-index: 99;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,0.75); text-decoration: none; font-weight: 500; font-size: 15px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg>
+      <span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#products" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta-btn" data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#products" onclick="toggleMenu()" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <a href="#why" onclick="toggleMenu()" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+  <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+  <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+</div>
+
+<!-- NEOCLUP -->
+<section class="neoclup-hero">
+  <div class="neoclup-inner">
+    <div class="neoclup-tag" data-tr="NeoClup · Nakit İade Programı" data-en="NeoClup · Cashback Program">NeoClup · Nakit İade Programı</div>
+    <h2 class="neoclup-title" data-tr="Büyük markalarda alışveriş yaparken <span class='neoclup-accent'>nakit iade</span> almak ister misiniz?" data-en="Would you like to get <span class='neoclup-accent'>cashback</span> while shopping at major brands?">Büyük markalarda alışveriş yaparken <span class="neoclup-accent">nakit iade</span> almak ister misiniz?</h2>
+    <p class="neoclup-sub" data-tr="NeoClup uygulamasıyla anlaşmalı markalardan yaptığınız her alışverişte otomatik nakit iade kazanın." data-en="Earn automatic cashback on every purchase from partner brands with the NeoClup app.">NeoClup uygulamasıyla anlaşmalı markalardan yaptığınız her alışverişte otomatik nakit iade kazanın.</p>
+    <div class="neoclup-steps">
+      <div class="neoclup-step">
+        <div class="neoclup-step-icon">📲</div>
+        <span class="neoclup-step-label" data-tr="Uygulamayı İndir" data-en="Download the App">Uygulamayı İndir</span>
+      </div>
+      <div class="neoclup-step-arrow">→</div>
+      <div class="neoclup-step">
+        <div class="neoclup-step-icon">🛍️</div>
+        <span class="neoclup-step-label" data-tr="Markadan Alışveriş Yap" data-en="Shop at Partner Brands">Markadan Alışveriş Yap</span>
+      </div>
+      <div class="neoclup-step-arrow">→</div>
+      <div class="neoclup-step">
+        <div class="neoclup-step-icon">💰</div>
+        <span class="neoclup-step-label" data-tr="Nakit İadeyi Hesabına Al" data-en="Receive Your Cashback">Nakit İadeyi Hesabına Al</span>
+      </div>
+    </div>
+    <div class="neoclup-btns">
+      <a href="https://share.neoclub.app/HWgtbzTmJ3b" target="_blank" class="neoclup-cta" id="neoclup-btn" data-tr="Hemen Katıl →" data-en="Join Now →">Hemen Katıl →</a>
+      <a href="neoclup.html" class="neoclup-info-btn" data-tr="NeoClup Nedir?" data-en="What is NeoClup?">NeoClup Nedir?</a>
+    </div>
+    <div class="neoclup-brands">
+      <div class="neoclup-brands-label" data-tr="Anlaşmalı Markalardan Bazıları" data-en="Some Partner Brands">Anlaşmalı Markalardan Bazıları</div>
+      <div class="neoclup-brands-row">
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=starbucks.com&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">Starbucks</span><span class="brand-pill-rate">%3</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=adidas.com&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">Adidas</span><span class="brand-pill-rate">%7</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=migros.com.tr&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">Migros</span><span class="brand-pill-rate">%2,5</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=mcdonalds.com&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">McDonald's</span><span class="brand-pill-rate">%3</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=koton.com&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">Koton</span><span class="brand-pill-rate">%7</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=a101.com.tr&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">A101</span><span class="brand-pill-rate">%3</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=mavi.com&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">Mavi</span><span class="brand-pill-rate">%7</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=kfc.com&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">KFC</span><span class="brand-pill-rate">%3</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=shell.com&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">Shell</span><span class="brand-pill-rate">%3,5</span></span>
+        <span class="brand-pill"><img src="https://www.google.com/s2/favicons?domain=burgerking.com&sz=64" onerror="this.style.display='none'"><span class="brand-pill-name">Burger King</span><span class="brand-pill-rate">%3</span></span>
+        <a href="neoclup.html" class="brand-pill-more">+ 77 marka daha →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterProducts('all')" data-tr="Tümü" data-en="All">Tümü</button>
+  <button class="filter-btn" onclick="filterProducts('transdermal')" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</button>
+  <button class="filter-btn" onclick="filterProducts('kozmetik')" data-tr="Kozmetik" data-en="Cosmetics">Kozmetik</button>
+  <button class="filter-btn" onclick="filterProducts('hijyen')" data-tr="Hijyen" data-en="Hygiene">Hijyen</button>
+  <button class="filter-btn" onclick="filterProducts('bakim')" data-tr="Kişisel Bakım" data-en="Personal Care">Kişisel Bakım</button>
+  <button class="filter-btn" onclick="filterProducts('beslenme')" data-tr="Beslenme" data-en="Nutrition">Beslenme</button>
+</div>
+
+<section class="products-section" id="products">
+  <div class="products-grid" id="productsGrid">
+
+    <!-- BODY PLUS -->
+    <a href="body-plus.html" class="product-card" data-category="transdermal">
+      <div class="product-img">
+        <div class="product-badge" data-tr="YENİ" data-en="NEW">YENİ</div>
+        <img src="images/body-plus.png" alt="Body Plus" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+        <div class="product-name">Body Plus</div>
+        <div class="product-desc" data-tr="Vücut enerjisi, metabolizma desteği ve bağışıklık güçlendirme için güçlü formül." data-en="Powerful formula for body energy, metabolism support and immune strengthening.">Vücut enerjisi, metabolizma desteği ve bağışıklık güçlendirme için güçlü formül.</div>
+        <div class="product-tags"><span class="tag" data-tr="Enerji" data-en="Energy">Enerji</span><span class="tag" data-tr="Metabolizma" data-en="Metabolism">Metabolizma</span><span class="tag" data-tr="Bağışıklık" data-en="Immunity">Bağışıklık</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="25 bant / 48 saat etki" data-en="25 patches / 48h effect">25 bant / 48 saat etki</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- MAN PLUS -->
+    <a href="man-plus.html" class="product-card" data-category="transdermal">
+      <div class="product-img">
+        <div class="product-badge" data-tr="ERKEK" data-en="MEN">ERKEK</div>
+        <img src="images/man-plus.png" alt="Man Plus" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+        <div class="product-name">Man Plus</div>
+        <div class="product-desc" data-tr="Erkek sağlığı, hormonal denge ve performans için güçlü doğal formül." data-en="Powerful natural formula for men's health, hormonal balance and performance.">Erkek sağlığı, hormonal denge ve performans için güçlü doğal formül.</div>
+        <div class="product-tags"><span class="tag" data-tr="Testosteron" data-en="Testosterone">Testosteron</span><span class="tag" data-tr="Performans" data-en="Performance">Performans</span><span class="tag" data-tr="Enerji" data-en="Energy">Enerji</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="25 bant / 48 saat etki" data-en="25 patches / 48h effect">25 bant / 48 saat etki</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- GIN PLUS -->
+    <a href="gin-plus.html" class="product-card" data-category="transdermal">
+      <div class="product-img">
+        <div class="product-badge" data-tr="YENİ" data-en="NEW">YENİ</div>
+        <img src="images/gin-plus.png" alt="Gin Plus" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+        <div class="product-name">Gin Plus</div>
+        <div class="product-desc" data-tr="Enerji, bağışıklık ve zihinsel berraklık için doğadan gelen güçlü destek." data-en="Powerful support from nature for energy, immunity and mental clarity.">Enerji, bağışıklık ve zihinsel berraklık için doğadan gelen güçlü destek.</div>
+        <div class="product-tags"><span class="tag" data-tr="Enerji" data-en="Energy">Enerji</span><span class="tag" data-tr="Eklem" data-en="Joint">Eklem</span><span class="tag" data-tr="Bağışıklık" data-en="Immunity">Bağışıklık</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="25 bant / 48 saat etki" data-en="25 patches / 48h effect">25 bant / 48 saat etki</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- OMEGA PLUS -->
+    <a href="omega-plus.html" class="product-card" data-category="transdermal">
+      <div class="product-img">
+        <img src="images/omega-plus.png" alt="Omega Plus" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+        <div class="product-name">Omega Plus</div>
+        <div class="product-desc" data-tr="Kalp, beyin ve göz sağlığı için DHA, EPA, Omega-3 ve Koenzim Q10 formülü." data-en="DHA, EPA, Omega-3 and Coenzyme Q10 formula for heart, brain and eye health.">Kalp, beyin ve göz sağlığı için DHA, EPA, Omega-3 ve Koenzim Q10 formülü.</div>
+        <div class="product-tags"><span class="tag" data-tr="Kalp" data-en="Heart">Kalp</span><span class="tag" data-tr="Beyin" data-en="Brain">Beyin</span><span class="tag" data-tr="Göz" data-en="Eye">Göz</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="30 bant / 24 saat etki" data-en="30 patches / 24h effect">30 bant / 24 saat etki</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- THIN PLUS BELLY -->
+    <a href="thin-plus-belly.html" class="product-card" data-category="transdermal">
+      <div class="product-img">
+        <div class="product-badge" data-tr="FORM" data-en="SLIM">FORM</div>
+        <img src="images/thin-plus-belly.png" alt="Thin Plus Belly" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+        <div class="product-name">Thin Plus Belly</div>
+        <div class="product-desc" data-tr="İdeal forma ulaşmak için 20'den fazla doğal bileşenli vücut şekillendirme bandı." data-en="Body shaping patch with 20+ natural ingredients to achieve your ideal form.">İdeal forma ulaşmak için 20'den fazla doğal bileşenli vücut şekillendirme bandı.</div>
+        <div class="product-tags"><span class="tag" data-tr="Yağ Yakımı" data-en="Fat Burn">Yağ Yakımı</span><span class="tag" data-tr="Form" data-en="Shape">Form</span><span class="tag" data-tr="Detoks" data-en="Detox">Detoks</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="6 bant / 24 saat etki" data-en="6 patches / 24h effect">6 bant / 24 saat etki</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- WOMAN PLUS -->
+    <a href="woman-plus.html" class="product-card" data-category="transdermal">
+      <div class="product-img">
+        <div class="product-badge" data-tr="KADIN" data-en="WOMEN">KADIN</div>
+        <img src="images/woman-plus.png" alt="Woman Plus" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+        <div class="product-name">Woman Plus</div>
+        <div class="product-desc" data-tr="Kadın sağlığına özel hormon dengesi, cilt, kemik ve enerji desteği." data-en="Hormonal balance, skin, bone and energy support specially for women's health.">Kadın sağlığına özel hormon dengesi, cilt, kemik ve enerji desteği.</div>
+        <div class="product-tags"><span class="tag" data-tr="Hormon" data-en="Hormone">Hormon</span><span class="tag" data-tr="Menopoz" data-en="Menopause">Menopoz</span><span class="tag" data-tr="Cilt" data-en="Skin">Cilt</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="25 bant / 48 saat etki" data-en="25 patches / 48h effect">25 bant / 48 saat etki</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- EPİFİZ PLUS -->
+    <a href="epifiz-plus.html" class="product-card" data-category="transdermal">
+      <div class="product-img">
+        <div class="product-badge" data-tr="UYKU" data-en="SLEEP">UYKU</div>
+        <img src="images/epifiz-plus.png" alt="Epifiz Plus" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+        <div class="product-name">Epifiz Plus</div>
+        <div class="product-desc" data-tr="Derin uyku, stres yönetimi ve zihinsel denge için melatonin ve adaptogen formülü." data-en="Melatonin and adaptogen formula for deep sleep, stress management and mental balance.">Derin uyku, stres yönetimi ve zihinsel denge için melatonin ve adaptogen formülü.</div>
+        <div class="product-tags"><span class="tag" data-tr="Uyku" data-en="Sleep">Uyku</span><span class="tag" data-tr="Stres" data-en="Stress">Stres</span><span class="tag" data-tr="Zihin" data-en="Mind">Zihin</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="30 bant / 24 saat etki" data-en="30 patches / 24h effect">30 bant / 24 saat etki</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- VİTA PLUS -->
+    <a href="vita-plus.html" class="product-card" data-category="transdermal">
+      <div class="product-img">
+        <div class="product-badge" data-tr="VİTA" data-en="VITA">VİTA</div>
+        <img src="images/vita-plus.png" alt="Vita Plus" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Transdermal Bant" data-en="Transdermal Patch">Transdermal Bant</div>
+        <div class="product-name">Vita Plus</div>
+        <div class="product-desc" data-tr="Bağışıklık, enerji ve cilt sağlığını aynı anda destekleyen kolajen ve ginseng formülü." data-en="Collagen and ginseng formula that simultaneously supports immunity, energy and skin health.">Bağışıklık, enerji ve cilt sağlığını aynı anda destekleyen kolajen ve ginseng formülü.</div>
+        <div class="product-tags"><span class="tag" data-tr="Bağışıklık" data-en="Immunity">Bağışıklık</span><span class="tag" data-tr="Cilt" data-en="Skin">Cilt</span><span class="tag" data-tr="Enerji" data-en="Energy">Enerji</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="25 bant / 48 saat etki" data-en="25 patches / 48h effect">25 bant / 48 saat etki</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- AURA LENA YÜZ TONİĞİ -->
+    <a href="aura-lena-yuz-tonigi.html" class="product-card" data-category="kozmetik">
+      <div class="product-img">
+        <div class="product-badge" data-tr="CİLT" data-en="SKIN">CİLT</div>
+        <img src="images/aura-lena-yuz-tonigi.png" alt="Aura Lena Yüz Toniği" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+        <div class="product-name">Aura Lena Yüz Toniği</div>
+        <div class="product-desc" data-tr="Nazik temizlik ve taze cilt görünümü için Hiyalüronik Asit, B5 ve Niacinamide formülü." data-en="Hyaluronic Acid, B5 and Niacinamide formula for gentle cleansing and fresh skin appearance.">Nazik temizlik ve taze cilt görünümü için Hiyalüronik Asit, B5 ve Niacinamide formülü.</div>
+        <div class="product-tags"><span class="tag" data-tr="Nemlendirici" data-en="Moisturizing">Nemlendirici</span><span class="tag" data-tr="Tonlayıcı" data-en="Toning">Tonlayıcı</span><span class="tag" data-tr="Tüm Ciltler" data-en="All Skins">Tüm Ciltler</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="pH Dengeli Formül" data-en="pH Balanced Formula">pH Dengeli Formül</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- AURA MINA VİBRACELL -->
+    <a href="aura-mina-vibracell.html" class="product-card" data-category="kozmetik">
+      <div class="product-img">
+        <div class="product-badge" data-tr="GÖZ" data-en="EYE">GÖZ</div>
+        <img src="images/aura-mina-vibracell.png" alt="Aura Mina VibraCell" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+        <div class="product-name">Aura Mina VibraCell</div>
+        <div class="product-desc" data-tr="4D teknolojisiyle göz çevresi halka, kontur, pigmentasyon ve sıkılaştırma serumu." data-en="Eye area serum with 4D technology for circles, contouring, pigmentation and firming.">4D teknolojisiyle göz çevresi halka, kontur, pigmentasyon ve sıkılaştırma serumu.</div>
+        <div class="product-tags"><span class="tag" data-tr="Göz Altı" data-en="Under Eye">Göz Altı</span><span class="tag" data-tr="4D Teknoloji" data-en="4D Tech">4D Teknoloji</span><span class="tag" data-tr="25ml" data-en="25ml">25ml</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="Dermatolojik Test" data-en="Dermatological Test">Dermatolojik Test</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- AURA NOVA TEMİZLEME KÖPÜĞÜ -->
+    <a href="aura-nova-temizleme-kopugu.html" class="product-card" data-category="kozmetik">
+      <div class="product-img">
+        <div class="product-badge" data-tr="NOVA" data-en="NOVA">NOVA</div>
+        <img src="images/aura-nova-temizleme-kopugu.png" alt="Aura Nova Temizleme Köpüğü" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+        <div class="product-name">Aura Nova Temizleme Köpüğü</div>
+        <div class="product-desc" data-tr="Sülfat, paraben ve alkol içermeyen, propolis ve bitkisel özlü doğal temizleme köpüğü." data-en="Natural cleansing foam with propolis and botanical extracts, sulfate, paraben and alcohol-free.">Sülfat, paraben ve alkol içermeyen, propolis ve bitkisel özlü doğal temizleme köpüğü.</div>
+        <div class="product-tags"><span class="tag" data-tr="Doğal" data-en="Natural">Doğal</span><span class="tag" data-tr="150ml" data-en="150ml">150ml</span><span class="tag" data-tr="Propolis" data-en="Propolis">Propolis</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="pH Dengeli, 12 Aktif İçerik" data-en="pH Balanced, 12 Ingredients">pH Dengeli, 12 Aktif İçerik</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- AURA LENA MASKE SETİ -->
+    <a href="aura-lena-maske-seti.html" class="product-card" data-category="kozmetik">
+      <div class="product-img">
+        <div class="product-badge" data-tr="SET" data-en="SET">SET</div>
+        <img src="images/aura-lena-maske-seti.png" alt="Aura Lena Maske Seti" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+        <div class="product-name">Aura Lena Maske Seti</div>
+        <div class="product-desc" data-tr="%99 çözünebilir kolajen maske ve aktif toner setinden oluşan gençleştirici bakım seti." data-en="Rejuvenating care set consisting of 99% soluble collagen mask and active toner set.">%99 çözünebilir kolajen maske ve aktif toner setinden oluşan gençleştirici bakım seti.</div>
+        <div class="product-tags"><span class="tag" data-tr="Kolajen" data-en="Collagen">Kolajen</span><span class="tag" data-tr="Maske + Toner" data-en="Mask + Toner">Maske + Toner</span><span class="tag" data-tr="Anti-Aging" data-en="Anti-Aging">Anti-Aging</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="%99 Kolajen + %1 Hyalüronik" data-en="99% Collagen + 1% Hyaluronic">%99 Kolajen + %1 Hyalüronik</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- AURA MINA MİKROİĞNE GÖZ BANDI -->
+    <a href="aura-mina.html" class="product-card" data-category="kozmetik">
+      <div class="product-img">
+        <div class="product-badge" data-tr="GECE" data-en="NIGHT">GECE</div>
+        <img src="images/aura-mina.png" alt="Aura Mina Mikroiğne Göz Bandı" />
+      </div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+        <div class="product-name">Aura Mina</div>
+        <div class="product-desc" data-tr="Mikroiğne teknolojisiyle göz çevresine aktif madde iletimi; gece boyunca etkili bakım." data-en="Active ingredient delivery around the eyes with microneedle technology; effective overnight care.">Mikroiğne teknolojisiyle göz çevresine aktif madde iletimi; gece boyunca etkili bakım.</div>
+        <div class="product-tags"><span class="tag" data-tr="Mikroiğne" data-en="Microneedle">Mikroiğne</span><span class="tag" data-tr="Göz Bandı" data-en="Eye Patch">Göz Bandı</span><span class="tag" data-tr="Gece Bakımı" data-en="Night Care">Gece Bakımı</span></div>
+        <div class="product-footer">
+          <div class="product-info" data-tr="2 Adet / Gece Boyunca" data-en="2 Patches / Overnight">2 Adet / Gece Boyunca</div>
+          <span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- AURA NOVA BB KREM MEDIUM -->
+    <a href="aura-nova-bb-krem-medium.html" class="product-card" data-category="kozmetik">
+      <div class="product-img"><div class="product-badge" data-tr="SPF50+" data-en="SPF50+">SPF50+</div><img src="images/aura-nova-bb-krem-medium.png" alt="Aura Nova BB Krem Medium" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+        <div class="product-name">Aura Nova BB Krem Medium</div>
+        <div class="product-desc" data-tr="SPF 50+ PA++++ korumalı, mat bitişli BB krem. Cilt tonu eşitleme ve güneş koruması bir arada." data-en="BB cream with SPF 50+ PA++++ protection and matte finish.">SPF 50+ PA++++ korumalı, mat bitişli BB krem. Cilt tonu eşitleme ve güneş koruması bir arada.</div>
+        <div class="product-tags"><span class="tag">SPF 50+</span><span class="tag" data-tr="Mat Bitiş" data-en="Matte">Mat Bitiş</span><span class="tag">30ml</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="Medium Ton · 7 Aktif İçerik" data-en="Medium Shade · 7 Ingredients">Medium Ton · 7 Aktif İçerik</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- AURA NOVA BB KREM LIGHT -->
+    <a href="aura-nova-bb-krem-light.html" class="product-card" data-category="kozmetik">
+      <div class="product-img"><div class="product-badge" data-tr="SPF50+" data-en="SPF50+">SPF50+</div><img src="images/aura-nova-bb-krem-light.png" alt="Aura Nova BB Krem Light" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+        <div class="product-name">Aura Nova BB Krem Light</div>
+        <div class="product-desc" data-tr="SPF 50+, paraben içermeyen yağsız BB krem. Açık ton için doğal parlaklık ve günlük koruma." data-en="SPF 50+, paraben-free oil-free BB cream. Natural radiance for fair skin tones.">SPF 50+, paraben içermeyen yağsız BB krem. Açık ton için doğal parlaklık ve günlük koruma.</div>
+        <div class="product-tags"><span class="tag">SPF 50+</span><span class="tag" data-tr="Light Ton" data-en="Light Shade">Light Ton</span><span class="tag" data-tr="Paraben Yok" data-en="No Parabens">Paraben Yok</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="Light Ton · Yağsız Formül" data-en="Light Shade · Oil-Free">Light Ton · Yağsız Formül</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- AURA SOLE -->
+    <a href="aura-sole.html" class="product-card" data-category="kozmetik">
+      <div class="product-img"><div class="product-badge" data-tr="GÜNEŞ" data-en="SUN">GÜNEŞ</div><img src="images/aura-sole.png" alt="Aura Sole" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Güneş Koruması" data-en="Sun Protection">Güneş Koruması</div>
+        <div class="product-name">Aura Sole</div>
+        <div class="product-desc" data-tr="UVA+UVB+Mavi Işık koruması, yağsız ve mat bitişli güneş koruyucu. Tüm cilt tiplerine uygun." data-en="UVA+UVB+Blue Light protection, oil-free matte finish sunscreen.">UVA+UVB+Mavi Işık koruması, yağsız ve mat bitişli güneş koruyucu. Tüm cilt tiplerine uygun.</div>
+        <div class="product-tags"><span class="tag">UVA+UVB</span><span class="tag" data-tr="Mavi Işık" data-en="Blue Light">Mavi Işık</span><span class="tag" data-tr="Mat Bitiş" data-en="Matte">Mat Bitiş</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="3in1 Koruma · Beyaz İz Yok" data-en="3in1 Protection · No White Cast">3in1 Koruma · Beyaz İz Yok</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- AURA NOVA ANTİ-AGİNG TONİK -->
+    <a href="aura-nova-anti-aging-tonik-losyon.html" class="product-card" data-category="kozmetik">
+      <div class="product-img"><div class="product-badge" data-tr="AHA" data-en="AHA">AHA</div><img src="images/aura-nova-anti-aging-tonik-losyon.png" alt="Aura Nova Anti-Aging Tonik" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+        <div class="product-name">Aura Nova Anti-Aging Tonik</div>
+        <div class="product-desc" data-tr="AHA asitler ve 4D Hyaluronik Asit ile gözenek sıkılaştırma, aydınlatma ve bariyer güçlendirme." data-en="Pore tightening, brightening and barrier strengthening with AHA acids and 4D Hyaluronic Acid.">AHA asitler ve 4D Hyaluronik Asit ile gözenek sıkılaştırma, aydınlatma ve bariyer güçlendirme.</div>
+        <div class="product-tags"><span class="tag">AHA</span><span class="tag" data-tr="4D Hyalüronik" data-en="4D Hyaluronic">4D Hyalüronik</span><span class="tag">200ml</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="200ml · 9 Aktif İçerik" data-en="200ml · 9 Ingredients">200ml · 9 Aktif İçerik</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- AURA NOVA ANTİ-AGİNG SERUM -->
+    <a href="aura-nova-anti-aging-serum.html" class="product-card" data-category="kozmetik">
+      <div class="product-img"><div class="product-badge" data-tr="GECE" data-en="NIGHT">GECE</div><img src="images/aura-nova-anti-aging-serum.png" alt="Aura Nova Anti-Aging Serum" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Anti-Aging" data-en="Anti-Aging">Anti-Aging</div>
+        <div class="product-name">Aura Nova Anti-Aging Serum</div>
+        <div class="product-desc" data-tr="Chronoline, Argireline ve Riboxyl içeren gece serumu. Botoks benzeri kırışıklık azaltıcı etki." data-en="Night serum with Chronoline, Argireline and Riboxyl. Botox-like wrinkle-reducing effect.">Chronoline, Argireline ve Riboxyl içeren gece serumu. Botoks benzeri kırışıklık azaltıcı etki.</div>
+        <div class="product-tags"><span class="tag">Argireline</span><span class="tag" data-tr="Gece Serumu" data-en="Night Serum">Gece Serumu</span><span class="tag">30ml</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="30ml · 5 Peptit Kompleks" data-en="30ml · 5 Peptide Complex">30ml · 5 Peptit Kompleks</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- AURA NOVA ANTİ-AGİNG KREM -->
+    <a href="aura-nova-anti-aging-krem.html" class="product-card" data-category="kozmetik">
+      <div class="product-img"><div class="product-badge" data-tr="KREM" data-en="CREAM">KREM</div><img src="images/aura-nova-anti-aging-krem.png" alt="Aura Nova Anti-Aging Krem" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Anti-Aging" data-en="Anti-Aging">Anti-Aging</div>
+        <div class="product-name">Aura Nova Anti-Aging Krem</div>
+        <div class="product-desc" data-tr="Matrixyl 3000, Syn-Ake ve Syn-Coll içeren ileri formüllü yaşlanma karşıtı yüz kremi." data-en="Advanced anti-aging face cream with Matrixyl 3000, Syn-Ake and Syn-Coll.">Matrixyl 3000, Syn-Ake ve Syn-Coll içeren ileri formüllü yaşlanma karşıtı yüz kremi.</div>
+        <div class="product-tags"><span class="tag">Matrixyl 3000</span><span class="tag">Syn-Ake</span><span class="tag">50ml</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="50ml · 5 Aktif Peptit" data-en="50ml · 5 Active Peptides">50ml · 5 Aktif Peptit</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- AURA ZİN -->
+    <a href="aura-zin.html" class="product-card" data-category="kozmetik">
+      <div class="product-img"><div class="product-badge" data-tr="NAD+" data-en="NAD+">NAD+</div><img src="images/aura-zin.png" alt="Aura Zin" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Premium Serum" data-en="Premium Serum">Premium Serum</div>
+        <div class="product-name">Aura Zin</div>
+        <div class="product-desc" data-tr="NAD+, Centella Asiatica ve Acetyl Hexapeptide-8 içeren premium serum. İpeksi formül." data-en="Premium serum with NAD+, Centella Asiatica and Acetyl Hexapeptide-8. Silky formula.">NAD+, Centella Asiatica ve Acetyl Hexapeptide-8 içeren premium serum. İpeksi formül.</div>
+        <div class="product-tags"><span class="tag">NAD+</span><span class="tag">Centella</span><span class="tag">Premium</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="8 Aktif İçerik · Premium" data-en="8 Ingredients · Premium">8 Aktif İçerik · Premium</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- DENTOVİA -->
+    <a href="dentovia.html" class="product-card" data-category="hijyen">
+      <div class="product-img"><div class="product-badge" data-tr="AĞIZ" data-en="ORAL">AĞIZ</div><img src="images/dentovia.png" alt="Dentovia" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Ağız Bakımı" data-en="Oral Care">Ağız Bakımı</div>
+        <div class="product-name">Dentovia</div>
+        <div class="product-desc" data-tr="Probiyotik destekli, florür ve paraben içermeyen diş macunu. 12 aktif botanik içerik." data-en="Probiotic-supported toothpaste without fluoride or parabens. 12 active botanical ingredients.">Probiyotik destekli, florür ve paraben içermeyen diş macunu. 12 aktif botanik içerik.</div>
+        <div class="product-tags"><span class="tag" data-tr="Probiyotik" data-en="Probiotic">Probiyotik</span><span class="tag" data-tr="Florürsüz" data-en="Fluoride-Free">Florürsüz</span><span class="tag">100ml</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="100ml · Hidroksiapatit" data-en="100ml · Hydroxyapatite">100ml · Hidroksiapatit</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- VİTA LİNA ŞAMPUAN -->
+    <a href="vita-lina-sampuan.html" class="product-card" data-category="bakim">
+      <div class="product-img"><div class="product-badge" data-tr="VEGAN" data-en="VEGAN">VEGAN</div><img src="images/vita-lina-sampuan.png" alt="Vita Lina Şampuan" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Saç Bakımı" data-en="Hair Care">Saç Bakımı</div>
+        <div class="product-name">Vita Lina Şampuan</div>
+        <div class="product-desc" data-tr="Sülfatsız vegan şampuan. Biyotin, Procapil ve Argan yağı ile saç dökülmesini önler." data-en="Sulfate-free vegan shampoo. Prevents hair loss with Biotin, Procapil and Argan oil.">Sülfatsız vegan şampuan. Biyotin, Procapil ve Argan yağı ile saç dökülmesini önler.</div>
+        <div class="product-tags"><span class="tag">Biyotin</span><span class="tag">Procapil</span><span class="tag">400ml</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="400ml · 18 Aktif İçerik" data-en="400ml · 18 Ingredients">400ml · 18 Aktif İçerik</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- ZEN FİT KLASİK -->
+    <a href="zen-fit-klasik.html" class="product-card" data-category="beslenme">
+      <div class="product-img"><div class="product-badge" data-tr="ÇAY" data-en="TEA">ÇAY</div><img src="images/zen-fit-klasik.png" alt="Zen Fit Klasik" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Bitkisel Çay" data-en="Herbal Tea">Bitkisel Çay</div>
+        <div class="product-name">Zen Fit Klasik</div>
+        <div class="product-desc" data-tr="Hindiba, Guarana ve Bromelain içeren şekersiz bitkisel çay. Metabolizma ve detoks desteği." data-en="Sugar-free herbal tea with Dandelion, Guarana and Bromelain. Metabolism and detox support.">Hindiba, Guarana ve Bromelain içeren şekersiz bitkisel çay. Metabolizma ve detoks desteği.</div>
+        <div class="product-tags"><span class="tag">Guarana</span><span class="tag" data-tr="Detoks" data-en="Detox">Detoks</span><span class="tag" data-tr="30 Poşet" data-en="30 Bags">30 Poşet</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="30 poşet · Şekersiz" data-en="30 bags · Sugar-free">30 poşet · Şekersiz</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- ZEN FİT TEA -->
+    <a href="zen-fit-tea.html" class="product-card" data-category="beslenme">
+      <div class="product-img"><div class="product-badge" data-tr="MATCHA" data-en="MATCHA">MATCHA</div><img src="images/zen-fit-tea.png" alt="Zen Fit Tea" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Bitki Çayı" data-en="Herbal Tea">Bitki Çayı</div>
+        <div class="product-name">Zen Fit Tea</div>
+        <div class="product-desc" data-tr="Matcha, yeşil çay, mate ve bitki ekstre karışımı. Enerji, zindelik ve antioksidan koruması." data-en="Matcha, green tea, mate and herbal extract blend. Energy, vitality and antioxidant protection.">Matcha, yeşil çay, mate ve bitki ekstre karışımı. Enerji, zindelik ve antioksidan koruması.</div>
+        <div class="product-tags"><span class="tag">Matcha</span><span class="tag">Yerba Mate</span><span class="tag" data-tr="30 Saşe" data-en="30 Sachets">30 Saşe</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="30 saşe · Şekersiz" data-en="30 sachets · Sugar-free">30 saşe · Şekersiz</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- ZEN 2in1 COFFEE -->
+    <a href="zen-2in1-coffee.html" class="product-card" data-category="beslenme">
+      <div class="product-img"><div class="product-badge" data-tr="REİSHİ" data-en="REISHI">REİSHİ</div><img src="images/zen-2in1-coffee.png" alt="Zen 2in1 Coffee" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Fonksiyonel Kahve" data-en="Functional Coffee">Fonksiyonel Kahve</div>
+        <div class="product-name">Zen 2in1 Coffee</div>
+        <div class="product-desc" data-tr="Reishi mantarı ekstresi ile güçlendirilmiş 2'si 1 arada fonksiyonel kahve. Vegan ve katkısız." data-en="2-in-1 functional coffee enriched with Reishi mushroom extract. Vegan and additive-free.">Reishi mantarı ekstresi ile güçlendirilmiş 2'si 1 arada fonksiyonel kahve. Vegan ve katkısız.</div>
+        <div class="product-tags"><span class="tag">Reishi</span><span class="tag">Vegan</span><span class="tag" data-tr="15 Poşet" data-en="15 Bags">15 Poşet</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="15 poşet · Bitkisel Krema" data-en="15 bags · Plant Creamer">15 poşet · Bitkisel Krema</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+    <!-- ZEN BLACK COFFEE -->
+    <a href="zen-black-coffee.html" class="product-card" data-category="beslenme">
+      <div class="product-img"><div class="product-badge" data-tr="SİYAH" data-en="BLACK">SİYAH</div><img src="images/zen-black-coffee.png" alt="Zen Black Coffee" /></div>
+      <div class="product-body">
+        <div class="product-cat" data-tr="Fonksiyonel Kahve" data-en="Functional Coffee">Fonksiyonel Kahve</div>
+        <div class="product-name">Zen Black Coffee</div>
+        <div class="product-desc" data-tr="%5 Reishi ekstresi ile siyah kahve. Enerji, zihinsel performans ve bağışıklık desteği." data-en="Black coffee with 5% Reishi extract. Energy, mental performance and immune support.">%5 Reishi ekstresi ile siyah kahve. Enerji, zihinsel performans ve bağışıklık desteği.</div>
+        <div class="product-tags"><span class="tag">Reishi %5</span><span class="tag" data-tr="Siyah Kahve" data-en="Black Coffee">Siyah Kahve</span><span class="tag" data-tr="30 Poşet" data-en="30 Bags">30 Poşet</span></div>
+        <div class="product-footer"><div class="product-info" data-tr="30 poşet · Katkısız" data-en="30 bags · Additive-free">30 poşet · Katkısız</div><span class="product-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span data-tr="İncele" data-en="View">İncele</span></span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div>
+      <div class="section-tag" data-tr="NEDEN DR. NEO?" data-en="WHY DR. NEO?">NEDEN DR. NEO?</div>
+      <h2 class="section-title" style="margin-bottom:16px" data-tr="Farkımız Doğadan Gelir" data-en="Our Difference Comes From Nature">Farkımız Doğadan Gelir</h2>
+      <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin-bottom:40px" data-tr="Bilim ve doğayı bir araya getirerek, sağlığınızı koruyacak en iyi ürünleri sunuyoruz." data-en="Combining science and nature, we offer the best products to protect your health.">
+        Bilim ve doğayı bir araya getirerek, sağlığınızı koruyacak en iyi ürünleri sunuyoruz.
+      </p>
+      <div class="why-features">
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <div class="feature-title" data-tr="Bilimsel Formüller" data-en="Scientific Formulas">Bilimsel Formüller</div>
+            <div class="feature-desc" data-tr="Her ürün, uzman ekipler tarafından araştırılmış ve test edilmiş formüllerle üretilir." data-en="Every product is manufactured with formulas researched and tested by expert teams.">Her ürün, uzman ekipler tarafından araştırılmış ve test edilmiş formüllerle üretilir.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="feature-title" data-tr="Doğal İçerikler" data-en="Natural Ingredients">Doğal İçerikler</div>
+            <div class="feature-desc" data-tr="Ürünlerimiz %100 doğal ve güvenli içeriklerden oluşur, sağlığınız için en iyisi." data-en="Our products consist of 100% natural and safe ingredients, the best for your health.">Ürünlerimiz %100 doğal ve güvenli içeriklerden oluşur, sağlığınız için en iyisi.</div>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div>
+            <div class="feature-title" data-tr="Hızlı Teslimat" data-en="Fast Delivery">Hızlı Teslimat</div>
+            <div class="feature-desc" data-tr="Siparişiniz onaylandıktan sonra hızla hazırlanır ve güvenle kapınıza teslim edilir." data-en="After your order is confirmed, it is quickly prepared and safely delivered to your door.">Siparişiniz onaylandıktan sonra hızla hazırlanır ve güvenle kapınıza teslim edilir.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="why-visual-title" data-tr="Dr. Neo Güvencesi" data-en="Dr. Neo Guarantee">Dr. Neo Güvencesi</div>
+      <div class="why-visual-sub" data-tr="Sağlığınıza değer katıyoruz" data-en="Adding value to your health">Sağlığınıza değer katıyoruz</div>
+      <div class="why-stats">
+        <div class="wstat">
+          <div class="wstat-num">4</div>
+          <div class="wstat-label" data-tr="Ürün Kategorisi" data-en="Product Categories">Ürün Kategorisi</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-num">13</div>
+          <div class="wstat-label" data-tr="Ülke Desteği" data-en="Country Support">Ülke Desteği</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-num">100%</div>
+          <div class="wstat-label" data-tr="Doğal İçerik" data-en="Natural Content">Doğal İçerik</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-num">24/7</div>
+          <div class="wstat-label" data-tr="Destek Hattı" data-en="Support Line">Destek Hattı</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 data-tr="Sağlıklı Yaşama Başlamaya Hazır mısınız?" data-en="Ready to Start a Healthy Life?">Sağlıklı Yaşama Başlamaya Hazır mısınız?</h2>
+    <p data-tr="Dr. Neo ürünleriyle tanışın, doğal ve sağlıklı bir yaşam için doğru adımı atın." data-en="Meet Dr. Neo products and take the right step for a natural and healthy life.">
+      Dr. Neo ürünleriyle tanışın, doğal ve sağlıklı bir yaşam için doğru adımı atın.
+    </p>
+    <a href="#" class="btn-white" id="cta-main-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <span data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div class="footer-links">
+      <a href="#products" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="footer-copy" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+
+<script>
+  // Referral link — buraya Doctorem referral linkinizi girin
+  const REFERRAL_LINK = 'https://doctoremglobal.com/index?ref=90195101'; // <- BURAYA REFERRAL LİNKİNİZİ GİRİN
+
+  document.querySelectorAll('.nav-cta, #cta-main-btn').forEach(btn => {
+    btn.href = REFERRAL_LINK;
+    btn.target = '_blank';
+    btn.rel = 'noopener';
+  });
+
+  function filterProducts(cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.category === cat) ? 'block' : 'none';
+    });
+  }
+
+  let currentLang = 'tr';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-tr]').forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (!text) return;
+      if (/<[a-z]/i.test(text)) {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
+      }
+    });
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Smooth scroll offset for fixed nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+<style>.whatsapp-btn{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.45);z-index:999;transition:all .3s}.whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.65)}.whatsapp-btn svg{width:28px;height:28px}.whatsapp-tooltip{position:absolute;right:64px;background:rgba(0,0,0,0.75);color:white;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}.whatsapp-btn:hover .whatsapp-tooltip{opacity:1}</style><a href="https://wa.me/905469576197" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="whatsapp-tooltip">Bize Yazın</span></a></body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Sole — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="product-style.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-pill" width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg><span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta" data-tr="Sipariş Ver" data-en="Order Now">Sipariş Ver</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a><a href="urunler.html">Ürünler</a>
+  <a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a>
+</div>
+<div class="breadcrumb">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <span>Aura Sole</span>
+</div>
+<div class="product-hero">
+  <div class="product-gallery">
+    <div class="main-img"><img src="images/aura-sole.png" alt="Aura Sole" /></div>
+    <div class="img-badge-row">
+      <div class="img-badge"><strong>UVA</strong><span data-tr="+ UVB Koruma" data-en="+ UVB Protection">+ UVB Koruma</span></div>
+      <div class="img-badge"><strong>Mavi</strong><span data-tr="Işık Koruması" data-en="Light Protection">Işık Koruması</span></div>
+      <div class="img-badge"><strong>Mat</strong><span data-tr="Bitiş" data-en="Finish">Bitiş</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="product-cat-tag" data-tr="Kozmetik · Güneş Koruması" data-en="Cosmetics · Sun Protection">Kozmetik · Güneş Koruması</div>
+    <h1 class="product-title">Aura Sole</h1>
+    <p class="product-subtitle" data-tr="UVA, UVB ve mavi ışık koruması sunan, yağsız ve mat bitişli güneş koruyucu. Tüm cilt tiplerine uygun ipeksi formül." data-en="Sun protector offering UVA, UVB and blue light protection with oil-free and matte finish. Silky formula suitable for all skin types.">UVA, UVB ve mavi ışık koruması sunan, yağsız ve mat bitişli güneş koruyucu. Tüm cilt tiplerine uygun ipeksi formül.</p>
+    <div class="highlights">
+      <div class="highlight-item"><span class="highlight-icon">☀️</span><span class="highlight-text" data-tr="UVA + UVB + Mavi Işık koruması tek formülde." data-en="UVA + UVB + Blue Light protection in one formula.">UVA + UVB + Mavi Işık koruması tek formülde.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">💧</span><span class="highlight-text" data-tr="Yağsız, hafif ve ipeksi doku; beyaz iz bırakmaz." data-en="Oil-free, lightweight and silky texture; leaves no white cast.">Yağsız, hafif ve ipeksi doku; beyaz iz bırakmaz.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🌿</span><span class="highlight-text" data-tr="Bisabolol ve Aynısefa yağı ile yatıştırıcı etki." data-en="Soothing effect with Bisabolol and Calendula oil.">Bisabolol ve Aynısefa yağı ile yatıştırıcı etki.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">✨</span><span class="highlight-text" data-tr="Gözenek tıkamaz, mat bitiş sunar." data-en="Non-comedogenic, provides matte finish.">Gözenek tıkamaz, mat bitiş sunar.</span></div>
+    </div>
+    <div class="product-meta">
+      <div class="meta-item"><div class="meta-num">3in1</div><div class="meta-label" data-tr="Koruma" data-en="Protection">Koruma</div></div>
+      <div class="meta-item"><div class="meta-num">Mat</div><div class="meta-label" data-tr="Bitiş" data-en="Finish">Bitiş</div></div>
+      <div class="meta-item"><div class="meta-num">7</div><div class="meta-label" data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</div></div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-title" data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</div>
+      <div class="cta-box-sub" data-tr="Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz." data-en="You can safely order through our official distributor link.">Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz.</div>
+      <a href="#" class="btn-cta" id="product-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span data-tr="Sipariş Ver" data-en="Place Order">Sipariş Ver</span>
+      </a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span data-tr="Güvenli Ödeme" data-en="Secure Payment">Güvenli Ödeme</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM1 10h22"/></svg><span data-tr="Hızlı Kargo" data-en="Fast Shipping">Hızlı Kargo</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg><span data-tr="Orijinal Ürün" data-en="Original Product">Orijinal Ürün</span></div>
+    </div>
+  </div>
+</div>
+<div class="product-tabs">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('benefits')" data-tr="Faydaları" data-en="Benefits">Faydaları</button>
+    <button class="tab-btn" onclick="showTab('ingredients')" data-tr="İçerik" data-en="Ingredients">İçerik</button>
+    <button class="tab-btn" onclick="showTab('usage')" data-tr="Nasıl Kullanılır?" data-en="How to Use?">Nasıl Kullanılır?</button>
+  </div>
+  <div class="tab-panel active" id="tab-benefits">
+    <div class="benefits-grid">
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Yağsız ve hafif formülü sayesinde ipeksi bir his bırakır" data-en="Leaves a silky feeling thanks to its oil-free and lightweight formula">Yağsız ve hafif formülü sayesinde ipeksi bir his bırakır</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Mat bitişli formül gün boyu parlama yapmaz" data-en="Matte finish formula provides all-day shine control">Mat bitişli formül gün boyu parlama yapmaz</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Gözenek tıkamaz, non-komedojenik yapısıyla tüm cilt tiplerine uygun" data-en="Non-comedogenic structure suitable for all skin types, does not clog pores">Gözenek tıkamaz, non-komedojenik yapısıyla tüm cilt tiplerine uygun</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Beyaz iz bırakmaz, cilde doğal görünüm sağlar" data-en="Leaves no white cast, provides natural appearance on skin">Beyaz iz bırakmaz, cilde doğal görünüm sağlar</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Tüm cilt tiplerine uygun; normal, yağlı, karma ve hassas ciltler için ideal" data-en="Suitable for all skin types; ideal for normal, oily, combination and sensitive skin">Tüm cilt tiplerine uygun; normal, yağlı, karma ve hassas ciltler için ideal</span></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-ingredients"><div class="ingredients-list">
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Titanium Dioxide & Zinc Oxide (UVA+UVB+Mavi Işık Koruma)" data-en="Titanium Dioxide & Zinc Oxide (UVA+UVB+Blue Light Protection)">Titanium Dioxide & Zinc Oxide</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Fiziksel güneş filtreleri olan bu iki madde UVA, UVB ve mavi ışık dahil geniş spektrum koruması sağlar. Hassas ve reaktif ciltlere uygun, kimyasal filtrelerden farklı olarak cildi tahriş etmez." data-en="These two physical sun filters provide broad spectrum protection including UVA, UVB and blue light. Suitable for sensitive and reactive skin, unlike chemical filters they do not irritate the skin.">Fiziksel güneş filtreleri olan bu iki madde UVA, UVB ve mavi ışık dahil geniş spektrum koruması sağlar. Hassas ve reaktif ciltlere uygun, kimyasal filtrelerden farklı olarak cildi tahriş etmez.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name">Octocrylene</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="UVB ve kısa dalga UVA ışınlarını absorbe eden kimyasal bir güneş filtresidir. Diğer filtrelerle birlikte kullanıldığında daha kapsamlı bir koruma sağlar." data-en="It is a chemical sun filter that absorbs UVB and short-wave UVA rays. When used together with other filters, it provides more comprehensive protection.">UVB ve kısa dalga UVA ışınlarını absorbe eden kimyasal bir güneş filtresidir. Diğer filtrelerle birlikte kullanıldığında daha kapsamlı bir koruma sağlar.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Ethyl Methoxycinnamate & Avobenzone" data-en="Ethyl Methoxycinnamate & Avobenzone">Ethyl Methoxycinnamate & Avobenzone</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="UVB ve UVA ışınlarını absorbe eden kimyasal filtrelerdir. Birlikte kullanıldıklarında geniş spektrum koruma sağlarlar ve formülün güneş koruma etkinliğini artırır." data-en="They are chemical filters that absorb UVB and UVA rays. When used together, they provide broad spectrum protection and enhance the sun protection efficacy of the formula.">UVB ve UVA ışınlarını absorbe eden kimyasal filtrelerdir. Birlikte kullanıldıklarında geniş spektrum koruma sağlarlar ve formülün güneş koruma etkinliğini artırır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Tocopheryl Acetate (E Vitamini)" data-en="Tocopheryl Acetate (Vitamin E)">Tocopheryl Acetate (E Vitamini)</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Antioksidan etkisiyle serbest radikal hasarını önler. Güneş ışığının ciltte oluşturabileceği oksidatif strese karşı koruma sağlar." data-en="Prevents free radical damage with its antioxidant effect. Provides protection against oxidative stress that sunlight can cause on the skin.">Antioksidan etkisiyle serbest radikal hasarını önler. Güneş ışığının ciltte oluşturabileceği oksidatif strese karşı koruma sağlar.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Bisabolol & Aynısefa Yağı (Calendula)" data-en="Bisabolol & Calendula Oil">Bisabolol & Aynısefa Yağı (Calendula)</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Bisabolol, hassas ciltler için güçlü bir yatıştırıcı ajandır. Aynısefa yağı antiinflamatuar ve onarıcı özellikler taşır. İkisi birlikte güneş sonrası cildi sakinleştirir ve onarır." data-en="Bisabolol is a powerful soothing agent for sensitive skin. Calendula oil has anti-inflammatory and restorative properties. Together they calm and repair skin after sun exposure.">Bisabolol, hassas ciltler için güçlü bir yatıştırıcı ajandır. Aynısefa yağı antiinflamatuar ve onarıcı özellikler taşır. İkisi birlikte güneş sonrası cildi sakinleştirir ve onarır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Panthenol (Pro-Vitamin B5)" data-en="Panthenol (Pro-Vitamin B5)">Panthenol (Pro-Vitamin B5)</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Derin neme hücreden destek verir. Cilt bariyerini güçlendirir, elastikiyeti artırır ve tahriş olmuş ciltleri yatıştırır." data-en="Provides deep moisture support at the cellular level. Strengthens the skin barrier, increases elasticity and soothes irritated skin.">Derin neme hücreden destek verir. Cilt bariyerini güçlendirir, elastikiyeti artırır ve tahriş olmuş ciltleri yatıştırır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Cyclopentasiloxane & Silica" data-en="Cyclopentasiloxane & Silica">Cyclopentasiloxane & Silica</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Cyclopentasiloxane, ürüne ipeksi ve pürüzsüz bir his katar. Silica ise gözenek görünümünü matlaştırır ve yağ kontrolüne yardımcı olur. İkisi birlikte formüle hafif ve akışkan bir doku kazandırır." data-en="Cyclopentasiloxane adds a silky and smooth feel to the product. Silica mattifies pore appearance and helps with oil control. Together they give the formula a light and fluid texture.">Cyclopentasiloxane, ürüne ipeksi ve pürüzsüz bir his katar. Silica ise gözenek görünümünü matlaştırır ve yağ kontrolüne yardımcı olur. İkisi birlikte formüle hafif ve akışkan bir doku kazandırır.</p></div></div>
+  </div></div>
+  <div class="tab-panel" id="tab-usage"><div class="usage-steps">
+    <div class="usage-step"><div class="step-num">1</div><div class="step-content"><div class="step-title" data-tr="Sabah Rutini" data-en="Morning Routine">Sabah Rutini</div><div class="step-desc" data-tr="Nemlendirici veya serum adımlarınızın ardından, makyaj öncesinde uygulayın." data-en="Apply after your moisturizer or serum steps, before makeup.">Nemlendirici veya serum adımlarınızın ardından, makyaj öncesinde uygulayın.</div></div></div>
+    <div class="usage-step"><div class="step-num">2</div><div class="step-content"><div class="step-title" data-tr="Miktarı Belirleyin" data-en="Determine Amount">Miktarı Belirleyin</div><div class="step-desc" data-tr="Yüz, boyun ve dékolté için yaklaşık 2 parmak ucu kadar ürün alın." data-en="Take about 2 fingertips worth of product for face, neck and décolletage.">Yüz, boyun ve dékolté için yaklaşık 2 parmak ucu kadar ürün alın.</div></div></div>
+    <div class="usage-step"><div class="step-num">3</div><div class="step-content"><div class="step-title" data-tr="Eşit Uygulayın" data-en="Apply Evenly">Eşit Uygulayın</div><div class="step-desc" data-tr="Yüzünüze eşit şekilde yayın. Göz çevresini atlayın." data-en="Spread evenly across your face. Avoid the eye area.">Yüzünüze eşit şekilde yayın. Göz çevresini atlayın.</div></div></div>
+    <div class="usage-step"><div class="step-num">4</div><div class="step-content"><div class="step-title" data-tr="Yenileyin" data-en="Reapply">Yenileyin</div><div class="step-desc" data-tr="Uzun süreli güneş maruziyetinde her 2-3 saatte bir yenileyin." data-en="Reapply every 2-3 hours during prolonged sun exposure.">Uzun süreli güneş maruziyetinde her 2-3 saatte bir yenileyin.</div></div></div>
+  </div></div>
+</div>
+<footer style="background:#0D1A2E;color:rgba(255,255,255,0.6);padding:48px 24px 32px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div style="color:white;font-family:'Playfair Display',serif;font-size:20px;">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div style="display:flex;gap:24px;">
+      <a href="index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+      <a href="urunler.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="iletisim.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div style="font-size:12px;text-align:center;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);margin-top:8px;" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+<script src="product-script.js"></script>
+</body>
+</html>

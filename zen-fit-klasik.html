@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zen Fit Klasik — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="product-style.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-pill" width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg><span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta" data-tr="Sipariş Ver" data-en="Order Now">Sipariş Ver</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a><a href="urunler.html">Ürünler</a>
+  <a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a>
+</div>
+<div class="breadcrumb">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <span>Zen Fit Klasik</span>
+</div>
+<div class="product-hero">
+  <div class="product-gallery">
+    <div class="main-img"><img src="images/zen-fit-klasik.png" alt="Zen Fit Klasik" /></div>
+    <div class="img-badge-row">
+      <div class="img-badge"><strong>30</strong><span data-tr="Poşet/Kutu" data-en="Bags/Box">Poşet/Kutu</span></div>
+      <div class="img-badge"><strong>4gr</strong><span data-tr="Poşet" data-en="Per Bag">Poşet</span></div>
+      <div class="img-badge"><strong>Şekersiz</strong><span data-tr="Formül" data-en="Formula">Formül</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="product-cat-tag" data-tr="Beslenme · Bitkisel Çay" data-en="Nutrition · Herbal Tea">Beslenme · Bitkisel Çay</div>
+    <h1 class="product-title">Zen Fit Klasik</h1>
+    <p class="product-subtitle" data-tr="Hindiba, Guarana ve Bromelain içeren bitkisel çay. Şeker, katkı maddesi ve yapay aroma içermeyen saf formül; metabolizmayı destekler." data-en="Herbal tea containing Dandelion, Guarana and Bromelain. Pure formula without sugar, additives and artificial flavors; supports metabolism.">Hindiba, Guarana ve Bromelain içeren bitkisel çay. Şeker, katkı maddesi ve yapay aroma içermeyen saf formül; metabolizmayı destekler.</p>
+    <div class="highlights">
+      <div class="highlight-item"><span class="highlight-icon">🌿</span><span class="highlight-text" data-tr="Hindiba, Guarana ve Bromelain içerir — doğal ve saf formül." data-en="Contains Dandelion, Guarana and Bromelain — natural and pure formula.">Hindiba, Guarana ve Bromelain içerir — doğal ve saf formül.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🚫</span><span class="highlight-text" data-tr="Şeker, katkı maddesi ve yapay aroma içermez." data-en="No sugar, additives or artificial flavors.">Şeker, katkı maddesi ve yapay aroma içermez.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🔥</span><span class="highlight-text" data-tr="Metabolizmayı hızlandırır, yağ yakımını destekler." data-en="Accelerates metabolism, supports fat burning.">Metabolizmayı hızlandırır, yağ yakımını destekler.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">☕</span><span class="highlight-text" data-tr="200ml sıcak suda demleyerek hazırlanır, günde 1-3 kez." data-en="Brewed in 200ml hot water, 1-3 times daily.">200ml sıcak suda demleyerek hazırlanır, günde 1-3 kez.</span></div>
+    </div>
+    <div class="product-meta">
+      <div class="meta-item"><div class="meta-num">30</div><div class="meta-label" data-tr="Poşet/Kutu" data-en="Bags/Box">Poşet/Kutu</div></div>
+      <div class="meta-item"><div class="meta-num">4gr</div><div class="meta-label" data-tr="Poşet Ağırlığı" data-en="Bag Weight">Poşet Ağırlığı</div></div>
+      <div class="meta-item"><div class="meta-num">3</div><div class="meta-label" data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</div></div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-title" data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</div>
+      <div class="cta-box-sub" data-tr="Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz." data-en="You can safely order through our official distributor link.">Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz.</div>
+      <a href="#" class="btn-cta" id="product-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span data-tr="Sipariş Ver" data-en="Place Order">Sipariş Ver</span>
+      </a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span data-tr="Güvenli Ödeme" data-en="Secure Payment">Güvenli Ödeme</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM1 10h22"/></svg><span data-tr="Hızlı Kargo" data-en="Fast Shipping">Hızlı Kargo</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg><span data-tr="Orijinal Ürün" data-en="Original Product">Orijinal Ürün</span></div>
+    </div>
+  </div>
+</div>
+<div class="product-tabs">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('benefits')" data-tr="Faydaları" data-en="Benefits">Faydaları</button>
+    <button class="tab-btn" onclick="showTab('ingredients')" data-tr="İçerik" data-en="Ingredients">İçerik</button>
+    <button class="tab-btn" onclick="showTab('usage')" data-tr="Nasıl Kullanılır?" data-en="How to Use?">Nasıl Kullanılır?</button>
+  </div>
+  <div class="tab-panel active" id="tab-benefits">
+    <div class="benefits-grid">
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Metabolizmayı hızlandırır ve enerji seviyelerini artırır" data-en="Accelerates metabolism and increases energy levels">Metabolizmayı hızlandırır ve enerji seviyelerini artırır</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Sindirim sistemini düzenler ve mide rahatsızlıklarını giderir" data-en="Regulates the digestive system and relieves stomach discomfort">Sindirim sistemini düzenler ve mide rahatsızlıklarını giderir</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Tokluk hissi sağlar ve iştahı dengelemeye yardımcı olur" data-en="Provides satiety and helps balance appetite">Tokluk hissi sağlar ve iştahı dengelemeye yardımcı olur</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Yağ yakımını destekler ve kilo yönetimine katkı sağlar" data-en="Supports fat burning and contributes to weight management">Yağ yakımını destekler ve kilo yönetimine katkı sağlar</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Karaciğer detoksunu destekler ve toksinlerin atılmasına yardımcı olur" data-en="Supports liver detox and helps eliminate toxins">Karaciğer detoksunu destekler ve toksinlerin atılmasına yardımcı olur</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Kolesterol ve kan şekeri dengesini destekler" data-en="Supports cholesterol and blood sugar balance">Kolesterol ve kan şekeri dengesini destekler</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Bağışıklık sistemini güçlendirir" data-en="Strengthens the immune system">Bağışıklık sistemini güçlendirir</span></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-ingredients"><div class="ingredients-list">
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Hindiba (Dandelion)" data-en="Dandelion">Hindiba (Dandelion)</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Karahindiba olarak da bilinen hindiba, geleneksel bitkisel tıpta karaciğer ve sindirim sağlığını desteklemek için yüzyıllardır kullanılmaktadır. Doğal diüretik etkisi ile şişkinliği azaltır, kolesterol ve kan şekeri seviyelerini dengelemeye yardımcı olur." data-en="Dandelion, also known as common dandelion, has been used for centuries in traditional herbal medicine to support liver and digestive health. It reduces bloating with its natural diuretic effect and helps balance cholesterol and blood sugar levels.">Karahindiba olarak da bilinen hindiba, geleneksel bitkisel tıpta karaciğer ve sindirim sağlığını desteklemek için yüzyıllardır kullanılmaktadır. Doğal diüretik etkisi ile şişkinliği azaltır, kolesterol ve kan şekeri seviyelerini dengelemeye yardımcı olur.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name">Guarana</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Amazon yağmur ormanlarından elde edilen güçlü bir bitkisel enerji kaynağıdır. Kahveden daha yavaş salınan kafein içeriğiyle uzun süreli enerji ve odaklanma sağlar. Metabolizmayı hızlandırır ve yağ yakımını destekler." data-en="It is a powerful herbal energy source from the Amazon rainforest. Provides long-lasting energy and focus with caffeine content that is released more slowly than coffee. Accelerates metabolism and supports fat burning.">Amazon yağmur ormanlarından elde edilen güçlü bir bitkisel enerji kaynağıdır. Kahveden daha yavaş salınan kafein içeriğiyle uzun süreli enerji ve odaklanma sağlar. Metabolizmayı hızlandırır ve yağ yakımını destekler.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name">Bromelain</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Ananasın gövde ve meyvesinden elde edilen proteolitik enzim karışımıdır. Sindirim sağlığını iyileştirir, proteini parçalar ve bağırsak sağlığını destekler. Antiinflamatuar özellikleri ile osteoartrit semptomlarını hafifletir ve bağışıklık sistemini güçlendirir." data-en="It is a mixture of proteolytic enzymes derived from the stem and fruit of pineapple. Improves digestive health, breaks down protein and supports intestinal health. With its anti-inflammatory properties, it relieves osteoarthritis symptoms and strengthens the immune system.">Ananasın gövde ve meyvesinden elde edilen proteolitik enzim karışımıdır. Sindirim sağlığını iyileştirir, proteini parçalar ve bağırsak sağlığını destekler. Antiinflamatuar özellikleri ile osteoartrit semptomlarını hafifletir ve bağışıklık sistemini güçlendirir.</p></div></div>
+  </div></div>
+  <div class="tab-panel" id="tab-usage"><div class="usage-steps">
+    <div class="usage-step"><div class="step-num">1</div><div class="step-content"><div class="step-title" data-tr="Suyu Hazırlayın" data-en="Prepare Water">Suyu Hazırlayın</div><div class="step-desc" data-tr="200ml suyu kaynatın ve 80-90°C'ye soğumasını bekleyin. Kaynar suya dökmeyin." data-en="Boil 200ml of water and wait for it to cool to 80-90°C. Do not pour in boiling water.">200ml suyu kaynatın ve 80-90°C'ye soğumasını bekleyin. Kaynar suya dökmeyin.</div></div></div>
+    <div class="usage-step"><div class="step-num">2</div><div class="step-content"><div class="step-title" data-tr="Demleme" data-en="Brewing">Demleme</div><div class="step-desc" data-tr="1 poşet çayı bardağa koyun ve sıcak suyu üzerine dökün. 3-5 dakika demleyin." data-en="Place 1 tea bag in a glass and pour hot water over it. Brew for 3-5 minutes.">1 poşet çayı bardağa koyun ve sıcak suyu üzerine dökün. 3-5 dakika demleyin.</div></div></div>
+    <div class="usage-step"><div class="step-num">3</div><div class="step-content"><div class="step-title" data-tr="Keyifle İçin" data-en="Enjoy">Keyifle İçin</div><div class="step-desc" data-tr="Poşeti çıkarın. İsterseniz limon veya bal ekleyebilirsiniz. Şeker eklememeyi tercih edin." data-en="Remove the bag. You can add lemon or honey if you like. Prefer not to add sugar.">Poşeti çıkarın. İsterseniz limon veya bal ekleyebilirsiniz. Şeker eklememeyi tercih edin.</div></div></div>
+    <div class="usage-step"><div class="step-num">4</div><div class="step-content"><div class="step-title" data-tr="Günlük Kullanım" data-en="Daily Use">Günlük Kullanım</div><div class="step-desc" data-tr="Günde 1-3 kez, tercihen yemeklerle birlikte veya sabah aç karnına için. Düzenli kullanım en iyi sonuçları verir." data-en="Drink 1-3 times daily, preferably with meals or in the morning on an empty stomach. Regular use gives the best results.">Günde 1-3 kez, tercihen yemeklerle birlikte veya sabah aç karnına için. Düzenli kullanım en iyi sonuçları verir.</div></div></div>
+  </div></div>
+</div>
+<footer style="background:#0D1A2E;color:rgba(255,255,255,0.6);padding:48px 24px 32px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div style="color:white;font-family:'Playfair Display',serif;font-size:20px;">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div style="display:flex;gap:24px;">
+      <a href="index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+      <a href="urunler.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="iletisim.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div style="font-size:12px;text-align:center;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);margin-top:8px;" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+<script src="product-script.js"></script>
+</body>
+</html>

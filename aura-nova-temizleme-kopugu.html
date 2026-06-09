@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Nova Temizleme Köpüğü — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="product-style.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-pill" width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg><span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta" data-tr="Sipariş Ver" data-en="Order Now">Sipariş Ver</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a><a href="urunler.html">Ürünler</a>
+  <a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a>
+</div>
+<div class="breadcrumb">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <span>Aura Nova Temizleme Köpüğü</span>
+</div>
+<div class="product-hero">
+  <div class="product-gallery">
+    <div class="main-img"><img src="images/aura-nova-temizleme-kopugu.png" alt="Aura Nova Temizleme Köpüğü" /></div>
+    <div class="img-badge-row">
+      <div class="img-badge"><strong>150ml</strong><span data-tr="Hacim" data-en="Volume">Hacim</span></div>
+      <div class="img-badge"><strong>pH</strong><span data-tr="Dengeli" data-en="Balanced">Dengeli</span></div>
+      <div class="img-badge"><strong>12</strong><span data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="product-cat-tag" data-tr="Cilt Bakımı" data-en="Skincare">Cilt Bakımı</div>
+    <h1 class="product-title">Aura Nova Temizleme Köpüğü</h1>
+    <p class="product-subtitle" data-tr="Cildinize nefes aldıran, doğadan gelen bir temizlik! Sülfat, paraben ve alkol içermeyen nazik formülüyle derinlemesine temizlik sağlar." data-en="A natural cleansing that lets your skin breathe! Provides deep cleansing with a gentle sulfate, paraben and alcohol-free formula.">Cildinize nefes aldıran, doğadan gelen bir temizlik! Sülfat, paraben ve alkol içermeyen nazik formülüyle derinlemesine temizlik sağlar.</p>
+    <div class="highlights">
+      <div class="highlight-item"><span class="highlight-icon">🌿</span><span class="highlight-text" data-tr="Sülfat, paraben ve alkol içermez; hassas ciltler için güvenli." data-en="Sulfate, paraben and alcohol-free; safe for sensitive skin.">Sülfat, paraben ve alkol içermez; hassas ciltler için güvenli.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🍯</span><span class="highlight-text" data-tr="Propolis ile doğal antibakteriyal koruma." data-en="Natural antibacterial protection with propolis.">Propolis ile doğal antibakteriyal koruma.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🥥</span><span class="highlight-text" data-tr="Hindistan cevizi ekstresiyle doğal ve nazik temizlik." data-en="Natural and gentle cleansing with coconut extract.">Hindistan cevizi ekstresiyle doğal ve nazik temizlik.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🌸</span><span class="highlight-text" data-tr="Lavanta, aloe vera ve papatya ile cilt yatıştırıcı etki." data-en="Soothing skin effect with lavender, aloe vera and chamomile.">Lavanta, aloe vera ve papatya ile cilt yatıştırıcı etki.</span></div>
+    </div>
+    <div class="product-meta">
+      <div class="meta-item"><div class="meta-num">150ml</div><div class="meta-label" data-tr="Hacim" data-en="Volume">Hacim</div></div>
+      <div class="meta-item"><div class="meta-num">0%</div><div class="meta-label" data-tr="Sülfat/Paraben" data-en="Sulfate/Paraben">Sülfat/Paraben</div></div>
+      <div class="meta-item"><div class="meta-num">12</div><div class="meta-label" data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</div></div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-title" data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</div>
+      <div class="cta-box-sub" data-tr="Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz." data-en="You can safely order through our official distributor link.">Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz.</div>
+      <a href="#" class="btn-cta" id="product-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span data-tr="Sipariş Ver" data-en="Place Order">Sipariş Ver</span>
+      </a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span data-tr="Güvenli Ödeme" data-en="Secure Payment">Güvenli Ödeme</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM1 10h22"/></svg><span data-tr="Hızlı Kargo" data-en="Fast Shipping">Hızlı Kargo</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg><span data-tr="Orijinal Ürün" data-en="Original Product">Orijinal Ürün</span></div>
+    </div>
+  </div>
+</div>
+<div class="product-tabs">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('benefits')" data-tr="Faydaları" data-en="Benefits">Faydaları</button>
+    <button class="tab-btn" onclick="showTab('ingredients')" data-tr="İçerik" data-en="Ingredients">İçerik</button>
+    <button class="tab-btn" onclick="showTab('usage')" data-tr="Nasıl Kullanılır?" data-en="How to Use?">Nasıl Kullanılır?</button>
+  </div>
+  <div class="tab-panel active" id="tab-benefits">
+    <div class="benefits-grid">
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Derinlemesine temizlik yapar, gözenekleri arındırır" data-en="Deep cleansing, purifies pores">Derinlemesine temizlik yapar, gözenekleri arındırır</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Cildi yormadan, nazikçe temizler" data-en="Cleanses gently without stressing the skin">Cildi yormadan, nazikçe temizler</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Antioksidan koruma, çevresel strese karşı savunma" data-en="Antioxidant protection against environmental stress">Antioksidan koruma, çevresel strese karşı savunma</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Kızarıklık ve tahrişi azaltır" data-en="Reduces redness and irritation">Kızarıklık ve tahrişi azaltır</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Anti-inflamatuar etki, sivilce karşıtı formül" data-en="Anti-inflammatory effect, anti-acne formula">Anti-inflamatuar etki, sivilce karşıtı formül</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Cilt bariyerini onarır ve güçlendirir" data-en="Repairs and strengthens the skin barrier">Cilt bariyerini onarır ve güçlendirir</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Nemlendirici özellik ile cildi nemlendirir" data-en="Moisturizing property keeps the skin hydrated">Nemlendirici özellik ile cildi nemlendirir</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Propolis ile antibakteriyal koruma sağlar" data-en="Provides antibacterial protection with propolis">Propolis ile antibakteriyal koruma sağlar</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Hindistan cevizi ile doğal ve latif temizlik" data-en="Natural and gentle cleansing with coconut">Hindistan cevizi ile doğal ve latif temizlik</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="pH dengeli formül, cilt asiditesini korur" data-en="pH-balanced formula, preserves skin acidity">pH dengeli formül, cilt asiditesini korur</span></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-ingredients"><div class="ingredients-list">
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Lavanta Suyu & Çiçek Ekstraktı" data-en="Lavender Water & Flower Extract">Lavanta Suyu & Çiçek Ekstraktı</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Lavanta, cilt üzerinde yatıştırıcı ve sakinleştirici etki gösterir. Hafif antiseptik özelliğiyle cildi korur ve temizler. Rahatlatıcı kokusuyla aromaterapi etkisi de sağlar." data-en="Lavender has a soothing and calming effect on the skin. It protects and cleanses the skin with its mild antiseptic properties. It also provides an aromatherapy effect with its relaxing scent.">Lavanta, cilt üzerinde yatıştırıcı ve sakinleştirici etki gösterir. Hafif antiseptik özelliğiyle cildi korur ve temizler. Rahatlatıcı kokusuyla aromaterapi etkisi de sağlar.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Aloe Barbadensis (Aloe Vera) Yaprağı Suyu" data-en="Aloe Barbadensis (Aloe Vera) Leaf Juice">Aloe Barbadensis (Aloe Vera) Yaprağı Suyu</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Aloe Vera, cildi nemlendiren, yatıştıran ve iyileştiren doğal bir bileşendir. Anti-inflamatuar özellikleriyle kızarıklık ve tahrişi azaltır, güneş yanığına karşı da etkilidir. Cildi ferahlatır ve canlandırır." data-en="Aloe Vera is a natural ingredient that moisturizes, soothes and heals the skin. With its anti-inflammatory properties, it reduces redness and irritation and is effective against sunburn. It refreshes and revitalizes the skin.">Aloe Vera, cildi nemlendiren, yatıştıran ve iyileştiren doğal bir bileşendir. Anti-inflamatuar özellikleriyle kızarıklık ve tahrişi azaltır, güneş yanığına karşı da etkilidir. Cildi ferahlatır ve canlandırır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Calendula & Papatya Çiçek Ekstresi" data-en="Calendula & Chamomile Flower Extract">Calendula & Papatya Çiçek Ekstresi</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Calendula ve papatya, cildi yatıştıran ve onaran güçlü bitki ekstrelerdir. Anti-inflamatuar özellikleriyle tahriş olmuş ciltlere rahatlama sağlar, hassas ciltlerde güvenle kullanılabilir." data-en="Calendula and chamomile are powerful plant extracts that soothe and repair the skin. With their anti-inflammatory properties, they provide relief to irritated skin and can be safely used on sensitive skin.">Calendula ve papatya, cildi yatıştıran ve onaran güçlü bitki ekstrelerdir. Anti-inflamatuar özellikleriyle tahriş olmuş ciltlere rahatlama sağlar, hassas ciltlerde güvenle kullanılabilir.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Propolis Ekstresi" data-en="Propolis Extract">Propolis Ekstresi</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Propolis, arılar tarafından üretilen doğal bir antibakteriyal ve antifungal ajandır. Cilt üzerindeki zararlı bakterilerle mücadele eder, sivilce ve akneye karşı etkilidir. Ayrıca antioksidan özellikleriyle cildi çevresel hasardan korur." data-en="Propolis is a natural antibacterial and antifungal agent produced by bees. It fights harmful bacteria on the skin and is effective against pimples and acne. It also protects the skin from environmental damage with its antioxidant properties.">Propolis, arılar tarafından üretilen doğal bir antibakteriyal ve antifungal ajandır. Cilt üzerindeki zararlı bakterilerle mücadele eder, sivilce ve akneye karşı etkilidir. Ayrıca antioksidan özellikleriyle cildi çevresel hasardan korur.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Panthenol (Provitamin B5)" data-en="Panthenol (Provitamin B5)">Panthenol (Provitamin B5)</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Panthenol, cilt bariyerini onarır ve güçlendirir. Uzun süreli nem tutarak cildi nemli ve sağlıklı tutar. Tahriş olan ciltleri yatıştırır ve kızarıklığı azaltır." data-en="Panthenol repairs and strengthens the skin barrier. It keeps the skin moist and healthy by retaining moisture for a long time. It soothes irritated skin and reduces redness.">Panthenol, cilt bariyerini onarır ve güçlendirir. Uzun süreli nem tutarak cildi nemli ve sağlıklı tutar. Tahriş olan ciltleri yatıştırır ve kızarıklığı azaltır.</p></div></div>
+  </div></div>
+  <div class="tab-panel" id="tab-usage"><div class="usage-steps">
+    <div class="usage-step"><div class="step-num">1</div><div class="step-content"><div class="step-title" data-tr="Islak Cilt" data-en="Wet Skin">Islak Cilt</div><div class="step-desc" data-tr="Yüzünüzü ılık suyla ıslatın. Köpük, ıslaklıkta en iyi sonucu verir." data-en="Wet your face with warm water. The foam works best when wet.">Yüzünüzü ılık suyla ıslatın. Köpük, ıslaklıkta en iyi sonucu verir.</div></div></div>
+    <div class="usage-step"><div class="step-num">2</div><div class="step-content"><div class="step-title" data-tr="Köpük Uygulayın" data-en="Apply Foam">Köpük Uygulayın</div><div class="step-desc" data-tr="Parmak uçlarınıza küçük miktarda köpük alın ve yüzünüze nazik dairesel hareketlerle uygulayın." data-en="Take a small amount of foam on your fingertips and apply to your face with gentle circular motions.">Parmak uçlarınıza küçük miktarda köpük alın ve yüzünüze nazik dairesel hareketlerle uygulayın.</div></div></div>
+    <div class="usage-step"><div class="step-num">3</div><div class="step-content"><div class="step-title" data-tr="Durulayın" data-en="Rinse">Durulayın</div><div class="step-desc" data-tr="Bol ılık suyla iyice durulayın. Sıcak su cilt bariyerine zarar verebilir, ılık su tercih edin." data-en="Rinse thoroughly with plenty of warm water. Hot water can damage the skin barrier, prefer warm water.">Bol ılık suyla iyice durulayın. Sıcak su cilt bariyerine zarar verebilir, ılık su tercih edin.</div></div></div>
+    <div class="usage-step"><div class="step-num">4</div><div class="step-content"><div class="step-title" data-tr="Kurulayın ve Rutin Devam Edin" data-en="Pat Dry and Continue Routine">Kurulayın ve Rutin Devam Edin</div><div class="step-desc" data-tr="Yüzünüzü nazikçe patlatarak kurulayın. Ardından tonik ve nemlendiricinizle rutinine devam edin." data-en="Gently pat your face dry. Then continue your routine with toner and moisturizer.">Yüzünüzü nazikçe patlatarak kurulayın. Ardından tonik ve nemlendiricinizle rutinine devam edin.</div></div></div>
+  </div></div>
+</div>
+<footer style="background:#0D1A2E;color:rgba(255,255,255,0.6);padding:48px 24px 32px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div style="color:white;font-family:'Playfair Display',serif;font-size:20px;">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div style="display:flex;gap:24px;">
+      <a href="index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+      <a href="urunler.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="iletisim.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div style="font-size:12px;text-align:center;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);margin-top:8px;" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+<script src="product-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Zin — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="product-style.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-pill" width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg><span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta" data-tr="Sipariş Ver" data-en="Order Now">Sipariş Ver</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a><a href="urunler.html">Ürünler</a>
+  <a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a>
+</div>
+<div class="breadcrumb">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <span>Aura Zin</span>
+</div>
+<div class="product-hero">
+  <div class="product-gallery">
+    <div class="main-img"><img src="images/aura-zin.png" alt="Aura Zin" /></div>
+    <div class="img-badge-row">
+      <div class="img-badge"><strong>NAD+</strong><span data-tr="Teknolojisi" data-en="Technology">Teknolojisi</span></div>
+      <div class="img-badge"><strong>8</strong><span data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</span></div>
+      <div class="img-badge"><strong>Premium</strong><span data-tr="Formül" data-en="Formula">Formül</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="product-cat-tag" data-tr="Kozmetik · Premium Serum" data-en="Cosmetics · Premium Serum">Kozmetik · Premium Serum</div>
+    <h1 class="product-title">Aura Zin</h1>
+    <p class="product-subtitle" data-tr="NAD+ ve Acetyl Hexapeptide-8 içeren premium serum. Hafif ipeksi formülü ile cilt bakım rutinine özel bir dokunuş." data-en="Premium serum with NAD+ and Acetyl Hexapeptide-8. A special touch to your skincare routine with its light silky formula.">NAD+ ve Acetyl Hexapeptide-8 içeren premium serum. Hafif ipeksi formülü ile cilt bakım rutinine özel bir dokunuş.</p>
+    <div class="highlights">
+      <div class="highlight-item"><span class="highlight-icon">✨</span><span class="highlight-text" data-tr="NAD+ ile hücresel yenilenme ve anti-aging güç." data-en="Cellular renewal and anti-aging power with NAD+.">NAD+ ile hücresel yenilenme ve anti-aging güç.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🌊</span><span class="highlight-text" data-tr="Centella Asiatica ve Deniz Yosunu ile yatıştırıcı ve onarıcı etki." data-en="Soothing and restorative effect with Centella Asiatica and Sea Algae.">Centella Asiatica ve Deniz Yosunu ile yatıştırıcı ve onarıcı etki.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">💧</span><span class="highlight-text" data-tr="Çok katmanlı Hyaluronik Asit ile derin nem." data-en="Deep hydration with multi-layered Hyaluronic Acid.">Çok katmanlı Hyaluronik Asit ile derin nem.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🌿</span><span class="highlight-text" data-tr="Lime Pearl ekstresiyle canlı ve aydınlık cilt tonu." data-en="Vibrant and bright skin tone with Lime Pearl extract.">Lime Pearl ekstresiyle canlı ve aydınlık cilt tonu.</span></div>
+    </div>
+    <div class="product-meta">
+      <div class="meta-item"><div class="meta-num">8</div><div class="meta-label" data-tr="Aktif İçerik" data-en="Ingredients">Aktif İçerik</div></div>
+      <div class="meta-item"><div class="meta-num">NAD+</div><div class="meta-label" data-tr="Hücresel Enerji" data-en="Cellular Energy">Hücresel Enerji</div></div>
+      <div class="meta-item"><div class="meta-num">Premium</div><div class="meta-label" data-tr="Formül" data-en="Formula">Formül</div></div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-title" data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</div>
+      <div class="cta-box-sub" data-tr="Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz." data-en="You can safely order through our official distributor link.">Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz.</div>
+      <a href="#" class="btn-cta" id="product-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span data-tr="Sipariş Ver" data-en="Place Order">Sipariş Ver</span>
+      </a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span data-tr="Güvenli Ödeme" data-en="Secure Payment">Güvenli Ödeme</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM1 10h22"/></svg><span data-tr="Hızlı Kargo" data-en="Fast Shipping">Hızlı Kargo</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg><span data-tr="Orijinal Ürün" data-en="Original Product">Orijinal Ürün</span></div>
+    </div>
+  </div>
+</div>
+<div class="product-tabs">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('benefits')" data-tr="Faydaları" data-en="Benefits">Faydaları</button>
+    <button class="tab-btn" onclick="showTab('ingredients')" data-tr="İçerik" data-en="Ingredients">İçerik</button>
+    <button class="tab-btn" onclick="showTab('usage')" data-tr="Nasıl Kullanılır?" data-en="How to Use?">Nasıl Kullanılır?</button>
+  </div>
+  <div class="tab-panel active" id="tab-benefits">
+    <div class="benefits-grid">
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Cilt bakım rutinine premium bir dokunuş katar" data-en="Adds a premium touch to your skincare routine">Cilt bakım rutinine premium bir dokunuş katar</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Hafif ipeksi formülü ile günlük kullanıma uygundur" data-en="Suitable for daily use with its light silky formula">Hafif ipeksi formülü ile günlük kullanıma uygundur</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Canlı ve bakımlı bir görünüm sağlar" data-en="Provides a vibrant and well-maintained appearance">Canlı ve bakımlı bir görünüm sağlar</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Çok katmanlı nem ile uzun süreli hidrasyon sunar" data-en="Offers long-lasting hydration with multi-layer moisture">Çok katmanlı nem ile uzun süreli hidrasyon sunar</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="NAD+ ile hücresel enerji artırır ve yaşlanma belirtilerini azaltır" data-en="Increases cellular energy and reduces signs of aging with NAD+">NAD+ ile hücresel enerji artırır ve yaşlanma belirtilerini azaltır</span></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-ingredients"><div class="ingredients-list">
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Hyaluronik Asit" data-en="Hyaluronic Acid">Hyaluronik Asit</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Kendi ağırlığının binlerce katı su tutabilen doğal bir nemlendiricidir. Cilt elastikiyetini artırır, ince çizgileri azaltır ve derin nemlendirme sağlar." data-en="It is a natural moisturizer that can hold thousands of times its weight in water. Increases skin elasticity, reduces fine lines and provides deep hydration.">Kendi ağırlığının binlerce katı su tutabilen doğal bir nemlendiricidir. Cilt elastikiyetini artırır, ince çizgileri azaltır ve derin nemlendirme sağlar.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Niacinamide (B3 Vitamini)" data-en="Niacinamide (Vitamin B3)">Niacinamide (B3 Vitamini)</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Cilt tonunu eşitler, gözenek görünümünü azaltır ve nem bariyerini güçlendirir. Aydınlatıcı etkisiyle premium formülün temel bileşenidir." data-en="Evens skin tone, reduces pore appearance and strengthens the moisture barrier. The basic component of the premium formula with its brightening effect.">Cilt tonunu eşitler, gözenek görünümünü azaltır ve nem bariyerini güçlendirir. Aydınlatıcı etkisiyle premium formülün temel bileşenidir.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Hydrolyzed Collagen" data-en="Hydrolyzed Collagen">Hydrolyzed Collagen</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Cildin nem bariyerini güçlendirir, elastikiyet kazandırır ve ince kırışıklıkların görünümünü azaltır." data-en="Strengthens the skin's moisture barrier, provides elasticity and reduces the appearance of fine wrinkles.">Cildin nem bariyerini güçlendirir, elastikiyet kazandırır ve ince kırışıklıkların görünümünü azaltır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Deniz Yosunu Ekstresi" data-en="Sea Algae Extract">Deniz Yosunu Ekstresi</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Mineral, vitamin ve antioksidan açısından zengin deniz yosunu ekstresi cildi besler, nem dengesi sağlar ve çevresel stresten korur." data-en="Rich in minerals, vitamins and antioxidants, sea algae extract nourishes skin, provides moisture balance and protects against environmental stress.">Mineral, vitamin ve antioksidan açısından zengin deniz yosunu ekstresi cildi besler, nem dengesi sağlar ve çevresel stresten korur.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Microcitrus Australasica (Lime Pearl)" data-en="Microcitrus Australasica (Lime Pearl)">Microcitrus Australasica (Lime Pearl)</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Avustralya'ya özgü nadir bir narenciye türünden elde edilen bu ekstrakt, güçlü antioksidan özellikleriyle cildi serbest radikallere karşı korur ve aydınlatma etkisi sağlar." data-en="This extract from a rare citrus variety native to Australia protects skin against free radicals with its powerful antioxidant properties and provides brightening effect.">Avustralya'ya özgü nadir bir narenciye türünden elde edilen bu ekstrakt, güçlü antioksidan özellikleriyle cildi serbest radikallere karşı korur ve aydınlatma etkisi sağlar.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name">Centella Asiatica</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Geleneksel tıpta binlerce yıldır kullanılan bir bitkidir. Cilt onarımını destekler, kızarıklık ve tahrişi azaltır, kolajen sentezini uyarır." data-en="A plant used in traditional medicine for thousands of years. Supports skin repair, reduces redness and irritation, stimulates collagen synthesis.">Geleneksel tıpta binlerce yıldır kullanılan bir bitkidir. Cilt onarımını destekler, kızarıklık ve tahrişi azaltır, kolajen sentezini uyarır.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="NAD+ (Nicotinamide Adenine Dinucleotide)" data-en="NAD+ (Nicotinamide Adenine Dinucleotide)">NAD+</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Hücresel enerji metabolizmasında kritik rol oynayan bir koenzimdir. Yaşlanmayla azalan NAD+ seviyelerini destekler, DNA onarımını artırır ve mitokondriyal işlevi iyileştirir. Anti-aging araştırmalarında öne çıkan bir bileşendir." data-en="It is a coenzyme that plays a critical role in cellular energy metabolism. Supports NAD+ levels that decrease with aging, increases DNA repair and improves mitochondrial function. A prominent component in anti-aging research.">Hücresel enerji metabolizmasında kritik rol oynayan bir koenzimdir. Yaşlanmayla azalan NAD+ seviyelerini destekler, DNA onarımını artırır ve mitokondriyal işlevi iyileştirir. Anti-aging araştırmalarında öne çıkan bir bileşendir.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Acetyl Hexapeptide-8 (Argireline)" data-en="Acetyl Hexapeptide-8 (Argireline)">Acetyl Hexapeptide-8</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Mimik kas kasılmasını azaltan, botoks etkisine benzer peptittir. İfade çizgilerini ve kırışıklıkları azaltır. Topikal kullanım için tamamen güvenlidir." data-en="A peptide similar to botox effect that reduces facial muscle contraction. Reduces expression lines and wrinkles. Completely safe for topical use.">Mimik kas kasılmasını azaltan, botoks etkisine benzer peptittir. İfade çizgilerini ve kırışıklıkları azaltır. Topikal kullanım için tamamen güvenlidir.</p></div></div>
+  </div></div>
+  <div class="tab-panel" id="tab-usage"><div class="usage-steps">
+    <div class="usage-step"><div class="step-num">1</div><div class="step-content"><div class="step-title" data-tr="Temizlik Sonrası" data-en="After Cleansing">Temizlik Sonrası</div><div class="step-desc" data-tr="Yüzünüzü temizleyin ve tonik adımını tamamlayın. Serum uygulamasına hazır olun." data-en="Cleanse your face and complete the toner step. Get ready for serum application.">Yüzünüzü temizleyin ve tonik adımını tamamlayın. Serum uygulamasına hazır olun.</div></div></div>
+    <div class="usage-step"><div class="step-num">2</div><div class="step-content"><div class="step-title" data-tr="Serumu Uygulayın" data-en="Apply Serum">Serumu Uygulayın</div><div class="step-desc" data-tr="2-3 damla serumu parmaklarınıza alın. Avuçlarınız arasında kısa süre ısıtın." data-en="Take 2-3 drops of serum on your fingers. Warm briefly between your palms.">2-3 damla serumu parmaklarınıza alın. Avuçlarınız arasında kısa süre ısıtın.</div></div></div>
+    <div class="usage-step"><div class="step-num">3</div><div class="step-content"><div class="step-title" data-tr="Hafif Vuruşlarla Yedirin" data-en="Pat In Gently">Hafif Vuruşlarla Yedirin</div><div class="step-desc" data-tr="Yüzünüze hafif vuruş hareketleriyle uygulayın. Göz çevresine özellikle özen gösterin." data-en="Apply to your face with gentle patting motions. Pay special attention to the eye area.">Yüzünüze hafif vuruş hareketleriyle uygulayın. Göz çevresine özellikle özen gösterin.</div></div></div>
+    <div class="usage-step"><div class="step-num">4</div><div class="step-content"><div class="step-title" data-tr="Günlük Kullanım" data-en="Daily Use">Günlük Kullanım</div><div class="step-desc" data-tr="Sabah veya akşam günlük rutininizde nemlendirici öncesinde kullanın." data-en="Use in your daily routine morning or evening before moisturizer.">Sabah veya akşam günlük rutininizde nemlendirici öncesinde kullanın.</div></div></div>
+  </div></div>
+</div>
+<footer style="background:#0D1A2E;color:rgba(255,255,255,0.6);padding:48px 24px 32px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div style="color:white;font-family:'Playfair Display',serif;font-size:20px;">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div style="display:flex;gap:24px;">
+      <a href="index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+      <a href="urunler.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="iletisim.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div style="font-size:12px;text-align:center;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);margin-top:8px;" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+<script src="product-script.js"></script>
+</body>
+</html>

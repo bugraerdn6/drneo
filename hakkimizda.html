@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakkımızda — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #1B3A6B; --green-light: #2E63BE; --green-pale: #EAF0FB;
+      --green-mid: #C2D4F0; --white: #FFFFFF; --off-white: #F5F7FC;
+      --text: #15243C; --text-muted: #4A6080; --border: #C8D8EC;
+      --red: #C0392B; --red-light: #E74C3C;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.88); background: #15243C; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(18,32,52,0.96); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.07); height: 88px;
+      display: flex; align-items: center;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 46px; color: white; font-weight: 700; letter-spacing: -0.5px; line-height: 1; }
+    .logo-dot { color: var(--red); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.55); font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: white; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .lang-toggle { display: flex; align-items: center; background: rgba(255,255,255,0.08); border-radius: 20px; padding: 4px; gap: 2px; }
+    .lang-btn { padding: 4px 12px; border-radius: 16px; border: none; font-size: 12px; font-weight: 600; cursor: pointer; transition: all .2s; background: transparent; color: rgba(255,255,255,0.45); }
+    .lang-btn.active { background: var(--green); color: white; }
+    .nav-cta { background: var(--red); color: white; padding: 9px 20px; border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: 600; transition: background .2s; }
+    .nav-cta:hover { background: var(--red-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: rgba(255,255,255,0.8); border-radius: 2px; transition: .3s; }
+
+    .mobile-menu { display: none; position: fixed; top: 88px; left: 0; right: 0; background: #162640; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 20px 24px; flex-direction: column; gap: 16px; z-index: 99; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,0.75); text-decoration: none; font-weight: 500; font-size: 15px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 120px 24px 80px;
+      background: linear-gradient(135deg, #162640 0%, #192C50 60%);
+      text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .page-hero-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--green-light); text-transform: uppercase; margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); line-height: 1.15; margin-bottom: 20px; color: white; }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,0.5); max-width: 580px; margin: 0 auto; line-height: 1.75; }
+
+    /* STORY */
+    .story { padding: 80px 24px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .story-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 38px); margin-bottom: 20px; color: white; }
+    .story-text p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 16px; }
+    .story-visual { background: var(--green); border-radius: 28px; padding: 48px; color: white; position: relative; overflow: hidden; }
+    .story-visual::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: rgba(255,255,255,0.06); border-radius: 50%; }
+    .story-visual::after { content: ''; position: absolute; bottom: -20px; left: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+    .story-stat { margin-bottom: 32px; }
+    .story-stat-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--green-light); line-height: 1; }
+    .story-stat-label { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 6px; }
+
+    /* MISSION */
+    .mission { padding: 80px 24px; background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .mission-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--green-light); text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); margin-bottom: 16px; color: white; }
+    .section-sub { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+    .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .card { background: #1D2E47; border-radius: 20px; border: 1px solid rgba(255,255,255,0.07); padding: 36px 28px; }
+    .card-icon { width: 52px; height: 52px; background: rgba(46,99,190,0.2); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .card-icon svg { width: 26px; height: 26px; stroke: var(--green-light); fill: none; stroke-width: 1.8; }
+    .card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; color: white; }
+    .card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+    /* VALUES */
+    .values { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+    .values-list { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; overflow: hidden; }
+    .value-row { display: grid; grid-template-columns: 56px 1fr; align-items: center; gap: 24px; padding: 28px 32px; border-bottom: 1px solid rgba(255,255,255,0.06); transition: background .2s; }
+    .value-row:last-child { border-bottom: none; }
+    .value-row:hover { background: rgba(46,99,190,0.1); }
+    .value-num { font-family: 'Playfair Display', serif; font-size: 28px; color: rgba(46,99,190,0.5); font-weight: 700; }
+    .value-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: white; }
+    .value-content p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+    /* DISTRIBUTOR */
+    .distributor { padding: 80px 24px; background: linear-gradient(135deg, var(--green) 0%, #0d2347 100%); }
+    .distributor-inner { max-width: 700px; margin: 0 auto; text-align: center; color: white; }
+    .distributor h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); margin-bottom: 20px; }
+    .distributor p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: 36px; }
+    .btn-white { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--red); padding: 14px 32px; border-radius: 50px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all .2s; }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-white svg { width: 18px; height: 18px; }
+
+    footer { background: #0D1A2E; color: rgba(255,255,255,0.6); padding: 48px 24px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { color: white; font-family: 'Playfair Display', serif; font-size: 20px; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color .2s; }
+    .footer-links a:hover { color: white; }
+    .footer-copy { font-size: 12px; text-align: center; width: 100%; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 8px; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .story { grid-template-columns: 1fr; gap: 40px; }
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .value-row { grid-template-columns: 40px 1fr; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg><span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" class="active" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta" data-tr="Sipariş Ver" data-en="Order Now">Sipariş Ver</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+  <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-tag" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</div>
+  <h1 data-tr="Sağlığı Hayatın Merkezine<br>Koyuyoruz" data-en="Putting Health at the<br>Center of Life">Sağlığı Hayatın Merkezine<br>Koyuyoruz</h1>
+  <p data-tr="Dr. Neo olarak, yenilikçi formüller ve doğal içeriklerle hazırlanmış Doctorem ürünlerini Türkiye'ye taşıyor; sizi güvenilir, bilimsel ve ulaşılabilir sağlık çözümleriyle buluşturuyoruz." data-en="As Dr. Neo, we bring Doctorem products — crafted with innovative formulas and natural ingredients — to Turkey, connecting you with reliable, science-backed and accessible health solutions.">Dr. Neo olarak, yenilikçi formüller ve doğal içeriklerle hazırlanmış Doctorem ürünlerini Türkiye'ye taşıyor; sizi güvenilir, bilimsel ve ulaşılabilir sağlık çözümleriyle buluşturuyoruz.</p>
+</div>
+
+<!-- STORY -->
+<div class="story">
+  <div class="story-text">
+    <div class="section-tag" data-tr="Hikayemiz" data-en="Our Story">Hikayemiz</div>
+    <h2 data-tr="Sağlıklı Bir Geleceğe Adım Attık" data-en="We Stepped Toward a Healthier Future">Sağlıklı Bir Geleceğe Adım Attık</h2>
+    <p data-tr="Dr. Neo, kaliteli ve yenilikçi sağlık ürünlerine erişimi herkes için kolaylaştırma hedefiyle kuruldu. Tüketicilerin ihtiyaçlarını, bilimsel araştırmalar ve doğanın sunduğu olanaklarla birleştirerek gerçek değer yaratmak istedik." data-en="Dr. Neo was founded with the goal of making access to quality and innovative health products easy for everyone. We wanted to create real value by combining the needs of consumers with scientific research and the opportunities offered by nature.">Dr. Neo, kaliteli ve yenilikçi sağlık ürünlerine erişimi herkes için kolaylaştırma hedefiyle kuruldu. Tüketicilerin ihtiyaçlarını, bilimsel araştırmalar ve doğanın sunduğu olanaklarla birleştirerek gerçek değer yaratmak istedik.</p>
+    <p data-tr="Doctorem International'ın yetkili distribütörü olarak, transdermal bantlardan kozmetik serilere, bitkisel çaylardan fonksiyonel kahvelere uzanan geniş ürün yelpazemizle sağlıklı yaşamın her alanında yanınızdayız." data-en="As an authorized distributor of Doctorem International, we are by your side in every aspect of healthy living — from transdermal patches to cosmetic series, from herbal teas to functional coffees.">Doctorem International'ın yetkili distribütörü olarak, transdermal bantlardan kozmetik serilere, bitkisel çaylardan fonksiyonel kahvelere uzanan geniş ürün yelpazemizle sağlıklı yaşamın her alanında yanınızdayız.</p>
+  </div>
+  <div class="story-visual">
+    <div class="story-stat">
+      <div class="story-stat-num">26+</div>
+      <div class="story-stat-label" data-tr="Ürün Çeşidi" data-en="Product Varieties">Ürün Çeşidi</div>
+    </div>
+    <div class="story-stat">
+      <div class="story-stat-num">5</div>
+      <div class="story-stat-label" data-tr="Kategori" data-en="Categories">Kategori</div>
+    </div>
+    <div class="story-stat" style="margin-bottom:0">
+      <div class="story-stat-num">%100</div>
+      <div class="story-stat-label" data-tr="Orijinal & Garantili" data-en="Original & Guaranteed">Orijinal &amp; Garantili</div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION -->
+<div class="mission">
+  <div class="mission-inner">
+    <div class="section-header">
+      <div class="section-tag" data-tr="Misyonumuz" data-en="Our Mission">Misyonumuz</div>
+      <h2 class="section-title" data-tr="Neden Varız?" data-en="Why Do We Exist?">Neden Varız?</h2>
+      <p class="section-sub" data-tr="Her ürünün arkasında bir neden, her formülün arkasında bir bilim var." data-en="Behind every product there is a reason, behind every formula there is a science.">Her ürünün arkasında bir neden, her formülün arkasında bir bilim var.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 data-tr="Güvenilir Kaynak" data-en="Trusted Source">Güvenilir Kaynak</h3>
+        <p data-tr="Doctorem International'ın Türkiye yetkili distribütörüyüz. Her ürün orijinallik garantisiyle gelir, doğrudan resmi kaynaktan temin edilir." data-en="We are the official distributor of Doctorem International in Turkey. Every product comes with an authenticity guarantee, sourced directly from the official channel.">Doctorem International'ın Türkiye yetkili distribütörüyüz. Her ürün orijinallik garantisiyle gelir, doğrudan resmi kaynaktan temin edilir.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        </div>
+        <h3 data-tr="Bilimsel Formüller" data-en="Scientific Formulas">Bilimsel Formüller</h3>
+        <p data-tr="Sunduğumuz her ürün, klinik araştırmalar ve bilimsel çalışmalar sonucunda geliştirilen, etkinliği kanıtlanmış formüllere sahiptir." data-en="Every product we offer has formulas developed as a result of clinical research and scientific studies with proven efficacy.">Sunduğumuz her ürün, klinik araştırmalar ve bilimsel çalışmalar sonucunda geliştirilen, etkinliği kanıtlanmış formüllere sahiptir.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3 data-tr="Sağlığa Saygı" data-en="Respect for Health">Sağlığa Saygı</h3>
+        <p data-tr="Ürün seçimlerimizde zararlı katkı maddelerinden arınmış, doğal ve güvenli içeriklere öncelik veriyoruz. Bedeninize saygılı formüller sunmak temel ilkemizdir." data-en="In our product selection, we prioritize natural and safe ingredients free from harmful additives. Offering formulas that respect your body is our fundamental principle.">Ürün seçimlerimizde zararlı katkı maddelerinden arınmış, doğal ve güvenli içeriklere öncelik veriyoruz. Bedeninize saygılı formüller sunmak temel ilkemizdir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUES -->
+<div class="values">
+  <div class="section-header">
+    <div class="section-tag" data-tr="Değerlerimiz" data-en="Our Values">Değerlerimiz</div>
+    <h2 class="section-title" data-tr="Bizi Biz Yapan İlkeler" data-en="The Principles That Define Us">Bizi Biz Yapan İlkeler</h2>
+  </div>
+  <div class="values-list">
+    <div class="value-row">
+      <div class="value-num">01</div>
+      <div class="value-content">
+        <h4 data-tr="Şeffaflık" data-en="Transparency">Şeffaflık</h4>
+        <p data-tr="Ürünlerimizin içeriklerini, etkilerini ve kullanım bilgilerini eksiksiz paylaşırız. Gizli bir şey yoktur." data-en="We fully share the ingredients, effects and usage information of our products. There is nothing hidden.">Ürünlerimizin içeriklerini, etkilerini ve kullanım bilgilerini eksiksiz paylaşırız. Gizli bir şey yoktur.</p>
+      </div>
+    </div>
+    <div class="value-row">
+      <div class="value-num">02</div>
+      <div class="value-content">
+        <h4 data-tr="Kalite" data-en="Quality">Kalite</h4>
+        <p data-tr="Yetkili distribütörlük statümüzle her ürünün orijinalliğini ve kalitesini garanti ederiz. Taklit ya da düşük kaliteli ürünlere yer yoktur." data-en="With our authorized distributor status, we guarantee the originality and quality of every product. There is no room for imitation or low-quality products.">Yetkili distribütörlük statümüzle her ürünün orijinalliğini ve kalitesini garanti ederiz. Taklit ya da düşük kaliteli ürünlere yer yoktur.</p>
+      </div>
+    </div>
+    <div class="value-row">
+      <div class="value-num">03</div>
+      <div class="value-content">
+        <h4 data-tr="Ulaşılabilirlik" data-en="Accessibility">Ulaşılabilirlik</h4>
+        <p data-tr="Sağlıklı yaşam bir ayrıcalık değil, herkesin hakkıdır. Ürünlerimizi herkese kolayca ulaşılabilir kılmak için çalışıyoruz." data-en="Healthy living is not a privilege, it is everyone's right. We work to make our products easily accessible to everyone.">Sağlıklı yaşam bir ayrıcalık değil, herkesin hakkıdır. Ürünlerimizi herkese kolayca ulaşılabilir kılmak için çalışıyoruz.</p>
+      </div>
+    </div>
+    <div class="value-row">
+      <div class="value-num">04</div>
+      <div class="value-content">
+        <h4 data-tr="Sürdürülebilirlik" data-en="Sustainability">Sürdürülebilirlik</h4>
+        <p data-tr="Vegan formüller, çevreye duyarlı paketler ve hayvan deneyi içermeyen üretim anlayışı önceliğimizdir." data-en="Vegan formulas, eco-friendly packaging and cruelty-free production philosophy are our priority.">Vegan formüller, çevreye duyarlı paketler ve hayvan deneyi içermeyen üretim anlayışı önceliğimizdir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISTRIBUTOR CTA -->
+<div class="distributor">
+  <div class="distributor-inner">
+    <h2 data-tr="Doctorem International'ın Yetkili Distribütörü" data-en="Authorized Distributor of Doctorem International">Doctorem International'ın Yetkili Distribütörü</h2>
+    <p data-tr="Tüm ürünler, resmi distribütör ağımız aracılığıyla orijinallik ve güvenlik garantisiyle sunulmaktadır. Sipariş vermek için yetkili Doctorem platformuna yönlendirilirsiniz." data-en="All products are offered through our official distributor network with authenticity and safety guarantees. You will be redirected to the authorized Doctorem platform to place an order.">Tüm ürünler, resmi distribütör ağımız aracılığıyla orijinallik ve güvenlik garantisiyle sunulmaktadır. Sipariş vermek için yetkili Doctorem platformuna yönlendirilirsiniz.</p>
+    <a href="urunler.html" class="btn-white">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <span data-tr="Ürünleri Keşfet" data-en="Discover Products">Ürünleri Keşfet</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div class="footer-links">
+      <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="footer-copy" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+
+<script>
+  const REFERRAL_LINK = 'https://doctoremglobal.com/index?ref=90195101';
+  function setLang(lang) {
+    document.querySelectorAll('[data-tr]').forEach(el => {
+      el.innerHTML = lang === 'tr' ? el.dataset.tr : el.dataset.en;
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    localStorage.setItem('drneo-lang', lang);
+  }
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('drneo-lang');
+    if (saved && saved !== 'tr') setLang(saved);
+    document.getElementById('nav-cta').href = REFERRAL_LINK;
+  });
+</script>
+<style>.whatsapp-btn{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.45);z-index:999;transition:all .3s}.whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.65)}.whatsapp-btn svg{width:28px;height:28px}.whatsapp-tooltip{position:absolute;right:64px;background:rgba(0,0,0,0.75);color:white;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}.whatsapp-btn:hover .whatsapp-tooltip{opacity:1}</style><a href="https://wa.me/905469576197" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="whatsapp-tooltip">Bize Yazın</span></a></body>
+</html>

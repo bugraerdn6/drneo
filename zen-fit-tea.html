@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zen Fit Tea — Dr. Neo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="product-style.css" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-pill" width="44" height="24" viewBox="0 0 44 24" fill="none"><defs><clipPath id="lp"><rect width="44" height="24" rx="12"/></clipPath></defs><g clip-path="url(#lp)"><polygon points="0,0 26,0 18,24 0,24" fill="#C0392B"/><polygon points="26,0 44,0 44,24 18,24" fill="#1B3A6B"/></g></svg><span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+    </a>
+    <div class="nav-links">
+      <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="index.html#why" data-tr="Neden Dr. Neo?" data-en="Why Dr. Neo?">Neden Dr. Neo?</a>
+      <a href="hakkimizda.html" data-tr="Hakkımızda" data-en="About Us">Hakkımızda</a>
+      <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('tr')">TR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#" class="nav-cta" id="nav-cta" data-tr="Sipariş Ver" data-en="Order Now">Sipariş Ver</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Ana Sayfa</a><a href="urunler.html">Ürünler</a>
+  <a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a>
+</div>
+<div class="breadcrumb">
+  <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <a href="urunler.html" data-tr="Ürünler" data-en="Products">Ürünler</a>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  <span>Zen Fit Tea</span>
+</div>
+<div class="product-hero">
+  <div class="product-gallery">
+    <div class="main-img"><img src="images/zen-fit-tea.png" alt="Zen Fit Tea" /></div>
+    <div class="img-badge-row">
+      <div class="img-badge"><strong>30</strong><span data-tr="Saşe/Kutu" data-en="Sachets/Box">Saşe/Kutu</span></div>
+      <div class="img-badge"><strong>3.5gr</strong><span data-tr="Saşe" data-en="Per Sachet">Saşe</span></div>
+      <div class="img-badge"><strong>Şekersiz</strong><span data-tr="Formül" data-en="Formula">Formül</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="product-cat-tag" data-tr="Beslenme · Bitki Çayı" data-en="Nutrition · Herbal Tea">Beslenme · Bitki Çayı</div>
+    <h1 class="product-title">Zen Fit Tea</h1>
+    <p class="product-subtitle" data-tr="Matcha, yeşil çay, mate ve bitki ekstreleri içeren premium bitki çayı karışımı. Enerji, zindelik ve antioksidan koruması bir arada." data-en="Premium herbal tea blend with matcha, green tea, mate and plant extracts. Energy, vitality and antioxidant protection combined.">Matcha, yeşil çay, mate ve bitki ekstreleri içeren premium bitki çayı karışımı. Enerji, zindelik ve antioksidan koruması bir arada.</p>
+    <div class="highlights">
+      <div class="highlight-item"><span class="highlight-icon">🍵</span><span class="highlight-text" data-tr="Matcha ve yeşil çay ile doğal enerji ve zindelik." data-en="Natural energy and vitality with matcha and green tea.">Matcha ve yeşil çay ile doğal enerji ve zindelik.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">🌿</span><span class="highlight-text" data-tr="Zencefil ve bitki ekstreleri ile ferahlık." data-en="Freshness with ginger and plant extracts.">Zencefil ve bitki ekstreleri ile ferahlık.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">✨</span><span class="highlight-text" data-tr="Güçlü antioksidan içeriği, şeker içermez." data-en="Strong antioxidant content, no sugar.">Güçlü antioksidan içeriği, şeker içermez.</span></div>
+      <div class="highlight-item"><span class="highlight-icon">⚡</span><span class="highlight-text" data-tr="Mate ile aktif yaşam tarzını destekler." data-en="Supports active lifestyle with mate.">Mate ile aktif yaşam tarzını destekler.</span></div>
+    </div>
+    <div class="product-meta">
+      <div class="meta-item"><div class="meta-num">30</div><div class="meta-label" data-tr="Saşe/Kutu" data-en="Sachets/Box">Saşe/Kutu</div></div>
+      <div class="meta-item"><div class="meta-num">3.5gr</div><div class="meta-label" data-tr="Saşe Ağırlığı" data-en="Sachet Weight">Saşe Ağırlığı</div></div>
+      <div class="meta-item"><div class="meta-num">2x</div><div class="meta-label" data-tr="Günlük Porsiyon" data-en="Daily Servings">Günlük Porsiyon</div></div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-title" data-tr="Hemen Sipariş Ver" data-en="Order Now">Hemen Sipariş Ver</div>
+      <div class="cta-box-sub" data-tr="Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz." data-en="You can safely order through our official distributor link.">Resmi distribütör linkimiz üzerinden güvenle sipariş verebilirsiniz.</div>
+      <a href="#" class="btn-cta" id="product-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span data-tr="Sipariş Ver" data-en="Place Order">Sipariş Ver</span>
+      </a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span data-tr="Güvenli Ödeme" data-en="Secure Payment">Güvenli Ödeme</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM1 10h22"/></svg><span data-tr="Hızlı Kargo" data-en="Fast Shipping">Hızlı Kargo</span></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg><span data-tr="Orijinal Ürün" data-en="Original Product">Orijinal Ürün</span></div>
+    </div>
+  </div>
+</div>
+<div class="product-tabs">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('benefits')" data-tr="Faydaları" data-en="Benefits">Faydaları</button>
+    <button class="tab-btn" onclick="showTab('ingredients')" data-tr="İçerik" data-en="Ingredients">İçerik</button>
+    <button class="tab-btn" onclick="showTab('usage')" data-tr="Nasıl Kullanılır?" data-en="How to Use?">Nasıl Kullanılır?</button>
+  </div>
+  <div class="tab-panel active" id="tab-benefits">
+    <div class="benefits-grid">
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Matcha ve yeşil çay ile sürekli ve dengeli enerji sağlar" data-en="Provides continuous and balanced energy with matcha and green tea">Matcha ve yeşil çay ile sürekli ve dengeli enerji sağlar</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Mate ile aktif yaşam tarzını ve fiziksel performansı destekler" data-en="Supports active lifestyle and physical performance with mate">Mate ile aktif yaşam tarzını ve fiziksel performansı destekler</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Zengin antioksidan içeriği serbest radikallere karşı korur" data-en="Rich antioxidant content protects against free radicals">Zengin antioksidan içeriği serbest radikallere karşı korur</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Zencefil ve bitki ekstreleri ile sindirim sistemini destekler" data-en="Supports digestive system with ginger and plant extracts">Zencefil ve bitki ekstreleri ile sindirim sistemini destekler</span></div>
+      <div class="benefit-item"><div class="benefit-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="benefit-text" data-tr="Şeker içermez, sağlıklı ve düşük kalorili bir içecek seçeneğidir" data-en="No sugar, a healthy and low-calorie beverage option">Şeker içermez, sağlıklı ve düşük kalorili bir içecek seçeneğidir</span></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab-ingredients"><div class="ingredients-list">
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Matcha" data-en="Matcha">Matcha</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Tüm yaprağın öğütülmesiyle elde edilen premium yeşil çay tozudur. Normal yeşil çaydan çok daha yoğun bir antioksidan, L-theanine ve kafein profili sunar. L-theanine ve kafein kombinasyonu sakin bir uyanıklık hali sağlar." data-en="It is a premium green tea powder obtained by grinding the entire leaf. Offers a much more intense antioxidant, L-theanine and caffeine profile than regular green tea. The combination of L-theanine and caffeine provides a calm alertness.">Tüm yaprağın öğütülmesiyle elde edilen premium yeşil çay tozudur. Normal yeşil çaydan çok daha yoğun bir antioksidan, L-theanine ve kafein profili sunar. L-theanine ve kafein kombinasyonu sakin bir uyanıklık hali sağlar.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Yeşil Çay" data-en="Green Tea">Yeşil Çay</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="EGCG (epigallokatechin gallat) açısından zengin güçlü bir antioksidandır. Metabolizmayı hızlandırır, kardiyovasküler sağlığı destekler ve beyin fonksiyonlarını iyileştirir. Dünya genelinde en çok tüketilen sağlık içeceklerinden biridir." data-en="It is a powerful antioxidant rich in EGCG (epigallocatechin gallate). Accelerates metabolism, supports cardiovascular health and improves brain functions. It is one of the most consumed health drinks in the world.">EGCG (epigallokatechin gallat) açısından zengin güçlü bir antioksidandır. Metabolizmayı hızlandırır, kardiyovasküler sağlığı destekler ve beyin fonksiyonlarını iyileştirir. Dünya genelinde en çok tüketilen sağlık içeceklerinden biridir.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Yerba Mate" data-en="Yerba Mate">Yerba Mate</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Güney Amerika'da aktif yaşam tarzı için yüzyıllardır tüketilen geleneksel bir içecektir. Enerji, fiziksel performans ve zihinsel keskinliği artırır. Matein adı verilen kafein benzeri bir bileşik içerir; kahve kadar sert bir etki yapmaz." data-en="It is a traditional beverage consumed for centuries for an active lifestyle in South America. Increases energy, physical performance and mental sharpness. Contains a caffeine-like compound called matein; does not have as harsh an effect as coffee.">Güney Amerika'da aktif yaşam tarzı için yüzyıllardır tüketilen geleneksel bir içecektir. Enerji, fiziksel performans ve zihinsel keskinliği artırır. Matein adı verilen kafein benzeri bir bileşik içerir; kahve kadar sert bir etki yapmaz.</p></div></div>
+    <div class="ingredient-item"><div class="ingredient-header" onclick="toggleIngredient(this)"><span class="ingredient-name" data-tr="Kuşburnu, Tarçın, Zencefil ve Bitki Ekstreleri" data-en="Rosehip, Cinnamon, Ginger and Plant Extracts">Kuşburnu, Tarçın, Zencefil ve Bitki Ekstreleri</span><svg class="ingredient-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6080" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="ingredient-body"><p class="ingredient-desc" data-tr="Kuşburnu C vitamini ile bağışıklık güçlendirir; tarçın kan şekerini dengeler ve lezzet katar; zencefil sindirim ve antiinflamatuar etkiyle ferahlık sağlar. Bu kombinasyon çaya dengeli ve ferahlatıcı bir lezzet profili kazandırır." data-en="Rosehip strengthens immunity with vitamin C; cinnamon balances blood sugar and adds flavor; ginger provides freshness with digestive and anti-inflammatory effects. This combination gives the tea a balanced and refreshing flavor profile.">Kuşburnu C vitamini ile bağışıklık güçlendirir; tarçın kan şekerini dengeler ve lezzet katar; zencefil sindirim ve antiinflamatuar etkiyle ferahlık sağlar. Bu kombinasyon çaya dengeli ve ferahlatıcı bir lezzet profili kazandırır.</p></div></div>
+  </div></div>
+  <div class="tab-panel" id="tab-usage"><div class="usage-steps">
+    <div class="usage-step"><div class="step-num">1</div><div class="step-content"><div class="step-title" data-tr="Suyu Isıtın" data-en="Heat Water">Suyu Isıtın</div><div class="step-desc" data-tr="200ml suyu ısıtın, ideal sıcaklık 80-85°C'dir. Matcha için kaynar su kullanmayın." data-en="Heat 200ml of water, ideal temperature is 80-85°C. Do not use boiling water for matcha.">200ml suyu ısıtın, ideal sıcaklık 80-85°C'dir. Matcha için kaynar su kullanmayın.</div></div></div>
+    <div class="usage-step"><div class="step-num">2</div><div class="step-content"><div class="step-title" data-tr="Demleme Süresi" data-en="Brewing Time">Demleme Süresi</div><div class="step-desc" data-tr="Saşeyi bardağa yerleştirin ve sıcak suyu üzerine dökün. 3-4 dakika demlenmesini bekleyin." data-en="Place the sachet in a glass and pour hot water over it. Wait 3-4 minutes to brew.">Saşeyi bardağa yerleştirin ve sıcak suyu üzerine dökün. 3-4 dakika demlenmesini bekleyin.</div></div></div>
+    <div class="usage-step"><div class="step-num">3</div><div class="step-content"><div class="step-title" data-tr="Hazır" data-en="Ready">Hazır</div><div class="step-desc" data-tr="Saşeyi çıkarın. Şeker eklemeden sıcak veya soğutarak tüketin." data-en="Remove the sachet. Consume hot or cooled without adding sugar.">Saşeyi çıkarın. Şeker eklemeden sıcak veya soğutarak tüketin.</div></div></div>
+    <div class="usage-step"><div class="step-num">4</div><div class="step-content"><div class="step-title" data-tr="Günde 1-2 Porsiyon" data-en="1-2 Servings Daily">Günde 1-2 Porsiyon</div><div class="step-desc" data-tr="Sabah veya öğle saatlerinde tüketilmesi önerilir. Kafein içeriği nedeniyle öğleden sonra ve geç saatlerde dikkatli olun." data-en="It is recommended to consume in the morning or noon. Be careful in the afternoon and late hours due to caffeine content.">Sabah veya öğle saatlerinde tüketilmesi önerilir. Kafein içeriği nedeniyle öğleden sonra ve geç saatlerde dikkatli olun.</div></div></div>
+  </div></div>
+</div>
+<footer style="background:#0D1A2E;color:rgba(255,255,255,0.6);padding:48px 24px 32px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div style="color:white;font-family:'Playfair Display',serif;font-size:20px;">Dr<span style="color:#C0392B">.</span> Neo</div>
+    <div style="display:flex;gap:24px;">
+      <a href="index.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+      <a href="urunler.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="Ürünler" data-en="Products">Ürünler</a>
+      <a href="iletisim.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;" data-tr="İletişim" data-en="Contact">İletişim</a>
+    </div>
+    <div style="font-size:12px;text-align:center;width:100%;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);margin-top:8px;" data-tr="© 2024 Dr. Neo. Tüm hakları saklıdır." data-en="© 2024 Dr. Neo. All rights reserved.">© 2024 Dr. Neo. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+<script src="product-script.js"></script>
+</body>
+</html>
