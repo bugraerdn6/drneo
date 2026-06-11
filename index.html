@@ -153,6 +153,82 @@
     .brand-pill-rate { font-size: 12px; font-weight: 700; color: #C0392B; }
     .brand-pill-more { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px 14px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); }
 
+    /* ── BAYİ BANNER ── */
+    .bayi-banner {
+      background: linear-gradient(135deg, #0d1826 0%, #1a1530 100%);
+      border-top: 1px solid rgba(192,57,43,0.2);
+      border-bottom: 1px solid rgba(192,57,43,0.2);
+      padding: 60px 24px;
+    }
+    .bayi-banner-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 32px; flex-wrap: wrap;
+    }
+    .bayi-banner-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--red); margin-bottom: 10px;
+    }
+    .bayi-banner-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 36px); color: white;
+      font-weight: 700; margin-bottom: 10px;
+    }
+    .bayi-banner-sub {
+      font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.6;
+    }
+    .bayi-banner-btn {
+      background: var(--red); color: white;
+      padding: 14px 36px; border-radius: 50px; border: none;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      white-space: nowrap; transition: all .25s;
+      box-shadow: 0 4px 20px rgba(192,57,43,0.4);
+      flex-shrink: 0;
+    }
+    .bayi-banner-btn:hover { background: var(--red-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(192,57,43,0.55); }
+
+    /* ── BAYİ MODAL ── */
+    .bayi-modal-box {
+      background: #1D2E47; border-radius: 24px;
+      border: 1px solid rgba(192,57,43,0.25);
+      padding: 40px; max-width: 560px; width: 100%;
+      position: relative; max-height: 90vh; overflow-y: auto;
+    }
+    .bayi-modal-close {
+      position: absolute; top: 16px; right: 20px;
+      background: rgba(255,255,255,0.08); border: none;
+      color: rgba(255,255,255,0.5); width: 32px; height: 32px;
+      border-radius: 50%; cursor: pointer; font-size: 14px;
+      transition: all .2s;
+    }
+    .bayi-modal-close:hover { background: rgba(255,255,255,0.15); color: white; }
+    .bayi-modal-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--red); margin-bottom: 10px;
+    }
+    .bayi-modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; color: white; font-weight: 700; margin-bottom: 12px;
+    }
+    .bayi-modal-sub {
+      font-size: 14px; color: rgba(255,255,255,0.45);
+      line-height: 1.65; margin-bottom: 28px;
+    }
+    .bayi-modal-features { display: flex; flex-direction: column; gap: 18px; margin-bottom: 32px; }
+    .bayi-modal-feature { display: flex; gap: 14px; align-items: flex-start; }
+    .bayi-feature-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .bayi-feature-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 3px; }
+    .bayi-feature-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .bayi-modal-wa {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: #25D366; color: white;
+      padding: 14px 32px; border-radius: 50px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      transition: all .25s; width: 100%;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    }
+    .bayi-modal-wa:hover { background: #1ebe5a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
+
     /* ── PRODUCTS SECTION ── */
     .products-section { padding: 0 24px 100px; max-width: 1200px; margin: 0 auto; }
     .filter-bar { padding: 28px 24px 20px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
@@ -893,6 +969,62 @@
     </a>
   </div>
 </section>
+
+<!-- BAYİ BANNER -->
+<section class="bayi-banner">
+  <div class="bayi-banner-inner">
+    <div class="bayi-banner-text">
+      <div class="bayi-banner-tag" data-tr="İŞ ORTAKLIĞI" data-en="PARTNERSHIP">İŞ ORTAKLIĞI</div>
+      <h2 class="bayi-banner-title" data-tr="Bayimiz Olmak İster Misiniz?" data-en="Want to Become Our Dealer?">Bayimiz Olmak İster Misiniz?</h2>
+      <p class="bayi-banner-sub" data-tr="Doctorem Global ürünlerini kendi bölgenizde satın, kazanmaya başlayın." data-en="Sell Doctorem Global products in your region and start earning.">Doctorem Global ürünlerini kendi bölgenizde satın, kazanmaya başlayın.</p>
+    </div>
+    <button class="bayi-banner-btn" onclick="document.getElementById('bayiModal').style.display='flex'" data-tr="Detaylı Bilgi Al →" data-en="Get Details →">Detaylı Bilgi Al →</button>
+  </div>
+</section>
+
+<!-- BAYİ MODAL -->
+<div id="bayiModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:999;align-items:center;justify-content:center;padding:24px;" onclick="if(event.target===this)this.style.display='none'">
+  <div class="bayi-modal-box">
+    <button class="bayi-modal-close" onclick="document.getElementById('bayiModal').style.display='none'">✕</button>
+    <div class="bayi-modal-tag" data-tr="BAYİLİK PROGRAMI" data-en="DEALER PROGRAM">BAYİLİK PROGRAMI</div>
+    <h3 class="bayi-modal-title" data-tr="Dr. Neo Bayisi Olun" data-en="Become a Dr. Neo Dealer">Dr. Neo Bayisi Olun</h3>
+    <p class="bayi-modal-sub" data-tr="Avrupa patentli Doctorem Global ürünlerini bölgenizde temsil edin. Büyüyen bir marka ile kazanmaya başlayın." data-en="Represent Doctorem Global products in your region. Start earning with a growing brand.">Avrupa patentli Doctorem Global ürünlerini bölgenizde temsil edin. Büyüyen bir marka ile kazanmaya başlayın.</p>
+    <div class="bayi-modal-features">
+      <div class="bayi-modal-feature">
+        <span class="bayi-feature-icon">📦</span>
+        <div>
+          <div class="bayi-feature-title" data-tr="Geniş Ürün Yelpazesi" data-en="Wide Product Range">Geniş Ürün Yelpazesi</div>
+          <div class="bayi-feature-desc" data-tr="Transdermal, kozmetik, beslenme ve daha fazlası." data-en="Transdermal, cosmetics, nutrition and more.">Transdermal, kozmetik, beslenme ve daha fazlası.</div>
+        </div>
+      </div>
+      <div class="bayi-modal-feature">
+        <span class="bayi-feature-icon">💰</span>
+        <div>
+          <div class="bayi-feature-title" data-tr="Rekabetçi Bayi Fiyatları" data-en="Competitive Dealer Prices">Rekabetçi Bayi Fiyatları</div>
+          <div class="bayi-feature-desc" data-tr="Yüksek kar marjıyla satış yapma imkânı." data-en="Opportunity to sell with high profit margins.">Yüksek kar marjıyla satış yapma imkânı.</div>
+        </div>
+      </div>
+      <div class="bayi-modal-feature">
+        <span class="bayi-feature-icon">🤝</span>
+        <div>
+          <div class="bayi-feature-title" data-tr="Sürekli Destek" data-en="Continuous Support">Sürekli Destek</div>
+          <div class="bayi-feature-desc" data-tr="Satış, pazarlama ve ürün konusunda yanınızdayız." data-en="We support you in sales, marketing and products.">Satış, pazarlama ve ürün konusunda yanınızdayız.</div>
+        </div>
+      </div>
+      <div class="bayi-modal-feature">
+        <span class="bayi-feature-icon">🌍</span>
+        <div>
+          <div class="bayi-feature-title" data-tr="Avrupa Patentli Ürünler" data-en="European Patented Products">Avrupa Patentli Ürünler</div>
+          <div class="bayi-feature-desc" data-tr="Güvenilir, sertifikalı ve uluslararası kalitede." data-en="Reliable, certified and internationally quality.">Güvenilir, sertifikalı ve uluslararası kalitede.</div>
+        </div>
+      </div>
+    </div>
+    <a href="https://wa.me/905469576197?text=Merhaba,%20Dr.%20Neo%20bayilik%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" class="bayi-modal-wa">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span data-tr="WhatsApp ile Bilgi Al" data-en="Get Info via WhatsApp">WhatsApp ile Bilgi Al</span>
+    </a>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
