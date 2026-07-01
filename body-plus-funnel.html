@@ -205,10 +205,10 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
     </div>
     <a href="#" class="cta-btn" id="cta-hero">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      WhatsApp Üzerinden İletişime Geçin
+      Ücretsiz Görüşme Planlayın
     </a>
     <div><a href="#paketler" class="cta-btn-ghost">Paketleri İncele</a></div>
-    <div class="cta-sub">Ankara merkezli, FDA/ISO sertifikalı ürün altyapısı</div>
+    <div class="cta-sub">Ücretsiz 30 dakikalık bilgilendirme görüşmesi · veya <a href="#" id="cta-hero-wa" style="color:inherit;text-decoration:underline;">WhatsApp'tan yazın</a></div>
     <div class="trust-row">
       <span>✓ Resmi Bayilik Başvurusu</span>
       <span>✓ Kurumsal Destek Süreci</span>
@@ -449,8 +449,9 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
     <p>Sorularınızı yanıtlayayım, birlikte size en uygun paketi belirleyelim.</p>
     <a href="#" class="cta-btn" id="cta-final">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      WhatsApp Üzerinden İletişime Geçin
+      Ücretsiz Görüşme Planlayın
     </a>
+    <div class="cta-sub" style="color:rgba(255,255,255,0.6);">veya <a href="#" id="cta-final-wa" style="color:inherit;text-decoration:underline;">WhatsApp'tan yazın</a></div>
   </div>
 </section>
 
@@ -460,14 +461,25 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-bar">
-  <a href="#" id="cta-sticky">WhatsApp Üzerinden İletişime Geçin →</a>
+  <a href="#" id="cta-sticky">Ücretsiz Görüşme Planlayın →</a>
 </div>
 
 <script>
   const REFERRAL_LINK = 'https://doctorembackoffice.com/90195101';
   const WHATSAPP_LINK = 'https://wa.me/905469576197?text=' + encodeURIComponent('Merhaba, Doctorem Global bayiliği hakkında bilgi almak istiyorum.');
+  const CALENDLY_LINK = 'https://calendly.com/muhammeterdn0/30min';
 
   ['cta-hero', 'cta-final', 'cta-sticky'].forEach(id => {
+    const el = document.getElementById(id);
+    el.href = CALENDLY_LINK;
+    el.target = '_blank';
+    el.addEventListener('click', () => {
+      try { if (typeof gtag === 'function') gtag('event', 'generate_lead', { link_id: id }); } catch (e) {}
+      try { if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: id }); } catch (e) {}
+    });
+  });
+
+  ['cta-hero-wa', 'cta-final-wa'].forEach(id => {
     const el = document.getElementById(id);
     el.href = WHATSAPP_LINK;
     el.target = '_blank';
