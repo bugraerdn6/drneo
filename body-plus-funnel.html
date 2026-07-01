@@ -115,6 +115,8 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
   .pkg-rows { display: flex; flex-direction: column; gap: 8px; }
   .pkg-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 8px; }
   .pkg-row span:last-child { color: white; font-weight: 600; }
+  .pkg-cta { display: block; text-align: center; margin-top: 14px; font-size: 12.5px; color: var(--blue-light); text-decoration: none; font-weight: 600; }
+  .pkg-cta:hover { text-decoration: underline; }
 
   /* EARNING TYPES */
   .earn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 620px; margin: 0 auto; }
@@ -187,8 +189,9 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
     </div>
     <a href="#" class="cta-btn" id="cta-hero">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      Paketleri İncele
+      WhatsApp'tan Bana Ulaş
     </a>
+    <div><a href="#paketler" class="cta-btn-ghost">Paketleri İncele</a></div>
     <div class="cta-sub">Ankara merkezli, FDA/ISO sertifikalı ürün altyapısı</div>
   </div>
 </section>
@@ -246,7 +249,7 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
 </section>
 
 <!-- PACKAGES -->
-<section class="block">
+<section class="block" id="paketler">
   <div class="wrap">
     <div class="block-tag">Paket Seçenekleri</div>
     <div class="block-title">Bütçenize Uygun Başlangıç</div>
@@ -259,6 +262,7 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
           <div class="pkg-row"><span>Link Kapasitesi</span><span>100 link</span></div>
           <div class="pkg-row"><span>Cirodan Takım Primi</span><span>%6</span></div>
         </div>
+        <a href="#" class="pkg-cta" data-pkg="bronze">Bu paketle doğrudan kayıt ol →</a>
       </div>
       <div class="pkg-card">
         <div class="pkg-name">Silver</div>
@@ -268,6 +272,7 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
           <div class="pkg-row"><span>Link Kapasitesi</span><span>500 link</span></div>
           <div class="pkg-row"><span>Cirodan Takım Primi</span><span>%8</span></div>
         </div>
+        <a href="#" class="pkg-cta" data-pkg="silver">Bu paketle doğrudan kayıt ol →</a>
       </div>
       <div class="pkg-card gold">
         <div class="pkg-badge">Önerilen</div>
@@ -278,6 +283,7 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
           <div class="pkg-row"><span>Link Kapasitesi</span><span>Sınırsız</span></div>
           <div class="pkg-row"><span>Cirodan Takım Primi</span><span>%10</span></div>
         </div>
+        <a href="#" class="pkg-cta" data-pkg="gold">Bu paketle doğrudan kayıt ol →</a>
       </div>
     </div>
   </div>
@@ -373,10 +379,10 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
 <section class="final-cta">
   <div class="wrap">
     <h2>Kendi Bayiliğinizi Bugün Kurun</h2>
-    <p>Paketini seç, referans linkinden kaydını tamamla.</p>
+    <p>Sorularını cevaplayayım, birlikte doğru paketi seçelim.</p>
     <a href="#" class="cta-btn" id="cta-final">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      Paketleri İncele
+      WhatsApp'tan Bana Ulaş
     </a>
   </div>
 </section>
@@ -387,19 +393,29 @@ src="https://www.facebook.com/tr?id=2011095216198583&ev=PageView&noscript=1"
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-bar">
-  <a href="#" id="cta-sticky">Paketleri İncele →</a>
+  <a href="#" id="cta-sticky">WhatsApp'tan Bana Ulaş →</a>
 </div>
 
 <script>
   const REFERRAL_LINK = 'https://doctorembackoffice.com/90195101';
+  const WHATSAPP_LINK = 'https://wa.me/905469576197?text=' + encodeURIComponent('Merhaba, Doctorem Global bayiliği hakkında bilgi almak istiyorum.');
 
   ['cta-hero', 'cta-final', 'cta-sticky'].forEach(id => {
     const el = document.getElementById(id);
+    el.href = WHATSAPP_LINK;
+    el.target = '_blank';
+    el.addEventListener('click', () => {
+      try { if (typeof gtag === 'function') gtag('event', 'generate_lead', { link_id: id }); } catch (e) {}
+      try { if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: id }); } catch (e) {}
+    });
+  });
+
+  document.querySelectorAll('.pkg-cta').forEach(el => {
     el.href = REFERRAL_LINK;
     el.target = '_blank';
     el.addEventListener('click', () => {
-      try { if (typeof gtag === 'function') gtag('event', 'select_content', { link_id: id }); } catch (e) {}
-      try { if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', { content_name: id }); } catch (e) {}
+      try { if (typeof gtag === 'function') gtag('event', 'select_content', { link_id: el.dataset.pkg }); } catch (e) {}
+      try { if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', { content_name: el.dataset.pkg }); } catch (e) {}
     });
   });
 
