@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Body Plus — 48 Saat Kesintisiz Enerji ve Metabolizma Desteği | Dr. Neo</title>
+<meta name="description" content="Hap yutmadan, cildine yapıştır: Body Plus transdermal bandı ile 48 saat boyunca enerji, metabolizma ve bağışıklık desteği." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+<!--
+  ANALİTİK KURULUMU
+  Aşağıya kendi GA4 Measurement ID'nizi ve Meta (Facebook) Pixel ID'nizi girip
+  bu bloğu saran yorum işaretlerini (en üstteki ve en alttaki satırları) silin.
+  CTA tıklamaları otomatik olarak "generate_lead" (GA4) ve "Lead" (Meta)
+  event'i olarak gönderilecek.
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'XXXXXXXXXXXXXXX');
+    fbq('track', 'PageView');
+  </script>
+-->
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #15243C; --navy-2: #0d1826; --blue: #1B3A6B; --blue-light: #2E63BE;
+    --red: #C0392B; --red-light: #E74C3C;
+    --text-dim: rgba(255,255,255,0.55); --text-dimmer: rgba(255,255,255,0.4);
+    --border: rgba(255,255,255,0.09);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--navy); color: rgba(255,255,255,0.9); line-height: 1.5; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  /* HEADER — minimal, no exit links */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(13,24,38,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 14px 20px; text-align: center; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: white; }
+  .logo-dot { color: var(--red); }
+
+  /* HERO */
+  .hero { padding: 40px 20px 32px; text-align: center; background: linear-gradient(160deg, var(--navy-2) 0%, var(--navy) 60%); }
+  .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red-light); margin-bottom: 14px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 6vw, 42px); line-height: 1.18; color: white; margin-bottom: 16px; }
+  .hero-sub { font-size: 16px; color: var(--text-dim); max-width: 560px; margin: 0 auto 28px; }
+  .hero-img { max-width: 280px; margin: 0 auto 24px; }
+  .badge-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+  .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 12px; padding: 10px 16px; min-width: 84px; }
+  .badge strong { display: block; font-size: 20px; color: white; }
+  .badge span { font-size: 11px; color: var(--text-dimmer); }
+
+  .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; box-shadow: 0 8px 30px rgba(192,57,43,0.4); transition: all .2s; }
+  .cta-btn:hover { background: var(--red-light); transform: translateY(-2px); }
+  .cta-sub { font-size: 12px; color: var(--text-dimmer); margin-top: 12px; }
+
+  .trust-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 24px; font-size: 12px; color: var(--text-dimmer); }
+  .trust-row span { display: flex; align-items: center; gap: 6px; }
+
+  /* SECTION SHELL */
+  section.block { padding: 56px 20px; border-top: 1px solid var(--border); }
+  .block-tag { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 12px; }
+  .block-title { text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 32px); color: white; margin-bottom: 20px; }
+  .block-body { font-size: 15px; color: var(--text-dim); text-align: center; max-width: 560px; margin: 0 auto 32px; }
+
+  /* PROBLEM */
+  .pain-list { display: flex; flex-direction: column; gap: 14px; max-width: 480px; margin: 0 auto 32px; }
+  .pain-item { display: flex; gap: 12px; align-items: flex-start; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+  .pain-icon { font-size: 20px; }
+  .pain-text { font-size: 14px; color: var(--text-dim); }
+
+  /* BENEFITS */
+  .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 620px; margin: 0 auto; }
+  .benefit-card { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .benefit-icon { font-size: 22px; margin-bottom: 8px; }
+  .benefit-text { font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
+
+  /* HOW IT WORKS */
+  .steps { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .step-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+  .step-title { font-weight: 600; color: white; font-size: 14.5px; margin-bottom: 3px; }
+  .step-desc { font-size: 13.5px; color: var(--text-dimmer); }
+
+  /* INGREDIENTS ACCORDION */
+  .acc { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+  .acc-item { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .acc-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 18px; cursor: pointer; font-weight: 600; font-size: 14.5px; color: white; }
+  .acc-arrow { transition: transform .2s; color: var(--text-dimmer); }
+  .acc-arrow.open { transform: rotate(180deg); }
+  .acc-body { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+  .acc-body.open { max-height: 200px; }
+  .acc-body p { padding: 0 18px 16px; font-size: 13.5px; color: var(--text-dim); }
+
+  /* TESTIMONIAL PLACEHOLDER */
+  .testi-note { max-width: 560px; margin: 0 auto; border: 1px dashed rgba(255,255,255,0.25); border-radius: 14px; padding: 20px; text-align: center; font-size: 13px; color: var(--text-dimmer); }
+
+  /* FAQ */
+  .faq-item { border-bottom: 1px solid var(--border); max-width: 620px; margin: 0 auto; }
+  .faq-head { display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; cursor: pointer; font-weight: 600; color: white; font-size: 14.5px; }
+  .faq-body { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+  .faq-body.open { max-height: 200px; }
+  .faq-body p { padding: 0 4px 18px; font-size: 13.5px; color: var(--text-dim); }
+
+  /* FINAL CTA */
+  .final-cta { text-align: center; background: linear-gradient(135deg, var(--blue) 0%, #0d2347 100%); padding: 64px 20px 90px; }
+  .final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 34px); color: white; margin-bottom: 14px; }
+  .final-cta p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 15px; }
+
+  /* STICKY MOBILE BAR */
+  .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; background: rgba(13,24,38,0.97); backdrop-filter: blur(8px); border-top: 1px solid var(--border); padding: 12px 16px; display: none; }
+  .sticky-bar a { display: block; text-align: center; background: var(--red); color: white; padding: 14px; border-radius: 50px; font-weight: 700; text-decoration: none; }
+  @media (max-width: 640px) {
+    .sticky-bar { display: block; }
+    .benefit-grid { grid-template-columns: 1fr; }
+    body { padding-bottom: 70px; }
+  }
+
+  footer { text-align: center; padding: 28px 20px; font-size: 12px; color: var(--text-dimmer); }
+  footer a { color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="logo-text">Dr<span class="logo-dot">.</span> Neo</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Transdermal Bant Teknolojisi</div>
+    <h1>Hap Yutmadan, Cildine Yapıştır: 48 Saat Kesintisiz Enerji ve Metabolizma Desteği</h1>
+    <p class="hero-sub">Body Plus; doğal bitki özleri, amino asitler ve vitaminleri doğrudan cildinden kana ulaştırır. Sindirim sistemini yormadan, gün boyu etkisini sürdürür.</p>
+    <div class="hero-img"><img src="images/body-plus.png" alt="Body Plus Transdermal Bant" /></div>
+    <div class="badge-row">
+      <div class="badge"><strong>25</strong><span>Adet Bant</span></div>
+      <div class="badge"><strong>48</strong><span>Saat Etki</span></div>
+      <div class="badge"><strong>12</strong><span>Aktif İçerik</span></div>
+    </div>
+    <a href="#" class="cta-btn" id="cta-hero">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Hemen Sipariş Ver
+    </a>
+    <div class="cta-sub">Resmi distribütör linki üzerinden güvenli sipariş</div>
+    <div class="trust-row">
+      <span>✓ Orijinal Ürün</span>
+      <span>✓ Güvenli Ödeme</span>
+      <span>✓ Hızlı Kargo</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / AGITATION -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-tag">Sana Tanıdık Geliyor mu?</div>
+    <div class="block-title">Güne Enerjik Başlayıp Öğleye Kalmadan Tükeniyor musun?</div>
+    <div class="pain-list">
+      <div class="pain-item"><span class="pain-icon">😴</span><span class="pain-text">Sabah kahveyle başlıyorsun ama öğleden sonra yine bitkin hissediyorsun.</span></div>
+      <div class="pain-item"><span class="pain-icon">🍔</span><span class="pain-text">Metabolizman yavaşladı, ne yapsan aynı kalıyorsun.</span></div>
+      <div class="pain-item"><span class="pain-icon">🤧</span><span class="pain-text">Mevsim geçişlerinde bağışıklığın zayıf kalıyor, sık sık hastalanıyorsun.</span></div>
+      <div class="pain-item"><span class="pain-icon">💊</span><span class="pain-text">Her gün onlarca hap yutmak yerine tek ve pratik bir çözüm istiyorsun.</span></div>
+    </div>
+    <div class="block-body">Body Plus, bu dört sorunu aynı anda hedefleyen tek bir bant. Cildine yapıştır, 48 saat boyunca formül doğrudan kan dolaşımına karışsın.</div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="block" style="background:rgba(255,255,255,0.02)">
+  <div class="wrap">
+    <div class="block-tag">Ne Sağlar?</div>
+    <div class="block-title">Tek Bantla Aldığın 6 Fayda</div>
+    <div class="benefit-grid">
+      <div class="benefit-card"><div class="benefit-icon">🔥</div><div class="benefit-text">Gün boyu süren enerji sağlar, yorgunluğu azaltır.</div></div>
+      <div class="benefit-card"><div class="benefit-icon">⚡</div><div class="benefit-text">Metabolizmayı hızlandırarak kilo kontrolüne destek olur.</div></div>
+      <div class="benefit-card"><div class="benefit-icon">🧠</div><div class="benefit-text">Hafıza ve odaklanmayı geliştirir, zihinsel performansı artırır.</div></div>
+      <div class="benefit-card"><div class="benefit-icon">🛡️</div><div class="benefit-text">Bağışıklık sistemini güçlendirerek hastalıklara karşı koruma sağlar.</div></div>
+      <div class="benefit-card"><div class="benefit-icon">💪</div><div class="benefit-text">Kas gelişimi ve toparlanmayı hızlandırır, egzersiz performansını artırır.</div></div>
+      <div class="benefit-card"><div class="benefit-icon">🌿</div><div class="benefit-text">Stres seviyesini düşürür, ruh halini iyileştirir.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-tag">Kullanımı Çok Kolay</div>
+    <div class="block-title">4 Adımda Body Plus</div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Temiz ve Kuru Bir Alan Seçin</div><div class="step-desc">Cildinizi temizleyip kurulayın. Kol içi, sırt veya karın bölgesi tercih edilebilir.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Bandı Uygulayın</div><div class="step-desc">Koruyucu filmi soyun, seçtiğiniz bölgeye bastırarak yapıştırın.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">48 Saat Etkisini Sürdürsün</div><div class="step-desc">Bu süre boyunca banyo yapabilir, spor aktivitelerinize devam edebilirsiniz.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-title">Çıkarın ve Yenileyin</div><div class="step-desc">48 saat sonra bandı çıkarıp farklı bir bölgeye yenisini uygulayın. Pakette 25 adet bant var.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="block" style="background:rgba(255,255,255,0.02)">
+  <div class="wrap">
+    <div class="block-tag">Formülün İçinde Ne Var?</div>
+    <div class="block-title">Öne Çıkan Aktif İçerikler</div>
+    <div class="acc" id="ingredients-acc">
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)"><span>Guarana</span><span class="acc-arrow">▾</span></div>
+        <div class="acc-body"><p>Yüksek kafein içeriğiyle enerji artırıcı ve zihinsel uyanıklık sağlar, metabolizmayı hızlandırır.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)"><span>L-Arginin</span><span class="acc-arrow">▾</span></div>
+        <div class="acc-body"><p>Nitrik oksit üretimini artırarak kan dolaşımını iyileştirir, spor performansını destekler.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)"><span>Vitamin C</span><span class="acc-arrow">▾</span></div>
+        <div class="acc-body"><p>Güçlü antioksidan; bağışıklık sistemini destekler, cilt sağlığını iyileştirir.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)"><span>Ginkgo Biloba</span><span class="acc-arrow">▾</span></div>
+        <div class="acc-body"><p>Hafızayı güçlendirir, kan dolaşımını artırarak zihinsel performansı destekler.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)"><span>Garcinia Cambogia</span><span class="acc-arrow">▾</span></div>
+        <div class="acc-body"><p>İçeriğindeki HCA ile yağ üretimini engeller, iştah kontrolüne yardımcı olur.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" onclick="toggleAcc(this)"><span>Kırmızı Kore Ginsengi</span><span class="acc-arrow">▾</span></div>
+        <div class="acc-body"><p>Enerji seviyelerini artırır, bağışıklığı güçlendirir, stresle mücadeleye yardımcı olur.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS PLACEHOLDER -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-tag">Müşteri Deneyimleri</div>
+    <div class="block-title">Gerçek Kullanıcı Yorumları Buraya Gelecek</div>
+    <div class="testi-note">
+      Bu alan bilerek boş bırakıldı — sahte yorum eklemedim. Gerçek müşterilerinden aldığın
+      yazılı/ekran görüntülü onayları (WhatsApp mesajı, sosyal medya yorumu vb.) buraya
+      eklediğinde bu bölüm gerçek bir dönüşüm artırıcı olur. Hazır olduğunda söyle, kart
+      tasarımını (fotoğraf + isim + yorum) birlikte ekleyelim.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" style="background:rgba(255,255,255,0.02)">
+  <div class="wrap">
+    <div class="block-tag">Merak Edilenler</div>
+    <div class="block-title">Sıkça Sorulan Sorular</div>
+    <div id="faq">
+      <div class="faq-item">
+        <div class="faq-head" onclick="toggleAcc(this)"><span>Bandın etkisi ne kadar sürer?</span><span class="acc-arrow">▾</span></div>
+        <div class="faq-body"><p>Her bant maksimum 48 saat boyunca etkisini sürdürür.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-head" onclick="toggleAcc(this)"><span>Her pakette kaç bant var?</span><span class="acc-arrow">▾</span></div>
+        <div class="faq-body"><p>Her pakette 25 adet bant bulunur, yaklaşık 50 günlük kullanım sağlar.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-head" onclick="toggleAcc(this)"><span>Ürün orijinal mi?</span><span class="acc-arrow">▾</span></div>
+        <div class="faq-body"><p>Evet, resmi distribütör linkimiz üzerinden orijinal ürün temin edilir.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-head" onclick="toggleAcc(this)"><span>Ödeme güvenli mi?</span><span class="acc-arrow">▾</span></div>
+        <div class="faq-body"><p>Sipariş, resmi distribütör linki üzerinden güvenli ödeme altyapısıyla alınır.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-head" onclick="toggleAcc(this)"><span>Kargo ne kadar sürede gelir?</span><span class="acc-arrow">▾</span></div>
+        <div class="faq-body"><p>Siparişiniz onaylandıktan sonra hızlı kargo ile gönderilir.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Bugün Başla, 48 Saat Sonra Farkı Hisset</h2>
+    <p>Body Plus'ı resmi distribütör linkinden güvenle sipariş ver.</p>
+    <a href="#" class="cta-btn" id="cta-final">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Hemen Sipariş Ver
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2024 Dr. Neo. Tüm hakları saklıdır. · <a href="index.html">Tüm ürünleri gör</a> · <a href="iletisim.html">İletişim</a></div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-bar">
+  <a href="#" id="cta-sticky">Hemen Sipariş Ver →</a>
+</div>
+
+<script>
+  const REFERRAL_LINK = 'https://doctoremglobal.com/index?ref=90195101&utm_source=funnel&utm_medium=body-plus-funnel';
+
+  ['cta-hero', 'cta-final', 'cta-sticky'].forEach(id => {
+    const el = document.getElementById(id);
+    el.href = REFERRAL_LINK;
+    el.target = '_blank';
+    el.addEventListener('click', () => {
+      try { if (typeof gtag === 'function') gtag('event', 'generate_lead', { link_id: id }); } catch (e) {}
+      try { if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: id }); } catch (e) {}
+    });
+  });
+
+  function toggleAcc(head) {
+    const body = head.nextElementSibling;
+    const arrow = head.querySelector('.acc-arrow');
+    body.classList.toggle('open');
+    arrow.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
